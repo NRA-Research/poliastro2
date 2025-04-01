@@ -5,3 +5,4 @@
 # X.L dev ignore
 convert122.py
 fail_report.txt
+src\poliastro2\dev_tools\directory_structure.txt
