@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core.orbit &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.core.orbit.creation" href="poliastro.core.orbit.creation.html" />
+    <link rel="prev" title="poliastro.core.math.io" href="poliastro.core.math.io.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.orbit.creation.html" title="poliastro.core.orbit.creation"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.math.io.html" title="poliastro.core.math.io"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" accesskey="U">poliastro.core</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.orbit</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core.orbit">
+<span id="poliastro-core-orbit"></span><h1>poliastro.core.orbit<a class="headerlink" href="#module-poliastro.core.orbit" title="Link to this heading">¶</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
+<p>This subpackage provides functions to create and manipulate orbital models.
+It includes routines for orbit creation and scalar computations.</p>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>creation: Functions for creating orbital states.</p></li>
+<li><p>scalar: Class for representing the orbit of a body with respect to an attractor.</p></li>
+</ul>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.orbit.</span></span><span class="sig-name descname"><span class="pre">Orbit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit" title="Link to this definition">¶</a></dt>
+<dd><p>Represents the position and velocity of a body with respect to an attractor at a
+given epoch.</p>
+<p>This class provides methods to access various orbital elements and properties, such as position,
+velocity, semimajor axis, eccentricity, inclination, and more. It also includes methods to change
+the attractor, propagate the orbit, and apply maneuvers. The implicit reference system is an
+inertial one, typically the International Celestial Reference System (ICRS) for the Solar System.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.attractor">
+<span class="sig-name descname"><span class="pre">attractor</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.attractor" title="Link to this definition">¶</a></dt>
+<dd><p>Main attractor of the orbit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body">Body</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.epoch">
+<span class="sig-name descname"><span class="pre">epoch</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Epoch of the orbit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Time</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.plane">
+<span class="sig-name descname"><span class="pre">plane</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.plane" title="Link to this definition">¶</a></dt>
+<dd><p>Fundamental plane of the frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Planes</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.r">
+<span class="sig-name descname"><span class="pre">r</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.r" title="Link to this definition">¶</a></dt>
+<dd><p>Position vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.v">
+<span class="sig-name descname"><span class="pre">v</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.v" title="Link to this definition">¶</a></dt>
+<dd><p>Velocity vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.a">
+<span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.a" title="Link to this definition">¶</a></dt>
+<dd><p>Semimajor axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.p">
+<span class="sig-name descname"><span class="pre">p</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.p" title="Link to this definition">¶</a></dt>
+<dd><p>Semilatus rectum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.r_p">
+<span class="sig-name descname"><span class="pre">r_p</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.r_p" title="Link to this definition">¶</a></dt>
+<dd><p>Radius of pericenter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.r_a">
+<span class="sig-name descname"><span class="pre">r_a</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.r_a" title="Link to this definition">¶</a></dt>
+<dd><p>Radius of apocenter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.ecc">
+<span class="sig-name descname"><span class="pre">ecc</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.ecc" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.inc">
+<span class="sig-name descname"><span class="pre">inc</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.inc" title="Link to this definition">¶</a></dt>
+<dd><p>Inclination.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.raan">
+<span class="sig-name descname"><span class="pre">raan</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.raan" title="Link to this definition">¶</a></dt>
+<dd><p>Right ascension of the ascending node.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.argp">
+<span class="sig-name descname"><span class="pre">argp</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.argp" title="Link to this definition">¶</a></dt>
+<dd><p>Argument of the perigee.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.nu">
+<span class="sig-name descname"><span class="pre">nu</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.f">
+<span class="sig-name descname"><span class="pre">f</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.f" title="Link to this definition">¶</a></dt>
+<dd><p>Second modified equinoctial element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.g">
+<span class="sig-name descname"><span class="pre">g</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.g" title="Link to this definition">¶</a></dt>
+<dd><p>Third modified equinoctial element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.h">
+<span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.h" title="Link to this definition">¶</a></dt>
+<dd><p>Fourth modified equinoctial element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.k">
+<span class="sig-name descname"><span class="pre">k</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.k" title="Link to this definition">¶</a></dt>
+<dd><p>Fifth modified equinoctial element.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.L">
+<span class="sig-name descname"><span class="pre">L</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.L" title="Link to this definition">¶</a></dt>
+<dd><p>True longitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.period">
+<span class="sig-name descname"><span class="pre">period</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.period" title="Link to this definition">¶</a></dt>
+<dd><p>Period of the orbit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.n">
+<span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.n" title="Link to this definition">¶</a></dt>
+<dd><p>Mean motion.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.energy">
+<span class="sig-name descname"><span class="pre">energy</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.energy" title="Link to this definition">¶</a></dt>
+<dd><p>Specific energy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.e_vec">
+<span class="sig-name descname"><span class="pre">e_vec</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.e_vec" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.h_vec">
+<span class="sig-name descname"><span class="pre">h_vec</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.h_vec" title="Link to this definition">¶</a></dt>
+<dd><p>Specific angular momentum vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.h_mag">
+<span class="sig-name descname"><span class="pre">h_mag</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.h_mag" title="Link to this definition">¶</a></dt>
+<dd><p>Specific angular momentum.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.arglat">
+<span class="sig-name descname"><span class="pre">arglat</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.arglat" title="Link to this definition">¶</a></dt>
+<dd><p>Argument of latitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.t_p">
+<span class="sig-name descname"><span class="pre">t_p</span></span><a class="headerlink" href="#poliastro.core.orbit.Orbit.t_p" title="Link to this definition">¶</a></dt>
+<dd><p>Elapsed time since latest perifocal passage.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.get_frame">
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.get_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Get equivalent reference frame of the orbit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.change_attractor">
+<span class="sig-name descname"><span class="pre">change_attractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.change_attractor" title="Link to this definition">¶</a></dt>
+<dd><p>Changes orbit attractor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.change_plane">
+<span class="sig-name descname"><span class="pre">change_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.change_plane" title="Link to this definition">¶</a></dt>
+<dd><p>Changes fundamental plane.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.represent_as">
+<span class="sig-name descname"><span class="pre">represent_as</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">representation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">differential_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.represent_as" title="Link to this definition">¶</a></dt>
+<dd><p>Converts the orbit to a specific representation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.rv">
+<span class="sig-name descname"><span class="pre">rv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.rv" title="Link to this definition">¶</a></dt>
+<dd><p>Returns position and velocity vectors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.classical">
+<span class="sig-name descname"><span class="pre">classical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.classical" title="Link to this definition">¶</a></dt>
+<dd><p>Returns classical orbital elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.pqw">
+<span class="sig-name descname"><span class="pre">pqw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.pqw" title="Link to this definition">¶</a></dt>
+<dd><p>Returns perifocal frame (PQW) vectors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.propagate">
+<span class="sig-name descname"><span class="pre">propagate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">FarnocchiaPropagator()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.propagate" title="Link to this definition">¶</a></dt>
+<dd><p>Propagates an orbit a specified time.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.time_to_anomaly">
+<span class="sig-name descname"><span class="pre">time_to_anomaly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.time_to_anomaly" title="Link to this definition">¶</a></dt>
+<dd><p>Returns time required to be in a specific true anomaly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.propagate_to_anomaly">
+<span class="sig-name descname"><span class="pre">propagate_to_anomaly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.propagate_to_anomaly" title="Link to this definition">¶</a></dt>
+<dd><p>Propagates an orbit to a specific true anomaly.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.to_ephem">
+<span class="sig-name descname"><span class="pre">to_ephem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">TrueAnomalyBounds()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.to_ephem" title="Link to this definition">¶</a></dt>
+<dd><p>Samples Orbit to return an ephemerides.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values=100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_anomaly=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_anomaly=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.sample" title="Link to this definition">¶</a></dt>
+<dd><p>Samples an orbit to some specified time values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.apply_maneuver">
+<span class="sig-name descname"><span class="pre">apply_maneuver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maneuver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intermediate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.apply_maneuver" title="Link to this definition">¶</a></dt>
+<dd><p>Returns resulting <cite>Orbit</cite> after applying maneuver to self.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.plot" title="Link to this definition">¶</a></dt>
+<dd><p>Plots the orbit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.Orbit.elevation">
+<span class="sig-name descname"><span class="pre">elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.Orbit.elevation" title="Link to this definition">¶</a></dt>
+<dd><p>Computes the elevation of the orbit with respect to a location on the attractor.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">L</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><p>True longitude.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd><p>Semimajor axis.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<span class="sig-name descname"><span class="pre">apply_maneuver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maneuver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intermediate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd><p>Returns resulting <cite>Orbit</cite> after applying maneuver to self.</p>
+<p>Optionally return intermediate states (default to False).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>maneuver</strong> (<a class="reference internal" href="poliastro.core.actions.maneuver.html#poliastro.core.actions.maneuver.Maneuver" title="poliastro.core.actions.maneuver.Maneuver"><em>Maneuver</em></a>) – Maneuver to apply.</p></li>
+<li><p><strong>intermediate</strong> (<em>bool</em><em>, </em><em>optional</em>) – Return intermediate states, default to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id3">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">arglat</span></span><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd><p>Argument of latitude.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">argp</span></span><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd><p>Argument of the perigee.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id5">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attractor</span></span><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
+<dd><p>Main attractor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<span class="sig-name descname"><span class="pre">change_attractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
+<dd><p>Changes orbit attractor.</p>
+<p>Only changes from attractor to parent or the other way around are allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>new_attractor</strong> (<em>poliastro.bodies.Body</em>) – Desired new attractor.</p></li>
+<li><p><strong>force</strong> (<em>bool</em>) – If <cite>True</cite>, changes attractor even if physically has no-sense.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ss</strong> – Orbit with new attractor</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>poliastro.twobody.orbit.Orbit</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<span class="sig-name descname"><span class="pre">change_plane</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<dd><p>Changes fundamental plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<span class="sig-name descname"><span class="pre">classical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<dd><p>Classical orbital elements.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id9">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">e_vec</span></span><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity vector.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id10">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ecc</span></span><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id11">
+<span class="sig-name descname"><span class="pre">elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<dd><p>Elevation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> (<em>astropy.units.Quantity</em>) – Latitude of the observation point on the attractor.</p></li>
+<li><p><strong>theta</strong> (<em>astropy.units.Quantity</em>) – Local sideral time of the observation point on the attractor.</p></li>
+<li><p><strong>h</strong> (<em>astropy.units.Quantity</em>) – Height of the station above the attractor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>elevation</strong> – Elevation of the orbit with respect to a location on attractor, in units of radian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>astropy.units.Quantity</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Local sideral time needs to be precomputed. If Earth is the attractor, it can
+be computed using <cite>poliastro.earth.util.get_local_sidereal_time</cite>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id12">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">energy</span></span><a class="headerlink" href="#id12" title="Link to this definition">¶</a></dt>
+<dd><p>Specific energy.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id13">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">epoch</span></span><a class="headerlink" href="#id13" title="Link to this definition">¶</a></dt>
+<dd><p>Epoch of the orbit.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id14">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">f</span></span><a class="headerlink" href="#id14" title="Link to this definition">¶</a></dt>
+<dd><p>Second modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id15">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">g</span></span><a class="headerlink" href="#id15" title="Link to this definition">¶</a></dt>
+<dd><p>Third modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id16">
+<span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id16" title="Link to this definition">¶</a></dt>
+<dd><p>Get equivalent reference frame of the orbit.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.14.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id17">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#id17" title="Link to this definition">¶</a></dt>
+<dd><p>Fourth modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id18">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">h_mag</span></span><a class="headerlink" href="#id18" title="Link to this definition">¶</a></dt>
+<dd><p>Specific angular momentum.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id19">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">h_vec</span></span><a class="headerlink" href="#id19" title="Link to this definition">¶</a></dt>
+<dd><p>Specific angular momentum vector.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id20">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inc</span></span><a class="headerlink" href="#id20" title="Link to this definition">¶</a></dt>
+<dd><p>Inclination.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id21">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">k</span></span><a class="headerlink" href="#id21" title="Link to this definition">¶</a></dt>
+<dd><p>Fifth modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id22">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#id22" title="Link to this definition">¶</a></dt>
+<dd><p>Mean motion.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id23">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nu</span></span><a class="headerlink" href="#id23" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id24">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">p</span></span><a class="headerlink" href="#id24" title="Link to this definition">¶</a></dt>
+<dd><p>Semilatus rectum.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id25">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">period</span></span><a class="headerlink" href="#id25" title="Link to this definition">¶</a></dt>
+<dd><p>Period of the orbit.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id26">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plane</span></span><a class="headerlink" href="#id26" title="Link to this definition">¶</a></dt>
+<dd><p>Fundamental plane of the frame.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id27">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id27" title="Link to this definition">¶</a></dt>
+<dd><p>Plots the orbit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>backend</strong> (<em>OrbitPlotterBackend</em>) – An instance of <code class="docutils literal notranslate"><span class="pre">OrbitPlotterBackend</span></code> for rendendering the scene.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the orbit, defaults to empty.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object for plotting orbits.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="poliastro.plotting.orbit.html#poliastro.plotting.orbit.OrbitPlotter" title="poliastro.plotting.orbit.OrbitPlotter"><em>OrbitPlotter</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id28">
+<span class="sig-name descname"><span class="pre">pqw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id28" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the Perifocal frame (PQW) vectors of the orbit.</p>
+<p>This method calculates the PQW vectors based on the eccentricity
+and inclination of the orbit. It issues a deprecation warning
+indicating that this method will be removed in a future release.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A tuple containing the p, q, and w vectors in the perifocal frame.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id29">
+<span class="sig-name descname"><span class="pre">propagate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method=&lt;poliastro.core.actions.propagate.farnocchia.FarnocchiaPropagator</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id29" title="Link to this definition">¶</a></dt>
+<dd><p>Propagates an orbit a specified time.</p>
+<p>If value is true anomaly, propagate orbit to this anomaly and return the result.
+Otherwise, if time is provided, propagate this <cite>Orbit</cite> some <cite>time</cite> and return the result.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>value</strong> (<em>Quantity</em><em>, </em><em>Time</em><em>, </em><em>TimeDelta</em>) – Scalar time to propagate.</p></li>
+<li><p><strong>method</strong> (<em>function</em><em>, </em><em>optional</em>) – Method used for propagation, default to farnocchia.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New orbit after propagation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#poliastro.core.orbit.Orbit" title="poliastro.core.orbit.Orbit">Orbit</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id30">
+<span class="sig-name descname"><span class="pre">propagate_to_anomaly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id30" title="Link to this definition">¶</a></dt>
+<dd><p>Propagates an orbit to a specific true anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>Quantity</em>)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Resulting orbit after propagation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#poliastro.core.orbit.Orbit" title="poliastro.core.orbit.Orbit">Orbit</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id31">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r</span></span><a class="headerlink" href="#id31" title="Link to this definition">¶</a></dt>
+<dd><p>Position vector.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id32">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r_a</span></span><a class="headerlink" href="#id32" title="Link to this definition">¶</a></dt>
+<dd><p>Radius of apocenter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id33">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r_p</span></span><a class="headerlink" href="#id33" title="Link to this definition">¶</a></dt>
+<dd><p>Radius of pericenter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id34">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raan</span></span><a class="headerlink" href="#id34" title="Link to this definition">¶</a></dt>
+<dd><p>Right ascension of the ascending node.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id35">
+<span class="sig-name descname"><span class="pre">represent_as</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">representation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">differential_class</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id35" title="Link to this definition">¶</a></dt>
+<dd><p>Converts the orbit to a specific representation.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.11.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>representation</strong> (<em>BaseRepresentation</em>) – Representation object to use. It must be a class, not an instance.</p></li>
+<li><p><strong>differential_class</strong> (<em>BaseDifferential</em><em>, </em><em>optional</em>) – Class in which the differential should be represented, default to None.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">poliastro.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">iss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">astropy.coordinates</span><span class="w"> </span><span class="kn">import</span> <span class="n">SphericalRepresentation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iss</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">CartesianRepresentation</span><span class="p">)</span>
+<span class="go">&lt;CartesianRepresentation (x, y, z) in km</span>
+<span class="go">    (859.07256, -4137.20368, 5295.56871)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iss</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">CartesianRepresentation</span><span class="p">)</span><span class="o">.</span><span class="n">xyz</span>
+<span class="go">&lt;Quantity [  859.07256, -4137.20368,  5295.56871] km&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iss</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">CartesianRepresentation</span><span class="p">,</span> <span class="n">CartesianDifferential</span><span class="p">)</span><span class="o">.</span><span class="n">differentials</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">]</span>
+<span class="go">&lt;CartesianDifferential (d_x, d_y, d_z) in km / s</span>
+<span class="go">    (7.37289205, 2.08223573, 0.43999979)&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iss</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">CartesianRepresentation</span><span class="p">,</span> <span class="n">CartesianDifferential</span><span class="p">)</span><span class="o">.</span><span class="n">differentials</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">d_xyz</span>
+<span class="go">&lt;Quantity [7.37289205, 2.08223573, 0.43999979] km / s&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iss</span><span class="o">.</span><span class="n">represent_as</span><span class="p">(</span><span class="n">SphericalRepresentation</span><span class="p">,</span> <span class="n">CartesianDifferential</span><span class="p">)</span>
+<span class="go">&lt;SphericalRepresentation (lon, lat, distance) in (rad, rad, km)</span>
+<span class="go">    (4.91712525, 0.89732339, 6774.76995296)</span>
+<span class="go"> (has differentials w.r.t.: &#39;s&#39;)&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id36">
+<span class="sig-name descname"><span class="pre">rv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id36" title="Link to this definition">¶</a></dt>
+<dd><p>Position and velocity vectors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id37">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_anomaly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_anomaly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id37" title="Link to this definition">¶</a></dt>
+<dd><p>Samples an orbit to some specified time values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.8.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>int</em>) – Number of interval points (default to 100).</p></li>
+<li><p><strong>min_anomaly</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Anomaly limits to sample the orbit.
+For elliptic orbits the default will be <span class="math notranslate nohighlight">\(E \in \left[0, 2 \pi \right]\)</span>,
+and for hyperbolic orbits it will be <span class="math notranslate nohighlight">\(\nu \in \left[-\nu_c, \nu_c \right]\)</span>,
+where <span class="math notranslate nohighlight">\(\nu_c\)</span> is either the current true anomaly
+or a value that corresponds to <span class="math notranslate nohighlight">\(r = 3p\)</span>.</p></li>
+<li><p><strong>max_anomaly</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Anomaly limits to sample the orbit.
+For elliptic orbits the default will be <span class="math notranslate nohighlight">\(E \in \left[0, 2 \pi \right]\)</span>,
+and for hyperbolic orbits it will be <span class="math notranslate nohighlight">\(\nu \in \left[-\nu_c, \nu_c \right]\)</span>,
+where <span class="math notranslate nohighlight">\(\nu_c\)</span> is either the current true anomaly
+or a value that corresponds to <span class="math notranslate nohighlight">\(r = 3p\)</span>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>positions</strong> – Array of x, y, z positions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>CartesianRepresentation</em></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>When specifying a number of points, the initial and final
+position is present twice inside the result (first and
+last row). This is more useful for plotting.</p>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">poliastro.examples</span><span class="w"> </span><span class="kn">import</span> <span class="n">iss</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iss</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>  
+<span class="go">&lt;CartesianRepresentation (x, y, z) in km ...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">iss</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  
+<span class="go">&lt;CartesianRepresentation (x, y, z) in km ...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id38">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">t_p</span></span><a class="headerlink" href="#id38" title="Link to this definition">¶</a></dt>
+<dd><p>Elapsed time since latest perifocal passage.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id39">
+<span class="sig-name descname"><span class="pre">time_to_anomaly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id39" title="Link to this definition">¶</a></dt>
+<dd><p>Returns time required to be in a specific true anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>Quantity</em>)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>tof</strong> – Time of flight required.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id40">
+<span class="sig-name descname"><span class="pre">to_ephem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strategy=&lt;poliastro.core.twobody.sampling.TrueAnomalyBounds</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id40" title="Link to this definition">¶</a></dt>
+<dd><p>Samples Orbit to return an ephemerides.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.17.0.</span></p>
+</div>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id41">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">v</span></span><a class="headerlink" href="#id41" title="Link to this definition">¶</a></dt>
+<dd><p>Velocity vector.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p class="rubric">Modules</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.core.orbit.creation.html#module-poliastro.core.orbit.creation" title="poliastro.core.orbit.creation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">creation</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.core.orbit.scalar.html#module-poliastro.core.orbit.scalar" title="poliastro.core.orbit.scalar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scalar</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core.orbit</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit"><code class="docutils literal notranslate"><span class="pre">Orbit</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.attractor"><code class="docutils literal notranslate"><span class="pre">Orbit.attractor</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.epoch"><code class="docutils literal notranslate"><span class="pre">Orbit.epoch</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.plane"><code class="docutils literal notranslate"><span class="pre">Orbit.plane</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.r"><code class="docutils literal notranslate"><span class="pre">Orbit.r</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.v"><code class="docutils literal notranslate"><span class="pre">Orbit.v</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.a"><code class="docutils literal notranslate"><span class="pre">Orbit.a</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.p"><code class="docutils literal notranslate"><span class="pre">Orbit.p</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.r_p"><code class="docutils literal notranslate"><span class="pre">Orbit.r_p</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.r_a"><code class="docutils literal notranslate"><span class="pre">Orbit.r_a</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.ecc"><code class="docutils literal notranslate"><span class="pre">Orbit.ecc</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.inc"><code class="docutils literal notranslate"><span class="pre">Orbit.inc</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.raan"><code class="docutils literal notranslate"><span class="pre">Orbit.raan</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.argp"><code class="docutils literal notranslate"><span class="pre">Orbit.argp</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.nu"><code class="docutils literal notranslate"><span class="pre">Orbit.nu</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.f"><code class="docutils literal notranslate"><span class="pre">Orbit.f</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.g"><code class="docutils literal notranslate"><span class="pre">Orbit.g</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.h"><code class="docutils literal notranslate"><span class="pre">Orbit.h</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.k"><code class="docutils literal notranslate"><span class="pre">Orbit.k</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.L"><code class="docutils literal notranslate"><span class="pre">Orbit.L</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.period"><code class="docutils literal notranslate"><span class="pre">Orbit.period</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.n"><code class="docutils literal notranslate"><span class="pre">Orbit.n</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.energy"><code class="docutils literal notranslate"><span class="pre">Orbit.energy</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.e_vec"><code class="docutils literal notranslate"><span class="pre">Orbit.e_vec</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.h_vec"><code class="docutils literal notranslate"><span class="pre">Orbit.h_vec</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.h_mag"><code class="docutils literal notranslate"><span class="pre">Orbit.h_mag</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.arglat"><code class="docutils literal notranslate"><span class="pre">Orbit.arglat</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.t_p"><code class="docutils literal notranslate"><span class="pre">Orbit.t_p</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.get_frame"><code class="docutils literal notranslate"><span class="pre">Orbit.get_frame()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.change_attractor"><code class="docutils literal notranslate"><span class="pre">Orbit.change_attractor()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.change_plane"><code class="docutils literal notranslate"><span class="pre">Orbit.change_plane()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.represent_as"><code class="docutils literal notranslate"><span class="pre">Orbit.represent_as()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.rv"><code class="docutils literal notranslate"><span class="pre">Orbit.rv()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.classical"><code class="docutils literal notranslate"><span class="pre">Orbit.classical()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.pqw"><code class="docutils literal notranslate"><span class="pre">Orbit.pqw()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.propagate"><code class="docutils literal notranslate"><span class="pre">Orbit.propagate()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.time_to_anomaly"><code class="docutils literal notranslate"><span class="pre">Orbit.time_to_anomaly()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.propagate_to_anomaly"><code class="docutils literal notranslate"><span class="pre">Orbit.propagate_to_anomaly()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.to_ephem"><code class="docutils literal notranslate"><span class="pre">Orbit.to_ephem()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.sample"><code class="docutils literal notranslate"><span class="pre">Orbit.sample()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.apply_maneuver"><code class="docutils literal notranslate"><span class="pre">Orbit.apply_maneuver()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.plot"><code class="docutils literal notranslate"><span class="pre">Orbit.plot()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.Orbit.elevation"><code class="docutils literal notranslate"><span class="pre">Orbit.elevation()</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Orbit.L</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">Orbit.a</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">Orbit.apply_maneuver()</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">Orbit.arglat</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">Orbit.argp</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">Orbit.attractor</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">Orbit.change_attractor()</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">Orbit.change_plane()</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">Orbit.classical()</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">Orbit.e_vec</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">Orbit.ecc</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">Orbit.elevation()</span></code></a></li>
+<li><a class="reference internal" href="#id12"><code class="docutils literal notranslate"><span class="pre">Orbit.energy</span></code></a></li>
+<li><a class="reference internal" href="#id13"><code class="docutils literal notranslate"><span class="pre">Orbit.epoch</span></code></a></li>
+<li><a class="reference internal" href="#id14"><code class="docutils literal notranslate"><span class="pre">Orbit.f</span></code></a></li>
+<li><a class="reference internal" href="#id15"><code class="docutils literal notranslate"><span class="pre">Orbit.g</span></code></a></li>
+<li><a class="reference internal" href="#id16"><code class="docutils literal notranslate"><span class="pre">Orbit.get_frame()</span></code></a></li>
+<li><a class="reference internal" href="#id17"><code class="docutils literal notranslate"><span class="pre">Orbit.h</span></code></a></li>
+<li><a class="reference internal" href="#id18"><code class="docutils literal notranslate"><span class="pre">Orbit.h_mag</span></code></a></li>
+<li><a class="reference internal" href="#id19"><code class="docutils literal notranslate"><span class="pre">Orbit.h_vec</span></code></a></li>
+<li><a class="reference internal" href="#id20"><code class="docutils literal notranslate"><span class="pre">Orbit.inc</span></code></a></li>
+<li><a class="reference internal" href="#id21"><code class="docutils literal notranslate"><span class="pre">Orbit.k</span></code></a></li>
+<li><a class="reference internal" href="#id22"><code class="docutils literal notranslate"><span class="pre">Orbit.n</span></code></a></li>
+<li><a class="reference internal" href="#id23"><code class="docutils literal notranslate"><span class="pre">Orbit.nu</span></code></a></li>
+<li><a class="reference internal" href="#id24"><code class="docutils literal notranslate"><span class="pre">Orbit.p</span></code></a></li>
+<li><a class="reference internal" href="#id25"><code class="docutils literal notranslate"><span class="pre">Orbit.period</span></code></a></li>
+<li><a class="reference internal" href="#id26"><code class="docutils literal notranslate"><span class="pre">Orbit.plane</span></code></a></li>
+<li><a class="reference internal" href="#id27"><code class="docutils literal notranslate"><span class="pre">Orbit.plot()</span></code></a></li>
+<li><a class="reference internal" href="#id28"><code class="docutils literal notranslate"><span class="pre">Orbit.pqw()</span></code></a></li>
+<li><a class="reference internal" href="#id29"><code class="docutils literal notranslate"><span class="pre">Orbit.propagate()</span></code></a></li>
+<li><a class="reference internal" href="#id30"><code class="docutils literal notranslate"><span class="pre">Orbit.propagate_to_anomaly()</span></code></a></li>
+<li><a class="reference internal" href="#id31"><code class="docutils literal notranslate"><span class="pre">Orbit.r</span></code></a></li>
+<li><a class="reference internal" href="#id32"><code class="docutils literal notranslate"><span class="pre">Orbit.r_a</span></code></a></li>
+<li><a class="reference internal" href="#id33"><code class="docutils literal notranslate"><span class="pre">Orbit.r_p</span></code></a></li>
+<li><a class="reference internal" href="#id34"><code class="docutils literal notranslate"><span class="pre">Orbit.raan</span></code></a></li>
+<li><a class="reference internal" href="#id35"><code class="docutils literal notranslate"><span class="pre">Orbit.represent_as()</span></code></a></li>
+<li><a class="reference internal" href="#id36"><code class="docutils literal notranslate"><span class="pre">Orbit.rv()</span></code></a></li>
+<li><a class="reference internal" href="#id37"><code class="docutils literal notranslate"><span class="pre">Orbit.sample()</span></code></a></li>
+<li><a class="reference internal" href="#id38"><code class="docutils literal notranslate"><span class="pre">Orbit.t_p</span></code></a></li>
+<li><a class="reference internal" href="#id39"><code class="docutils literal notranslate"><span class="pre">Orbit.time_to_anomaly()</span></code></a></li>
+<li><a class="reference internal" href="#id40"><code class="docutils literal notranslate"><span class="pre">Orbit.to_ephem()</span></code></a></li>
+<li><a class="reference internal" href="#id41"><code class="docutils literal notranslate"><span class="pre">Orbit.v</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.core.math.io.html"
+                          title="previous chapter">poliastro.core.math.io</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.core.orbit.creation.html"
+                          title="next chapter">poliastro.core.orbit.creation</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.orbit.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.orbit.creation.html" title="poliastro.core.orbit.creation"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.math.io.html" title="poliastro.core.math.io"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.orbit</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

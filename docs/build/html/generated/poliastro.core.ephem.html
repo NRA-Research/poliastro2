@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core.ephem &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.core.events" href="poliastro.core.events.html" />
+    <link rel="prev" title="poliastro.core.actions.thrust.change_ecc_quasioptimal" href="poliastro.core.actions.thrust.change_ecc_quasioptimal.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.events.html" title="poliastro.core.events"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.actions.thrust.change_ecc_quasioptimal.html" title="poliastro.core.actions.thrust.change_ecc_quasioptimal"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" accesskey="U">poliastro.core</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.ephem</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core.ephem">
+<span id="poliastro-core-ephem"></span><h1>poliastro.core.ephem<a class="headerlink" href="#module-poliastro.core.ephem" title="Link to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.ephem.build_ephem_interpolant" title="poliastro.core.ephem.build_ephem_interpolant"><code class="xref py py-obj docutils literal notranslate"><span class="pre">build_ephem_interpolant</span></code></a>(body, epochs[, ...])</p></td>
+<td><p>Interpolates ephemerides data.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.ephem.BaseInterpolator" title="poliastro.core.ephem.BaseInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseInterpolator</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.ephem.Ephem" title="poliastro.core.ephem.Ephem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Ephem</span></code></a>(coordinates, epochs, plane)</p></td>
+<td><p>Time history of position and velocity of some object at particular epochs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.ephem.SincInterpolator" title="poliastro.core.ephem.SincInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SincInterpolator</span></code></a>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.ephem.SplineInterpolator" title="poliastro.core.ephem.SplineInterpolator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SplineInterpolator</span></code></a>([kind])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.ephem.BaseInterpolator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.ephem.</span></span><span class="sig-name descname"><span class="pre">BaseInterpolator</span></span><a class="headerlink" href="#poliastro.core.ephem.BaseInterpolator" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.BaseInterpolator.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.BaseInterpolator.interpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.ephem.</span></span><span class="sig-name descname"><span class="pre">Ephem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.Ephem" title="Link to this definition">¶</a></dt>
+<dd><p>Time history of position and velocity of some object at particular epochs.</p>
+<p>Instead of creating Ephem objects directly, use the available classmethods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coordinates</strong> (<em>astropy.coordinates.CartesianRepresentation</em>) – Coordinates with velocities.</p></li>
+<li><p><strong>epochs</strong> (<em>astropy.time.Time</em>) – Epochs corresponding to the coordinates.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Reference plane of the coordinates.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem.epochs">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">epochs</span></span><a class="headerlink" href="#poliastro.core.ephem.Ephem.epochs" title="Link to this definition">¶</a></dt>
+<dd><p>Epochs at which the ephemerides was originally sampled.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem.from_body">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_body</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.Ephem.from_body" title="Link to this definition">¶</a></dt>
+<dd><p>Return <cite>Ephem</cite> for a <cite>SolarSystemPlanet</cite> at certain epochs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<em>SolarSystemPlanet</em>) – Body.</p></li>
+<li><p><strong>epochs</strong> (<em>Time</em>) – Epochs to sample the body positions.</p></li>
+<li><p><strong>attractor</strong> (<em>SolarSystemPlanet</em><em>, </em><em>optional</em>) – Body to use as central location,
+if not given the Solar System Barycenter will be used.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em><em>, </em><em>optional</em>) – Fundamental plane of the frame, default to Earth Equator.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem.from_horizons">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_horizons</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.Ephem.from_horizons" title="Link to this definition">¶</a></dt>
+<dd><p>Return <cite>Ephem</cite> for an object using JPLHorizons module of Astroquery.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the body to query for.</p></li>
+<li><p><strong>epochs</strong> (<em>Time</em>) – Epochs to sample the body positions.</p></li>
+<li><p><strong>attractor</strong> (<em>SolarSystemPlanet</em><em>, </em><em>optional</em>) – Body to use as central location,
+if not given the Solar System Barycenter will be used.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em><em>, </em><em>optional</em>) – Fundamental plane of the frame, default to Earth Equator.</p></li>
+<li><p><strong>id_type</strong> (<em>NoneType</em><em> or </em><em>str</em><em>, </em><em>optional</em>) – Use “smallbody” for Asteroids and Comets and None (default) to first
+search for Planets and Satellites.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem.from_orbit">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_orbit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.Ephem.from_orbit" title="Link to this definition">¶</a></dt>
+<dd><p>Return <cite>Ephem</cite> from an <cite>Orbit</cite> at certain epochs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orbit</strong> (<em>Orbit</em>) – Orbit.</p></li>
+<li><p><strong>epochs</strong> (<em>Time</em>) – Epochs to sample the orbit positions.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em><em>, </em><em>optional</em>) – Fundamental plane of the frame, default to Earth Equator.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem.plane">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plane</span></span><a class="headerlink" href="#poliastro.core.ephem.Ephem.plane" title="Link to this definition">¶</a></dt>
+<dd><p>Reference plane of the ephemerides.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem.rv">
+<span class="sig-name descname"><span class="pre">rv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.Ephem.rv" title="Link to this definition">¶</a></dt>
+<dd><p>Position and velocity vectors at given epochs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epochs</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epochs to sample the ephemerides, default to now.</p></li>
+<li><p><strong>**kwargs</strong> – Extra kwargs for interpolation method.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.Ephem.sample">
+<span class="sig-name descname"><span class="pre">sample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpolator=&lt;poliastro.core.ephem.SplineInterpolator</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.Ephem.sample" title="Link to this definition">¶</a></dt>
+<dd><p>Returns coordinates at specified epochs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>epochs</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epochs to sample the ephemerides,
+if not given the original one from the object will be used.</p></li>
+<li><p><strong>interpolator</strong> (<em>BaseInterpolator</em><em>, </em><em>optional</em>) – Interpolation method to use for epochs outside of the original ones,
+default to splines.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sampled coordinates with velocities.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>CartesianRepresentation</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.ephem.SincInterpolator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.ephem.</span></span><span class="sig-name descname"><span class="pre">SincInterpolator</span></span><a class="headerlink" href="#poliastro.core.ephem.SincInterpolator" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.SincInterpolator.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.SincInterpolator.interpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.ephem.SplineInterpolator">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.ephem.</span></span><span class="sig-name descname"><span class="pre">SplineInterpolator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kind</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cubic'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.SplineInterpolator" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.ephem.SplineInterpolator.interpolate">
+<span class="sig-name descname"><span class="pre">interpolate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.SplineInterpolator.interpolate" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.ephem._get_destination_frame">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.ephem.</span></span><span class="sig-name descname"><span class="pre">_get_destination_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem._get_destination_frame" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.ephem.build_ephem_interpolant">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.ephem.</span></span><span class="sig-name descname"><span class="pre">build_ephem_interpolant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epochs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor=((None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'Sun'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'☉'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">3.98600442e+14</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'Earth'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'♁'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">6378136.6</span> <span class="pre">m&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">6356751.9</span> <span class="pre">m&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">6371008.4</span> <span class="pre">m&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">0.9972698</span> <span class="pre">d&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">0.00108263&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">-2.53266132e-06&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">5.97216787e+24</span> <span class="pre">kg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;Quantity</span> <span class="pre">1.49597871e+08</span> <span class="pre">km&gt;)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.ephem.build_ephem_interpolant" title="Link to this definition">¶</a></dt>
+<dd><p>Interpolates ephemerides data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Source body.</p></li>
+<li><p><strong>epochs</strong> (<em>Time</em>) – Array of time values, can be generated with poliastro.util.time_range.</p></li>
+<li><p><strong>attractor</strong> (<em>Body</em><em>, </em><em>optional</em>) – Attractor, default to Earth.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>interpolant</strong> – Interpolant function that receives time increment in seconds
+since the initial epoch.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>callable</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core.ephem</a><ul>
+<li><a class="reference internal" href="#poliastro.core.ephem.BaseInterpolator"><code class="docutils literal notranslate"><span class="pre">BaseInterpolator</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.ephem.BaseInterpolator.interpolate"><code class="docutils literal notranslate"><span class="pre">BaseInterpolator.interpolate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem"><code class="docutils literal notranslate"><span class="pre">Ephem</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem.epochs"><code class="docutils literal notranslate"><span class="pre">Ephem.epochs</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem.from_body"><code class="docutils literal notranslate"><span class="pre">Ephem.from_body()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem.from_horizons"><code class="docutils literal notranslate"><span class="pre">Ephem.from_horizons()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem.from_orbit"><code class="docutils literal notranslate"><span class="pre">Ephem.from_orbit()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem.plane"><code class="docutils literal notranslate"><span class="pre">Ephem.plane</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem.rv"><code class="docutils literal notranslate"><span class="pre">Ephem.rv()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.ephem.Ephem.sample"><code class="docutils literal notranslate"><span class="pre">Ephem.sample()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.ephem.SincInterpolator"><code class="docutils literal notranslate"><span class="pre">SincInterpolator</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.ephem.SincInterpolator.interpolate"><code class="docutils literal notranslate"><span class="pre">SincInterpolator.interpolate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.ephem.SplineInterpolator"><code class="docutils literal notranslate"><span class="pre">SplineInterpolator</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.ephem.SplineInterpolator.interpolate"><code class="docutils literal notranslate"><span class="pre">SplineInterpolator.interpolate()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.ephem._get_destination_frame"><code class="docutils literal notranslate"><span class="pre">_get_destination_frame()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.ephem.build_ephem_interpolant"><code class="docutils literal notranslate"><span class="pre">build_ephem_interpolant()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.core.actions.thrust.change_ecc_quasioptimal.html"
+                          title="previous chapter">poliastro.core.actions.thrust.change_ecc_quasioptimal</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.core.events.html"
+                          title="next chapter">poliastro.core.events</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.ephem.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.events.html" title="poliastro.core.events"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.actions.thrust.change_ecc_quasioptimal.html" title="poliastro.core.actions.thrust.change_ecc_quasioptimal"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.ephem</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

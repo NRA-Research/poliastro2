@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.math.iod.vallado &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.math.linalg" href="poliastro.math.linalg.html" />
+    <link rel="prev" title="poliastro.math.iod.izzo" href="poliastro.math.iod.izzo.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.linalg.html" title="poliastro.math.linalg"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.iod.izzo.html" title="poliastro.math.iod.izzo"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.math.html" >poliastro.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.math.iod.html" accesskey="U">poliastro.math.iod</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.math.iod.vallado</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.math.iod.vallado">
+<span id="poliastro-math-iod-vallado"></span><h1>poliastro.math.iod.vallado<a class="headerlink" href="#module-poliastro.math.iod.vallado" title="Link to this heading">¶</a></h1>
+<p>Initial orbit determination.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.math.iod.vallado.lambert" title="poliastro.math.iod.vallado.lambert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lambert</span></code></a>(k, r0, r, tof[, M, prograde, ...])</p></td>
+<td><p>Solves the Lambert problem.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.iod.vallado.lambert">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.iod.vallado.</span></span><span class="sig-name descname"><span class="pre">lambert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prograde</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowpath</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">35</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.iod.vallado.lambert" title="Link to this definition">¶</a></dt>
+<dd><p>Solves the Lambert problem.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.3.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>Quantity</em>) – Gravitational constant of main attractor (km^3 / s^2).</p></li>
+<li><p><strong>r0</strong> (<em>Quantity</em>) – Initial position (km).</p></li>
+<li><p><strong>r</strong> (<em>Quantity</em>) – Final position (km).</p></li>
+<li><p><strong>tof</strong> (<em>Quantity</em>) – Time of flight (s).</p></li>
+<li><p><strong>M</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of full revolutions, default to 0.</p></li>
+<li><p><strong>prograde</strong> (<em>boolean</em>) – Controls the desired inclination of the transfer orbit.</p></li>
+<li><p><strong>lowpath</strong> (<em>boolean</em>) – If <cite>True</cite> or <cite>False</cite>, gets the transfer orbit whose vacant focus is
+below or above the chord line, respectively.</p></li>
+<li><p><strong>numiter</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum number of iterations, default to 35.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em><em>, </em><em>optional</em>) – Relative tolerance of the algorithm, default to 1e-8.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>v0, v</strong> – Pair of velocity solutions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>RuntimeError</strong> – If it was not possible to compute the orbit.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This uses the universal variable approach found in Battin, Mueller &amp; White
+with the bisection iteration suggested by Vallado. Multiple revolutions
+not supported.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.math.iod.vallado</a><ul>
+<li><a class="reference internal" href="#poliastro.math.iod.vallado.lambert"><code class="docutils literal notranslate"><span class="pre">lambert()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.math.iod.izzo.html"
+                          title="previous chapter">poliastro.math.iod.izzo</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.math.linalg.html"
+                          title="next chapter">poliastro.math.linalg</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.math.iod.vallado.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.linalg.html" title="poliastro.math.linalg"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.iod.izzo.html" title="poliastro.math.iod.izzo"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.math.html" >poliastro.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.math.iod.html" >poliastro.math.iod</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.math.iod.vallado</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

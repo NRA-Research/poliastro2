@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.math.propagation &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.math.propagation.base" href="poliastro.math.propagation.base.html" />
+    <link rel="prev" title="poliastro.math.perturbations" href="poliastro.math.perturbations.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.propagation.base.html" title="poliastro.math.propagation.base"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.perturbations.html" title="poliastro.math.perturbations"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.math.html" accesskey="U">poliastro.math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.math.propagation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.math.propagation">
+<span id="poliastro-math-propagation"></span><h1>poliastro.math.propagation<a class="headerlink" href="#module-poliastro.math.propagation" title="Link to this heading">¶</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
+<p>This subpackage offers various propagation algorithms for orbit simulation.
+It implements methods to compute the evolution of orbital states over time.</p>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>base: Base propagation routines.</p></li>
+<li><p>cowell: Implementation of the Cowell propagation method.</p></li>
+<li><p>danby: Danby’s propagation algorithm.</p></li>
+<li><p>farnocchia: Farnocchia propagation routine.</p></li>
+<li><p>gooding: Gooding’s method.</p></li>
+<li><p>markley: Markley’s propagation routine.</p></li>
+<li><p>mikkola: Mikkola’s algorithm.</p></li>
+<li><p>pimienta: Pimienta’s propagation routines.</p></li>
+<li><p>recseries: Recursive series propagation.</p></li>
+<li><p>vallado: Propagation method based on Vallado’s work.</p></li>
+</ul>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.cowell">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">cowell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tofs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol=1e-11</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f=CPUDispatcher(&lt;function</span> <span class="pre">func_twobody&gt;)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.cowell" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.danby">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">danby</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.danby" title="Link to this definition">¶</a></dt>
+<dd><p>Kepler solver for both elliptic and parabolic orbits based on Danby’s algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter of the attractor.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Position vector.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+<li><p><strong>numiter</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations, defaults to 20.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em><em>, </em><em>optional</em>) – Relative error for accuracy of the method, defaults to 1e-8.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>rr</strong> (<em>numpy.ndarray</em>) – Final position vector.</p></li>
+<li><p><strong>vv</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This algorithm was developed by Danby in his paper <em>The solution of Kepler
+Equation</em> with DOI: <a class="reference external" href="https://doi.org/10.1007/BF01686811">https://doi.org/10.1007/BF01686811</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.danby_coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">danby_coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.danby_coe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.farnocchia">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">farnocchia</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.farnocchia" title="Link to this definition">¶</a></dt>
+<dd><p>Propagates orbit using mean motion.</p>
+<p>This algorithm depends on the geometric shape of the orbit.
+For the case of the strong elliptic or strong hyperbolic orbits:</p>
+<div class="math notranslate nohighlight">
+\[M = M_{0} + \frac{\mu^{2}}{h^{3}}\left ( 1 -e^{2}\right )^{\frac{3}{2}}t\]</div>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.9.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standar Gravitational parameter</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Initial position vector wrt attractor center.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Initial velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight (s).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This method takes initial <span class="math notranslate nohighlight">\(\vec{r}, \vec{v}\)</span>, calculates classical orbit parameters,
+increases mean anomaly and performs inverse transformation to get final <span class="math notranslate nohighlight">\(\vec{r}, \vec{v}\)</span>
+The logic is based on formulae (4), (6) and (7) from <a class="reference external" href="http://dx.doi.org/10.1007/s10569-013-9476-9">http://dx.doi.org/10.1007/s10569-013-9476-9</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.farnocchia_coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">farnocchia_coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.farnocchia_coe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.func_twobody">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">func_twobody</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">u_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.func_twobody" title="Link to this definition">¶</a></dt>
+<dd><p>Differential equation for the initial value two body problem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t0</strong> (<em>float</em>) – Time.</p></li>
+<li><p><strong>u</strong> (<em>numpy.ndarray</em>) – Six component state vector [x, y, z, vx, vy, vz] (km, km/s).</p></li>
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.gooding">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">gooding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.gooding" title="Link to this definition">¶</a></dt>
+<dd><p>Solves the Elliptic Kepler Equation with a cubic convergence and accuracy better
+than 10e-12 rad is normally achieved. It is not valid for eccentricities equal or
+higher than 1.0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter of the attractor.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Position vector.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+<li><p><strong>numiter</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations, defaults to 150.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em><em>, </em><em>optional</em>) – Relative error for accuracy of the method, defaults to 1e-8.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>rr</strong> (<em>numpy.ndarray</em>) – Final position vector.</p></li>
+<li><p><strong>vv</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Original paper for the algorithm: <a class="reference external" href="https://doi.org/10.1007/BF01238923">https://doi.org/10.1007/BF01238923</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.gooding_coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">gooding_coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.gooding_coe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.markley">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">markley</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.markley" title="Link to this definition">¶</a></dt>
+<dd><p>Solves the kepler problem by a non-iterative method. Relative error is around
+1e-18, only limited by machine double-precision errors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standar Gravitational parameter.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Initial position vector wrt attractor center.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Initial velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>rr</strong> (<em>numpy.ndarray</em>) – Final position vector.</p></li>
+<li><p><strong>vv</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The following algorithm was taken from <a class="reference external" href="http://dx.doi.org/10.1007/BF00691917">http://dx.doi.org/10.1007/BF00691917</a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.markley_coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">markley_coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.markley_coe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.mikkola">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">mikkola</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.mikkola" title="Link to this definition">¶</a></dt>
+<dd><p>Raw algorithm for Mikkola’s Kepler solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter of the attractor.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Position vector.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em>) – This method does not require tolerance since it is non-iterative.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>rr</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+<li><p><strong>vv</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Original paper: <a class="reference external" href="https://doi.org/10.1007/BF01235850">https://doi.org/10.1007/BF01235850</a></p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.mikkola_coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">mikkola_coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.mikkola_coe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.pimienta">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">pimienta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.pimienta" title="Link to this definition">¶</a></dt>
+<dd><p>Raw algorithm for Adonis’ Pimienta and John L. Crassidis 15th order polynomial
+Kepler solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standar Gravitational parameter.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Initial position vector wrt attractor center.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Initial velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>rr</strong> (<em>numpy.ndarray</em>) – Final position vector.</p></li>
+<li><p><strong>vv</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This algorithm was derived from the original paper:
+Pimienta-Peñalver, A. &amp; Crassidis, John. (2013). Accurate Kepler equation
+solver without transcendental function evaluations. Advances in the Astronautical Sciences. 147. 233-247.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.pimienta_coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">pimienta_coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.pimienta_coe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.recseries">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">recseries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rtol'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.recseries" title="Link to this definition">¶</a></dt>
+<dd><p>Kepler solver for elliptical orbits with recursive series approximation method.
+The order of the series is a user defined parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter of the attractor.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Position vector.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+<li><p><strong>method</strong> (<em>str</em>) – Type of termination method (‘rtol’,’order’)</p></li>
+<li><p><strong>order</strong> (<em>int</em><em>, </em><em>optional</em>) – Order of recursion, defaults to 8.</p></li>
+<li><p><strong>numiter</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations, defaults to 100.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em><em>, </em><em>optional</em>) – Relative error for accuracy of the method, defaults to 1e-8.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>rr</strong> (<em>numpy.ndarray</em>) – Final position vector.</p></li>
+<li><p><strong>vv</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This algorithm uses series discussed in the paper <em>Recursive solution to
+Kepler’s problem for elliptical orbits - application in robust
+Newton-Raphson and co-planar closest approach estimation</em>
+with DOI: <a class="reference external" href="http://dx.doi.org/10.13140/RG.2.2.18578.58563/1">http://dx.doi.org/10.13140/RG.2.2.18578.58563/1</a></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.recseries_coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">recseries_coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'rtol'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.recseries_coe" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.propagation.vallado">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.propagation.</span></span><span class="sig-name descname"><span class="pre">vallado</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.propagation.vallado" title="Link to this definition">¶</a></dt>
+<dd><p>Solves Kepler’s Equation by applying a Newton-Raphson method.</p>
+<p>If the position of a body along its orbit wants to be computed
+for a specific time, it can be solved by terms of the Kepler’s Equation:</p>
+<div class="math notranslate nohighlight">
+\[E = M + e\sin{E}\]</div>
+<p>In this case, the equation is written in terms of the Universal Anomaly:</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{\mu}\Delta t = \frac{r_{o}v_{o}}{\sqrt{\mu}}\chi^{2}C(\alpha \chi^{2}) + (1 - \alpha r_{o})\chi^{3}S(\alpha \chi^{2}) + r_{0}\chi\]</div>
+<p>This equation is solved for the universal anomaly by applying a Newton-Raphson numerical method.
+Once it is solved, the Lagrange coefficients are returned:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    f &amp;= 1 \frac{\chi^{2}}{r_{o}}C(\alpha \chi^{2}) \\
+    g &amp;= \Delta t - \frac{1}{\sqrt{\mu}}\chi^{3}S(\alpha \chi^{2}) \\
+    \dot{f} &amp;= \frac{\sqrt{\mu}}{rr_{o}}(\alpha \chi^{3}S(\alpha \chi^{2}) - \chi) \\
+    \dot{g} &amp;= 1 - \frac{\chi^{2}}{r}C(\alpha \chi^{2}) \\
+\end{align}\end{split}\]</div>
+<p>Lagrange coefficients can be related then with the position and velocity vectors:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \vec{r} &amp;= f\vec{r_{o}} + g\vec{v_{o}} \\
+    \vec{v} &amp;= \dot{f}\vec{r_{o}} + \dot{g}\vec{v_{o}} \\
+\end{align}\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Initial position vector.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Initial velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+<li><p><strong>numiter</strong> (<em>int</em>) – Number of iterations.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>f</strong> (<em>float</em>) – First Lagrange coefficient</p></li>
+<li><p><strong>g</strong> (<em>float</em>) – Second Lagrange coefficient</p></li>
+<li><p><strong>fdot</strong> (<em>float</em>) – Derivative of the first coefficient</p></li>
+<li><p><strong>gdot</strong> (<em>float</em>) – Derivative of the second coefficient</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The theoretical procedure is explained in section 3.7 of Curtis in really
+deep detail. For analytical example, check in the same book for example 3.6.</p>
+</dd></dl>
+
+<p class="rubric">Modules</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.math.propagation.base.html#module-poliastro.math.propagation.base" title="poliastro.math.propagation.base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.math.propagation.cowell.html#poliastro.math.propagation.cowell" title="poliastro.math.propagation.cowell"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cowell</span></code></a>(k, r, v, tofs[, rtol, events, f])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.math.propagation.danby.html#poliastro.math.propagation.danby" title="poliastro.math.propagation.danby"><code class="xref py py-obj docutils literal notranslate"><span class="pre">danby</span></code></a>(k, r0, v0, tof[, numiter, rtol])</p></td>
+<td><p>Kepler solver for both elliptic and parabolic orbits based on Danby's algorithm.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.math.propagation.farnocchia.html#poliastro.math.propagation.farnocchia" title="poliastro.math.propagation.farnocchia"><code class="xref py py-obj docutils literal notranslate"><span class="pre">farnocchia</span></code></a>(k, r0, v0, tof)</p></td>
+<td><p>Propagates orbit using mean motion.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.math.propagation.gooding.html#poliastro.math.propagation.gooding" title="poliastro.math.propagation.gooding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">gooding</span></code></a>(k, r0, v0, tof[, numiter, rtol])</p></td>
+<td><p>Solves the Elliptic Kepler Equation with a cubic convergence and accuracy better than 10e-12 rad is normally achieved.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.math.propagation.markley.html#poliastro.math.propagation.markley" title="poliastro.math.propagation.markley"><code class="xref py py-obj docutils literal notranslate"><span class="pre">markley</span></code></a>(k, r0, v0, tof)</p></td>
+<td><p>Solves the kepler problem by a non-iterative method.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.math.propagation.mikkola.html#poliastro.math.propagation.mikkola" title="poliastro.math.propagation.mikkola"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mikkola</span></code></a>(k, r0, v0, tof[, rtol])</p></td>
+<td><p>Raw algorithm for Mikkola's Kepler solver.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.math.propagation.pimienta.html#poliastro.math.propagation.pimienta" title="poliastro.math.propagation.pimienta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pimienta</span></code></a>(k, r0, v0, tof)</p></td>
+<td><p>Raw algorithm for Adonis' Pimienta and John L.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.math.propagation.recseries.html#poliastro.math.propagation.recseries" title="poliastro.math.propagation.recseries"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recseries</span></code></a>(k, r0, v0, tof[, method, order, ...])</p></td>
+<td><p>Kepler solver for elliptical orbits with recursive series approximation method.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.math.propagation.vallado.html#poliastro.math.propagation.vallado" title="poliastro.math.propagation.vallado"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vallado</span></code></a>(k, r0, v0, tof, numiter)</p></td>
+<td><p>Solves Kepler's Equation by applying a Newton-Raphson method.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.math.propagation</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.cowell"><code class="docutils literal notranslate"><span class="pre">cowell()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.danby"><code class="docutils literal notranslate"><span class="pre">danby()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.danby_coe"><code class="docutils literal notranslate"><span class="pre">danby_coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.farnocchia"><code class="docutils literal notranslate"><span class="pre">farnocchia()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.farnocchia_coe"><code class="docutils literal notranslate"><span class="pre">farnocchia_coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.func_twobody"><code class="docutils literal notranslate"><span class="pre">func_twobody()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.gooding"><code class="docutils literal notranslate"><span class="pre">gooding()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.gooding_coe"><code class="docutils literal notranslate"><span class="pre">gooding_coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.markley"><code class="docutils literal notranslate"><span class="pre">markley()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.markley_coe"><code class="docutils literal notranslate"><span class="pre">markley_coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.mikkola"><code class="docutils literal notranslate"><span class="pre">mikkola()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.mikkola_coe"><code class="docutils literal notranslate"><span class="pre">mikkola_coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.pimienta"><code class="docutils literal notranslate"><span class="pre">pimienta()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.pimienta_coe"><code class="docutils literal notranslate"><span class="pre">pimienta_coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.recseries"><code class="docutils literal notranslate"><span class="pre">recseries()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.recseries_coe"><code class="docutils literal notranslate"><span class="pre">recseries_coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.propagation.vallado"><code class="docutils literal notranslate"><span class="pre">vallado()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.math.perturbations.html"
+                          title="previous chapter">poliastro.math.perturbations</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.math.propagation.base.html"
+                          title="next chapter">poliastro.math.propagation.base</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.math.propagation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.propagation.base.html" title="poliastro.math.propagation.base"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.perturbations.html" title="poliastro.math.perturbations"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.math.html" >poliastro.math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.math.propagation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

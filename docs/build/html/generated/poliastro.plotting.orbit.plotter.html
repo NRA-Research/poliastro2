@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.plotting.orbit.plotter &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.plotting.porkchop" href="poliastro.plotting.porkchop.html" />
+    <link rel="prev" title="poliastro.plotting.orbit.backends.plotly" href="poliastro.plotting.orbit.backends.plotly.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.plotting.porkchop.html" title="poliastro.plotting.porkchop"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.plotting.orbit.backends.plotly.html" title="poliastro.plotting.orbit.backends.plotly"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.plotting.html" >poliastro.plotting</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.plotting.orbit.html" accesskey="U">poliastro.plotting.orbit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.plotting.orbit.plotter</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.plotting.orbit.plotter">
+<span id="poliastro-plotting-orbit-plotter"></span><h1>poliastro.plotting.orbit.plotter<a class="headerlink" href="#module-poliastro.plotting.orbit.plotter" title="Link to this heading">¶</a></h1>
+<p>A module containing different orbit related plotters.</p>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter" title="poliastro.plotting.orbit.plotter.OrbitPlotter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OrbitPlotter</span></code></a>([backend, num_points, plane, ...])</p></td>
+<td><p>A base class containing common attributes and methods for plotters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.plotting.orbit.plotter.Trajectory" title="poliastro.plotting.orbit.plotter.Trajectory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Trajectory</span></code></a>(coordinates, position, colors, ...)</p></td>
+<td><p>A class for collecting all information of a body within a plotter.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.plotting.orbit.plotter.</span></span><span class="sig-name descname"><span class="pre">OrbitPlotter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_points</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">150</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length_scale_units</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Unit('km')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter" title="Link to this definition">¶</a></dt>
+<dd><p>A base class containing common attributes and methods for plotters.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter._add_trajectory">
+<span class="sig-name descname"><span class="pre">_add_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trajectory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._add_trajectory" title="Link to this definition">¶</a></dt>
+<dd><p>Add a new trajectory to the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>trajectory</strong> (<a class="reference internal" href="#poliastro.plotting.orbit.plotter.Trajectory" title="poliastro.plotting.orbit.plotter.Trajectory"><em>Trajectory</em></a>) – An object for modeling trajectories.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>trace_coordinates</strong> (<em>object</em>) – An object representing the trace of the coordinates in the scene.</p></li>
+<li><p><strong>trace_position</strong> (<em>object</em>) – An object representing the trace of the position in the scene.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter._create_trajectory">
+<span class="sig-name descname"><span class="pre">_create_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dashed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._create_trajectory" title="Link to this definition">¶</a></dt>
+<dd><p>Create a new <code class="docutils literal notranslate"><span class="pre">Trajectory</span></code> instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coordinates</strong> (<em>CartesianRepresentation</em>) – Trajectory to plot.</p></li>
+<li><p><strong>position</strong> (<em>ndarray</em><em>, </em><em>optional</em>) – Position of the body along its orbit.</p></li>
+<li><p><strong>colors</strong> (<em>str</em><em>, </em><em>optional</em>) – A list of colors for the points of the trajectory.</p></li>
+<li><p><strong>dashed</strong> (<em>bool</em><em>, </em><em>optional</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> to use a dashed line style. <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label of the orbit.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An object for modeling trajectories.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#poliastro.plotting.orbit.plotter.Trajectory" title="poliastro.plotting.orbit.plotter.Trajectory">Trajectory</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter._plot_attractor">
+<span class="sig-name descname"><span class="pre">_plot_attractor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._plot_attractor" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the scene attractor.</p>
+<p class="rubric">Notes</p>
+<p>This method allows to select a sensible value for the radius of the
+attractor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter._project">
+<span class="sig-name descname"><span class="pre">_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._project" title="Link to this definition">¶</a></dt>
+<dd><p>Project the vector into the frame of the orbit plotter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vec</strong> (<em>ndarray</em>) – The vector to be projected into the frame of the orbit plotter.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A tuple containing the x, y, and z coordinates of the vector
+projected into the frame of the orbit plotter.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple(float, float, float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter._redraw">
+<span class="sig-name descname"><span class="pre">_redraw</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._redraw" title="Link to this definition">¶</a></dt>
+<dd><p>Redraw the the whole scene.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter._unplot_attractor">
+<span class="sig-name descname"><span class="pre">_unplot_attractor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._unplot_attractor" title="Link to this definition">¶</a></dt>
+<dd><p>Remove the attractor from the scene.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.backend">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backend</span></span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.backend" title="Link to this definition">¶</a></dt>
+<dd><p>Backend instance used by the plotter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>An instance of <code class="docutils literal notranslate"><span class="pre">OrbitPlotterBackend</span></code> used for rendendering the scene.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>OrbitPlotterBackend</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.length_scale_units">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">length_scale_units</span></span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.length_scale_units" title="Link to this definition">¶</a></dt>
+<dd><p>Units of length used for representing distances.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>length_units</strong> – Desired length units to be used when representing distances.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Unit</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.plane">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plane</span></span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plane" title="Link to this definition">¶</a></dt>
+<dd><p>Reference plane to be used when drawing the scene.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Reference plane to be used when drawing the scene. Default to</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>Plane</em>, optional</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.plot">
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dashed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot" title="Link to this definition">¶</a></dt>
+<dd><p>Plot state and osculating orbit in their plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orbit</strong> (<em>Orbit</em>) – Orbit to plot.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of the line and the position.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label of the orbit.</p></li>
+<li><p><strong>trail</strong> (<em>bool</em><em>, </em><em>optional</em>) – Fade the orbit trail, default to False.</p></li>
+<li><p><strong>dashed</strong> (<em>bool</em><em>, </em><em>optional</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> to use a dashed line style. <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.plot_body_orbit">
+<span class="sig-name descname"><span class="pre">plot_body_orbit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_body_orbit" title="Link to this definition">¶</a></dt>
+<dd><p>Plot complete revolution of body and current position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<em>poliastro.bodies.SolarSystemPlanet</em>) – Body.</p></li>
+<li><p><strong>epoch</strong> (<em>astropy.time.Time</em>) – Epoch of current position.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label of the orbit, default to the name of the body.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of the line and the position.</p></li>
+<li><p><strong>trail</strong> (<em>bool</em><em>, </em><em>optional</em>) – Fade the orbit trail, default to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.plot_coordinates">
+<span class="sig-name descname"><span class="pre">plot_coordinates</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dashed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_coordinates" title="Link to this definition">¶</a></dt>
+<dd><p>Plot a precomputed trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coordinates</strong> (<em>CartesianRepresentation</em>) – Trajectory to plot.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label of the trajectory.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of the trajectory.</p></li>
+<li><p><strong>trail</strong> (<em>bool</em><em>, </em><em>optional</em>) – Fade the orbit trail, default to False.</p></li>
+<li><p><strong>dashed</strong> (<em>bool</em><em>, </em><em>optional</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> to use a dashed line style. <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – An attractor must be set first.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.plot_ephem">
+<span class="sig-name descname"><span class="pre">plot_ephem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ephem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_ephem" title="Link to this definition">¶</a></dt>
+<dd><p>Plot <code class="docutils literal notranslate"><span class="pre">Ephem</span></code> object over its sampling period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ephem</strong> (<em>Ephem</em>) – Ephemerides to plot.</p></li>
+<li><p><strong>epoch</strong> (<em>astropy.time.Time</em><em>, </em><em>optional</em>) – Epoch of the current position, <cite>None</cite> is used if not given.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label of the orbit, default to the name of the body.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of the line and the position.</p></li>
+<li><p><strong>trail</strong> (<em>bool</em><em>, </em><em>optional</em>) – Fade the orbit trail, default to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.plot_maneuver">
+<span class="sig-name descname"><span class="pre">plot_maneuver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maneuver</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_maneuver" title="Link to this definition">¶</a></dt>
+<dd><p>Plot the maneuver trajectory applied to the provided initial orbit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>initial_orbit</strong> (<em>Orbit</em>) – The base orbit for which the maneuver will be applied.</p></li>
+<li><p><strong>maneuver</strong> (<em>Maneuver</em>) – The maneuver to be plotted.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label of the trajectory.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of the trajectory.</p></li>
+<li><p><strong>trail</strong> (<em>bool</em><em>, </em><em>optional</em>) – Fade the orbit trail, default to False.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.plot_trajectory">
+<span class="sig-name descname"><span class="pre">plot_trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trail</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dashed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_trajectory" title="Link to this definition">¶</a></dt>
+<dd><p>Plot a precomputed trajectory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coordinates</strong> (<em>CartesianRepresentation</em>) – Trajectory to plot.</p></li>
+<li><p><strong>label</strong> (<em>str</em><em>, </em><em>optional</em>) – Label of the trajectory.</p></li>
+<li><p><strong>color</strong> (<em>str</em><em>, </em><em>optional</em>) – Color of the trajectory.</p></li>
+<li><p><strong>trail</strong> (<em>bool</em><em>, </em><em>optional</em>) – Fade the orbit trail, default to False.</p></li>
+<li><p><strong>dashed</strong> (<em>bool</em><em>, </em><em>optional</em>) – <code class="docutils literal notranslate"><span class="pre">True</span></code> to use a dashed line style. <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – An attractor must be set first.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.set_attractor">
+<span class="sig-name descname"><span class="pre">set_attractor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_attractor" title="Link to this definition">¶</a></dt>
+<dd><p>Set the desired plotting attractor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attractor</strong> (<em>Body</em>) – Central body.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>NotImplementedError</strong> – Raised if attractor is already set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.set_body_frame">
+<span class="sig-name descname"><span class="pre">set_body_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">body</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_body_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Set perifocal frame based on the orbit of a body at a particular epoch if
+given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>body</strong> (<em>poliastro.bodies.SolarSystemPlanet</em>) – Body.</p></li>
+<li><p><strong>epoch</strong> (<em>astropy.time.Time</em><em>, </em><em>optional</em>) – Epoch of current position.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.set_orbit_frame">
+<span class="sig-name descname"><span class="pre">set_orbit_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_orbit_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Set the perifocal frame based on an orbit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>orbit</strong> (<em>Orbit</em>) – Orbit to use as frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.set_view">
+<span class="sig-name descname"><span class="pre">set_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">elevation_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">azimuth_angle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance=&lt;Quantity</span> <span class="pre">5.</span> <span class="pre">km&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_view" title="Link to this definition">¶</a></dt>
+<dd><p>Change 3D view by setting the elevation, azimuth and distance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>elevation_angle</strong> (<em>Quantity</em>) – Desired elevation angle of the camera.</p></li>
+<li><p><strong>azimuth_angle</strong> (<em>Quantity</em>) – Desired azimuth angle of the camera.</p></li>
+<li><p><strong>distance</strong> (<em>optional</em><em>, </em><em>Quantity</em>) – Desired distance of the camera to the scene.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.show" title="Link to this definition">¶</a></dt>
+<dd><p>Render the plot.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.OrbitPlotter.trajectories">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">trajectories</span></span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.trajectories" title="Link to this definition">¶</a></dt>
+<dd><p>List with all the <cite>Trajectory</cite> instances used in the plotter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A list containing all the trajectories rendered in the scene.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List[<a class="reference internal" href="#poliastro.plotting.orbit.plotter.Trajectory" title="poliastro.plotting.orbit.plotter.Trajectory">Trajectory</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.plotting.orbit.plotter.Trajectory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.plotting.orbit.plotter.</span></span><span class="sig-name descname"><span class="pre">Trajectory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coordinates</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dashed</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.plotting.orbit.plotter.Trajectory" title="Link to this definition">¶</a></dt>
+<dd><p>A class for collecting all information of a body within a plotter.</p>
+<p>Information contains all the trajectory coordinates, the current
+position, the name of the label to be displayed in the plotter, the
+color to be used and if dashed mode is desired or not.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.plotting.orbit.plotter</a><ul>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._add_trajectory"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter._add_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._create_trajectory"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter._create_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._plot_attractor"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter._plot_attractor()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._project"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter._project()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._redraw"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter._redraw()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter._unplot_attractor"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter._unplot_attractor()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.backend"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.backend</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.length_scale_units"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.length_scale_units</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plane"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.plane</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.plot()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_body_orbit"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.plot_body_orbit()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_coordinates"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.plot_coordinates()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_ephem"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.plot_ephem()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_maneuver"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.plot_maneuver()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.plot_trajectory"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.plot_trajectory()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_attractor"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.set_attractor()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_body_frame"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.set_body_frame()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_orbit_frame"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.set_orbit_frame()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.set_view"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.set_view()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.show"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.show()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.OrbitPlotter.trajectories"><code class="docutils literal notranslate"><span class="pre">OrbitPlotter.trajectories</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.plotting.orbit.plotter.Trajectory"><code class="docutils literal notranslate"><span class="pre">Trajectory</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.plotting.orbit.backends.plotly.html"
+                          title="previous chapter">poliastro.plotting.orbit.backends.plotly</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.plotting.porkchop.html"
+                          title="next chapter">poliastro.plotting.porkchop</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.plotting.orbit.plotter.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.plotting.porkchop.html" title="poliastro.plotting.porkchop"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.plotting.orbit.backends.plotly.html" title="poliastro.plotting.orbit.backends.plotly"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.plotting.html" >poliastro.plotting</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.plotting.orbit.html" >poliastro.plotting.orbit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.plotting.orbit.plotter</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

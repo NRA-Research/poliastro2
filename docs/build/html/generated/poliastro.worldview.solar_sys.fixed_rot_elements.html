@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.worldview.solar_sys.fixed_rot_elements &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.czml" href="poliastro.czml.html" />
+    <link rel="prev" title="poliastro.worldview.solar_sys.constants.rotational_elements" href="poliastro.worldview.solar_sys.constants.rotational_elements.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.czml.html" title="poliastro.czml"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.worldview.solar_sys.constants.rotational_elements.html" title="poliastro.worldview.solar_sys.constants.rotational_elements"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.worldview.html" >poliastro.worldview</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.worldview.solar_sys.html" accesskey="U">poliastro.worldview.solar_sys</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.worldview.solar_sys.fixed_rot_elements</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.worldview.solar_sys.fixed_rot_elements">
+<span id="poliastro-worldview-solar-sys-fixed-rot-elements"></span><h1>poliastro.worldview.solar_sys.fixed_rot_elements<a class="headerlink" href="#module-poliastro.worldview.solar_sys.fixed_rot_elements" title="Link to this heading">¶</a></h1>
+<p>Low level ra, dec, and W calculations for bodies.</p>
+<p class="rubric">References</p>
+<p>The values for all bodies except the Moon have been taken from: Archinal, B., Acton, C., A’Hearn, M., Conrad, A., Consolmagno, G., &amp; Duxbury, T. et al. (2018). Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015. Celestial Mechanics And Dynamical Astronomy, 130(3). doi: 10.1007/s10569-017-9805-5.</p>
+<p>The values for Moon have been taken from: Archinal, B., A’Hearn, M., Bowell, E., Conrad, A., Consolmagno, G., &amp; Courtin, R. et al. (2010). Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2009. Celestial Mechanics And Dynamical Astronomy, 109(2), 101-135. doi: 10.1007/s10569-010-9320-4.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.jupiter_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.jupiter_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">jupiter_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Jupiter.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.mars_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.mars_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mars_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Mars.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.mercury_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.mercury_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mercury_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Mercury.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.moon_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.moon_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">moon_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Moon.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.neptune_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.neptune_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neptune_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Neptune.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.saturn_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.saturn_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturn_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Saturn.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.sun_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.sun_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sun_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Sun.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.uranus_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.uranus_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">uranus_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Uranus.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.venus_rot_elements_at_epoch" title="poliastro.worldview.solar_sys.fixed_rot_elements.venus_rot_elements_at_epoch"><code class="xref py py-obj docutils literal notranslate"><span class="pre">venus_rot_elements_at_epoch</span></code></a>(T, d)</p></td>
+<td><p>Calculate rotational elements for Venus.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.jupiter_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">jupiter_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.jupiter_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Jupiter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.mars_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">mars_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.mars_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Mars.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.mercury_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">mercury_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.mercury_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Mercury.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.moon_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">moon_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.moon_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Moon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.neptune_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">neptune_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.neptune_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Neptune.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.saturn_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">saturn_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.saturn_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Saturn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.sun_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">sun_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.sun_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Sun.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries i.e. 36525 days.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.uranus_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">uranus_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.uranus_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Uranus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.worldview.solar_sys.fixed_rot_elements.venus_rot_elements_at_epoch">
+<span class="sig-prename descclassname"><span class="pre">poliastro.worldview.solar_sys.fixed_rot_elements.</span></span><span class="sig-name descname"><span class="pre">venus_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.solar_sys.fixed_rot_elements.venus_rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate rotational elements for Venus.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> (<em>float</em>) – Interval from the standard epoch, in Julian centuries.</p></li>
+<li><p><strong>d</strong> (<em>float</em>) – Interval in days from the standard epoch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ra, dec, W</strong> – Right ascension and declination of north pole, and angle of the prime meridian.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple (float)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.worldview.solar_sys.fixed_rot_elements</a><ul>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.jupiter_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">jupiter_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.mars_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">mars_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.mercury_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">mercury_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.moon_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">moon_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.neptune_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">neptune_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.saturn_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">saturn_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.sun_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">sun_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.uranus_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">uranus_rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.solar_sys.fixed_rot_elements.venus_rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">venus_rot_elements_at_epoch()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.worldview.solar_sys.constants.rotational_elements.html"
+                          title="previous chapter">poliastro.worldview.solar_sys.constants.rotational_elements</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.czml.html"
+                          title="next chapter">poliastro.czml</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.worldview.solar_sys.fixed_rot_elements.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.czml.html" title="poliastro.czml"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.worldview.solar_sys.constants.rotational_elements.html" title="poliastro.worldview.solar_sys.constants.rotational_elements"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.worldview.html" >poliastro.worldview</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.worldview.solar_sys.html" >poliastro.worldview.solar_sys</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.worldview.solar_sys.fixed_rot_elements</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

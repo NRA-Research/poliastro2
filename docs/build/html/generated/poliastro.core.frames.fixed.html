@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core.frames.fixed &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.core.frames.util" href="poliastro.core.frames.util.html" />
+    <link rel="prev" title="poliastro.core.frames.equatorial" href="poliastro.core.frames.equatorial.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.frames.util.html" title="poliastro.core.frames.util"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.frames.equatorial.html" title="poliastro.core.frames.equatorial"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.frames.html" accesskey="U">poliastro.core.frames</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.frames.fixed</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core.frames.fixed">
+<span id="poliastro-core-frames-fixed"></span><h1>poliastro.core.frames.fixed<a class="headerlink" href="#module-poliastro.core.frames.fixed" title="Link to this heading">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed" title="poliastro.core.frames.fixed.JupiterFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">JupiterFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed" title="poliastro.core.frames.fixed.MarsFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MarsFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed" title="poliastro.core.frames.fixed.MercuryFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MercuryFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">MoonFixed</span></code>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed" title="poliastro.core.frames.fixed.NeptuneFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NeptuneFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed" title="poliastro.core.frames.fixed.SaturnFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SaturnFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed" title="poliastro.core.frames.fixed.SunFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SunFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed" title="poliastro.core.frames.fixed.UranusFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UranusFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed" title="poliastro.core.frames.fixed.VenusFixed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">VenusFixed</span></code></a>(*args, **kwargs)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">ITRS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">representation_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">differential_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS" title="Link to this definition">¶</a></dt>
+<dd><p>A coordinate or frame in the International Terrestrial Reference System
+(ITRS).  This is approximately a geocentric system, although strictly it is
+defined by a series of reference locations near the surface of the Earth (the ITRF).
+For more background on the ITRS, see the references provided in the
+<span class="xref std std-ref">astropy:astropy-coordinates-seealso</span> section of the documentation.</p>
+<p>This frame also includes frames that are defined <em>relative</em> to the center of the Earth,
+but that are offset (in both position and velocity) from the center of the Earth. You
+may see such non-geocentric coordinates referred to as “topocentric”.</p>
+<p>Topocentric ITRS frames are convenient for observations of near Earth objects where
+stellar aberration is not included. One can merely subtract the observing site’s
+EarthLocation geocentric ITRS coordinates from the object’s geocentric ITRS coordinates,
+put the resulting vector into a topocentric ITRS frame and then transform to
+<cite>~astropy.coordinates.AltAz</cite> or <cite>~astropy.coordinates.HADec</cite>. The other way around is
+to transform an observed <cite>~astropy.coordinates.AltAz</cite> or <cite>~astropy.coordinates.HADec</cite>
+position to a topocentric ITRS frame and add the observing site’s EarthLocation geocentric
+ITRS coordinates to yield the object’s geocentric ITRS coordinates.</p>
+<p>On the other hand, using <code class="docutils literal notranslate"><span class="pre">transform_to</span></code> to transform geocentric ITRS coordinates to
+topocentric ITRS, observed <cite>~astropy.coordinates.AltAz</cite>, or observed
+<cite>~astropy.coordinates.HADec</cite> coordinates includes the difference between stellar aberration
+from the point of view of an observer at the geocenter and stellar aberration from the
+point of view of an observer on the surface of the Earth. If the geocentric ITRS
+coordinates of the object include stellar aberration at the geocenter (e.g. certain ILRS
+ephemerides), then this is the way to go.</p>
+<p>Note to ILRS ephemeris users: Astropy does not currently consider relativistic
+effects of the Earth’s gravatational field. Nor do the <cite>~astropy.coordinates.AltAz</cite>
+or <cite>~astropy.coordinates.HADec</cite> refraction corrections compute the change in the
+range due to the curved path of light through the atmosphere, so Astropy is no
+substitute for the ILRS software in these respects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<cite>~astropy.coordinates.BaseRepresentation</cite> subclass instance) – A representation object or <code class="docutils literal notranslate"><span class="pre">None</span></code> to have no data (or use the
+coordinate component arguments, see below).</p></li>
+<li><p><strong>representation_type</strong> (<cite>~astropy.coordinates.BaseRepresentation</cite> subclass, str, optional) – A representation class or string name of a representation class. This
+sets the expected input representation class, thereby changing the
+expected keyword arguments for the data passed in. For example, passing
+<code class="docutils literal notranslate"><span class="pre">representation_type='cartesian'</span></code> will make the classes expect
+position data with cartesian names, i.e. <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span></code> in most cases
+unless overridden via <code class="docutils literal notranslate"><span class="pre">frame_specific_representation_info</span></code>. To see this
+frame’s names, check out <code class="docutils literal notranslate"><span class="pre">&lt;this</span> <span class="pre">frame&gt;().representation_info</span></code>.</p></li>
+<li><p><strong>differential_type</strong> (<cite>~astropy.coordinates.BaseDifferential</cite> subclass, str, dict, optional) – A differential class or dictionary of differential classes (currently
+only a velocity differential with key ‘s’ is supported). This sets the
+expected input differential class, thereby changing the expected keyword
+arguments of the data passed in. For example, passing
+<code class="docutils literal notranslate"><span class="pre">differential_type='cartesian'</span></code> will make the classes expect velocity
+data with the argument names <code class="docutils literal notranslate"><span class="pre">v_x,</span> <span class="pre">v_y,</span> <span class="pre">v_z</span></code> unless overridden via
+<code class="docutils literal notranslate"><span class="pre">frame_specific_representation_info</span></code>. To see this frame’s names,
+check out <code class="docutils literal notranslate"><span class="pre">&lt;this</span> <span class="pre">frame&gt;().representation_info</span></code>.</p></li>
+<li><p><strong>copy</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <cite>True</cite> (default), make copies of the input coordinate arrays.
+Can only be passed in as a keyword argument.</p></li>
+<li><p><strong>obstime</strong> (<cite>~astropy.time.Time</cite>) – The time at which the observation is taken.  Used for determining the
+position of the Earth and its precession.</p></li>
+<li><p><strong>location</strong> (<cite>~astropy.coordinates.EarthLocation</cite>) – The location on the Earth.  This can be specified either as an
+<cite>~astropy.coordinates.EarthLocation</cite> object or as anything that can be
+transformed to an <cite>~astropy.coordinates.ITRS</cite> frame. The default is the
+centre of the Earth.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">CartesianDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">CartesianRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_lon_coslat',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_lat',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_lon',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_lat',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'lon',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'lat',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_lon_coslat',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_lat',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_lon',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_lat',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'lon',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'lat',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.earth_location">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">earth_location</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.earth_location" title="Link to this definition">¶</a></dt>
+<dd><p>The data in this frame as an <cite>~astropy.coordinates.EarthLocation</cite> class.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'location':</span> <span class="pre">&lt;astropy.coordinates.attributes.EarthLocationAttribute</span> <span class="pre">object&gt;,</span> <span class="pre">'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.location">
+<span class="sig-name descname"><span class="pre">location</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;EarthLocation</span> <span class="pre">(0.,</span> <span class="pre">0.,</span> <span class="pre">0.)</span> <span class="pre">km&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.location" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'itrs'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.ITRS.obstime">
+<span class="sig-name descname"><span class="pre">obstime</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.ITRS.obstime" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">JupiterFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;),</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.26712763e+17</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Jupiter',</span> <span class="pre">'♃',</span> <span class="pre">&lt;Quantity</span> <span class="pre">71492000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">66854000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">69911000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.41354</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.8981246e+27</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">7.78340817e+08</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.JupiterICRS" title="poliastro.core.frames.equatorial.JupiterICRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">JupiterICRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.JupiterFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'jupiterfixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.JupiterFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">MarsFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;),</span> <span class="pre">&lt;Quantity</span> <span class="pre">4.28283744e+13</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Mars',</span> <span class="pre">'♂',</span> <span class="pre">&lt;Quantity</span> <span class="pre">3396190.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">3376220.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">3389500.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.02595675</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.0019555&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">3.145e-05&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.4169088e+23</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.27943822e+08</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.MarsICRS" title="poliastro.core.frames.equatorial.MarsICRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">MarsICRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MarsFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'marsfixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MarsFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">MercuryFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;),</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.203209e+13</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Mercury',</span> <span class="pre">'☿',</span> <span class="pre">&lt;Quantity</span> <span class="pre">2440530.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2438260.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2439400.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">58.6462</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">3.30103382e+23</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">57909226.54152438</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.MercuryICRS" title="poliastro.core.frames.equatorial.MercuryICRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">MercuryICRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.MercuryFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'mercuryfixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.MercuryFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">NeptuneFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;),</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.8365271e+15</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Neptune',</span> <span class="pre">'♆',</span> <span class="pre">&lt;Quantity</span> <span class="pre">24764000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">24341000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">24622000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.768</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.02430623e+26</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">4.49839642e+09</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.NeptuneICRS" title="poliastro.core.frames.equatorial.NeptuneICRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">NeptuneICRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.NeptuneFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'neptunefixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.NeptuneFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">SaturnFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;),</span> <span class="pre">&lt;Quantity</span> <span class="pre">3.79312077e+16</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Saturn',</span> <span class="pre">'♄',</span> <span class="pre">&lt;Quantity</span> <span class="pre">60268000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">54364000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">58232000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.4375</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">5.68317392e+26</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.42666641e+09</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.SaturnICRS" title="poliastro.core.frames.equatorial.SaturnICRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">SaturnICRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SaturnFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'saturnfixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SaturnFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">SunFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">(None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.HCRS" title="astropy.coordinates.builtin_frames.hcrs.HCRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">HCRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.SunFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sunfixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.SunFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">UranusFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;),</span> <span class="pre">&lt;Quantity</span> <span class="pre">5.7939393e+15</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Uranus',</span> <span class="pre">'⛢',</span> <span class="pre">&lt;Quantity</span> <span class="pre">25559000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">24973000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25362000.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">-0.65</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">8.68096924e+25</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.87065817e+09</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.UranusICRS" title="poliastro.core.frames.equatorial.UranusICRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">UranusICRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.UranusFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'uranusfixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.UranusFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.frames.fixed.</span></span><span class="sig-name descname"><span class="pre">VenusFixed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed" title="Link to this definition">¶</a></dt>
+<dd><dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed._abc_impl">
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed._abc_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed._default_differential">
+<span class="sig-name descname"><span class="pre">_default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed._default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalCosLatDifferential</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed._default_representation">
+<span class="sig-name descname"><span class="pre">_default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed._default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SphericalRepresentation</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed._frame_class_cache">
+<span class="sig-name descname"><span class="pre">_frame_class_cache</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed._frame_class_cache" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed._frame_specific_representation_info">
+<span class="sig-name descname"><span class="pre">_frame_specific_representation_info</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{&lt;class</span> <span class="pre">'astropy.coordinates.representation.CartesianDifferential'&gt;:</span> <span class="pre">[('d_x',</span> <span class="pre">'v_x',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_y',</span> <span class="pre">'v_y',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;)),</span> <span class="pre">('d_z',</span> <span class="pre">'v_z',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.SphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalCosLatDifferential'&gt;:</span> <span class="pre">[('d_lon_coslat',</span> <span class="pre">'pm_ra_cosdec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalDifferential'&gt;:</span> <span class="pre">[('d_lon',</span> <span class="pre">'pm_ra',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_lat',</span> <span class="pre">'pm_dec',</span> <span class="pre">Unit(&quot;mas</span> <span class="pre">/</span> <span class="pre">yr&quot;)),</span> <span class="pre">('d_distance',</span> <span class="pre">'radial_velocity',</span> <span class="pre">Unit(&quot;km</span> <span class="pre">/</span> <span class="pre">s&quot;))],</span> <span class="pre">&lt;class</span> <span class="pre">'astropy.coordinates.representation.UnitSphericalRepresentation'&gt;:</span> <span class="pre">[('lon',</span> <span class="pre">'ra',</span> <span class="pre">'recommended'),</span> <span class="pre">('lat',</span> <span class="pre">'dec',</span> <span class="pre">'recommended')]}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed._frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed._rot_elements_at_epoch">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_rot_elements_at_epoch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed._rot_elements_at_epoch" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed.body">
+<span class="sig-name descname"><span class="pre">body</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">((None,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.32712442e+20</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Sun',</span> <span class="pre">'☉',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6.957e+08</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">25.38</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">2.2e-07&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.98840987e+30</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">km&gt;),</span> <span class="pre">&lt;Quantity</span> <span class="pre">3.24858592e+14</span> <span class="pre">m3</span> <span class="pre">/</span> <span class="pre">s2&gt;,</span> <span class="pre">'Venus',</span> <span class="pre">'♀',</span> <span class="pre">&lt;Quantity</span> <span class="pre">6051800.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">6051800.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">6051800.</span> <span class="pre">m&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">-243.01</span> <span class="pre">d&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">4.4044e-06&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">-2.1082e-06&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">4.86730581e+24</span> <span class="pre">kg&gt;,</span> <span class="pre">&lt;Quantity</span> <span class="pre">1.08209475e+08</span> <span class="pre">km&gt;)</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed.body" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed.default_differential">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_differential</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed.default_differential" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for differential data (e.g., velocity)</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed.default_representation">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default_representation</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed.default_representation" title="Link to this definition">¶</a></dt>
+<dd><p>Default representation for position data</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed.equatorial">
+<span class="sig-name descname"><span class="pre">equatorial</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed.equatorial" title="Link to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="poliastro.core.frames.equatorial.html#poliastro.core.frames.equatorial.VenusICRS" title="poliastro.core.frames.equatorial.VenusICRS"><code class="xref py py-class docutils literal notranslate"><span class="pre">VenusICRS</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed.frame_attributes">
+<span class="sig-name descname"><span class="pre">frame_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'obstime':</span> <span class="pre">&lt;astropy.coordinates.attributes.TimeAttribute</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed.frame_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed.frame_specific_representation_info">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frame_specific_representation_info</span></span><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed.frame_specific_representation_info" title="Link to this definition">¶</a></dt>
+<dd><p>Mapping for frame-specific component names</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.frames.fixed.VenusFixed.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'venusfixed'</span></em><a class="headerlink" href="#poliastro.core.frames.fixed.VenusFixed.name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core.frames.fixed</a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS"><code class="docutils literal notranslate"><span class="pre">ITRS</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS._abc_impl"><code class="docutils literal notranslate"><span class="pre">ITRS._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS._default_differential"><code class="docutils literal notranslate"><span class="pre">ITRS._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS._default_representation"><code class="docutils literal notranslate"><span class="pre">ITRS._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">ITRS._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">ITRS._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.default_differential"><code class="docutils literal notranslate"><span class="pre">ITRS.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.default_representation"><code class="docutils literal notranslate"><span class="pre">ITRS.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.earth_location"><code class="docutils literal notranslate"><span class="pre">ITRS.earth_location</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.frame_attributes"><code class="docutils literal notranslate"><span class="pre">ITRS.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">ITRS.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.location"><code class="docutils literal notranslate"><span class="pre">ITRS.location</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.name"><code class="docutils literal notranslate"><span class="pre">ITRS.name</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.ITRS.obstime"><code class="docutils literal notranslate"><span class="pre">ITRS.obstime</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed"><code class="docutils literal notranslate"><span class="pre">JupiterFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">JupiterFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">JupiterFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">JupiterFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">JupiterFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">JupiterFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">JupiterFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed.body"><code class="docutils literal notranslate"><span class="pre">JupiterFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">JupiterFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">JupiterFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">JupiterFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">JupiterFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">JupiterFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.JupiterFixed.name"><code class="docutils literal notranslate"><span class="pre">JupiterFixed.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed"><code class="docutils literal notranslate"><span class="pre">MarsFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">MarsFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">MarsFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">MarsFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">MarsFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">MarsFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">MarsFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed.body"><code class="docutils literal notranslate"><span class="pre">MarsFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">MarsFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">MarsFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">MarsFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">MarsFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">MarsFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MarsFixed.name"><code class="docutils literal notranslate"><span class="pre">MarsFixed.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed"><code class="docutils literal notranslate"><span class="pre">MercuryFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">MercuryFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">MercuryFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">MercuryFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">MercuryFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">MercuryFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">MercuryFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed.body"><code class="docutils literal notranslate"><span class="pre">MercuryFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">MercuryFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">MercuryFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">MercuryFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">MercuryFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">MercuryFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.MercuryFixed.name"><code class="docutils literal notranslate"><span class="pre">MercuryFixed.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed.body"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.NeptuneFixed.name"><code class="docutils literal notranslate"><span class="pre">NeptuneFixed.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed"><code class="docutils literal notranslate"><span class="pre">SaturnFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">SaturnFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">SaturnFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">SaturnFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">SaturnFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">SaturnFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">SaturnFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed.body"><code class="docutils literal notranslate"><span class="pre">SaturnFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">SaturnFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">SaturnFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">SaturnFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">SaturnFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">SaturnFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SaturnFixed.name"><code class="docutils literal notranslate"><span class="pre">SaturnFixed.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed"><code class="docutils literal notranslate"><span class="pre">SunFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">SunFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">SunFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">SunFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">SunFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">SunFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">SunFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed.body"><code class="docutils literal notranslate"><span class="pre">SunFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">SunFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">SunFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">SunFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">SunFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">SunFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.SunFixed.name"><code class="docutils literal notranslate"><span class="pre">SunFixed.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed"><code class="docutils literal notranslate"><span class="pre">UranusFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">UranusFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">UranusFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">UranusFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">UranusFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">UranusFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">UranusFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed.body"><code class="docutils literal notranslate"><span class="pre">UranusFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">UranusFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">UranusFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">UranusFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">UranusFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">UranusFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.UranusFixed.name"><code class="docutils literal notranslate"><span class="pre">UranusFixed.name</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed"><code class="docutils literal notranslate"><span class="pre">VenusFixed</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed._abc_impl"><code class="docutils literal notranslate"><span class="pre">VenusFixed._abc_impl</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed._default_differential"><code class="docutils literal notranslate"><span class="pre">VenusFixed._default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed._default_representation"><code class="docutils literal notranslate"><span class="pre">VenusFixed._default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed._frame_class_cache"><code class="docutils literal notranslate"><span class="pre">VenusFixed._frame_class_cache</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed._frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">VenusFixed._frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed._rot_elements_at_epoch"><code class="docutils literal notranslate"><span class="pre">VenusFixed._rot_elements_at_epoch()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed.body"><code class="docutils literal notranslate"><span class="pre">VenusFixed.body</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed.default_differential"><code class="docutils literal notranslate"><span class="pre">VenusFixed.default_differential</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed.default_representation"><code class="docutils literal notranslate"><span class="pre">VenusFixed.default_representation</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed.equatorial"><code class="docutils literal notranslate"><span class="pre">VenusFixed.equatorial</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed.frame_attributes"><code class="docutils literal notranslate"><span class="pre">VenusFixed.frame_attributes</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed.frame_specific_representation_info"><code class="docutils literal notranslate"><span class="pre">VenusFixed.frame_specific_representation_info</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.frames.fixed.VenusFixed.name"><code class="docutils literal notranslate"><span class="pre">VenusFixed.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.core.frames.equatorial.html"
+                          title="previous chapter">poliastro.core.frames.equatorial</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.core.frames.util.html"
+                          title="next chapter">poliastro.core.frames.util</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.frames.fixed.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.frames.util.html" title="poliastro.core.frames.util"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.frames.equatorial.html" title="poliastro.core.frames.equatorial"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.frames.html" >poliastro.core.frames</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.frames.fixed</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core.twobody.angles &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.core.twobody.elements" href="poliastro.core.twobody.elements.html" />
+    <link rel="prev" title="poliastro.core.twobody" href="poliastro.core.twobody.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.twobody.elements.html" title="poliastro.core.twobody.elements"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.twobody.html" title="poliastro.core.twobody"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.twobody.html" accesskey="U">poliastro.core.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.twobody.angles</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core.twobody.angles">
+<span id="poliastro-core-twobody-angles"></span><h1>poliastro.core.twobody.angles<a class="headerlink" href="#module-poliastro.core.twobody.angles" title="Link to this heading">¶</a></h1>
+<p>Angles and anomalies.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.D_to_M" title="poliastro.core.twobody.angles.D_to_M"><code class="xref py py-obj docutils literal notranslate"><span class="pre">D_to_M</span></code></a>(D)</p></td>
+<td><p>Mean anomaly from eccentric anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.D_to_nu" title="poliastro.core.twobody.angles.D_to_nu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">D_to_nu</span></code></a>(D)</p></td>
+<td><p>True anomaly from parabolic eccentric anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.E_to_M" title="poliastro.core.twobody.angles.E_to_M"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E_to_M</span></code></a>(E, ecc)</p></td>
+<td><p>Mean anomaly from eccentric anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.E_to_nu" title="poliastro.core.twobody.angles.E_to_nu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E_to_nu</span></code></a>(E, ecc)</p></td>
+<td><p>True anomaly from eccentric anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.F_to_M" title="poliastro.core.twobody.angles.F_to_M"><code class="xref py py-obj docutils literal notranslate"><span class="pre">F_to_M</span></code></a>(F, ecc)</p></td>
+<td><p>Mean anomaly from eccentric anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.F_to_nu" title="poliastro.core.twobody.angles.F_to_nu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">F_to_nu</span></code></a>(F, ecc)</p></td>
+<td><p>True anomaly from hyperbolic eccentric anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.M_to_D" title="poliastro.core.twobody.angles.M_to_D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">M_to_D</span></code></a>(M)</p></td>
+<td><p>Parabolic eccentric anomaly from mean anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.M_to_E" title="poliastro.core.twobody.angles.M_to_E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">M_to_E</span></code></a>(M, ecc)</p></td>
+<td><p>Eccentric anomaly from mean anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.M_to_F" title="poliastro.core.twobody.angles.M_to_F"><code class="xref py py-obj docutils literal notranslate"><span class="pre">M_to_F</span></code></a>(M, ecc)</p></td>
+<td><p>Hyperbolic eccentric anomaly from mean anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.fp_angle" title="poliastro.core.twobody.angles.fp_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fp_angle</span></code></a>(nu, ecc)</p></td>
+<td><p>Flight path angle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.nu_to_D" title="poliastro.core.twobody.angles.nu_to_D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nu_to_D</span></code></a>(nu)</p></td>
+<td><p>Parabolic eccentric anomaly from true anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.nu_to_E" title="poliastro.core.twobody.angles.nu_to_E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nu_to_E</span></code></a>(nu, ecc)</p></td>
+<td><p>Eccentric anomaly from true anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.angles.nu_to_F" title="poliastro.core.twobody.angles.nu_to_F"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nu_to_F</span></code></a>(nu, ecc)</p></td>
+<td><p>Hyperbolic eccentric anomaly from true anomaly.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.D_to_M">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">D_to_M</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">D</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.D_to_M" title="Link to this definition">¶</a></dt>
+<dd><p>Mean anomaly from eccentric anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>D</strong> (<em>Quantity</em>) – Parabolic eccentric anomaly.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> – Mean anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.D_to_nu">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">D_to_nu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">D</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.D_to_nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly from parabolic eccentric anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>D</strong> (<em>Quantity</em>) – Eccentric anomaly.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>nu</strong> – True anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Taken from Farnocchia, Davide, Davide Bracali Cioci, and Andrea Milani.
+“Robust resolution of Kepler’s equation in all eccentricity regimes.”
+Celestial Mechanics and Dynamical Astronomy 116, no. 1 (2013): 21-34.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.E_to_M">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">E_to_M</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.E_to_M" title="Link to this definition">¶</a></dt>
+<dd><p>Mean anomaly from eccentric anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>E</strong> (<em>Quantity</em>) – Eccentric anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> – Mean anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.E_to_nu">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">E_to_nu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.E_to_nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly from eccentric anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>E</strong> (<em>Quantity</em>) – Eccentric anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>nu</strong> – True anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.F_to_M">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">F_to_M</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.F_to_M" title="Link to this definition">¶</a></dt>
+<dd><p>Mean anomaly from eccentric anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>Quantity</em>) – Hyperbolic eccentric anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> – Mean anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.F_to_nu">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">F_to_nu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.F_to_nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly from hyperbolic eccentric anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>Quantity</em>) – Hyperbolic eccentric anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>nu</strong> – True anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.M_to_D">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">M_to_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.M_to_D" title="Link to this definition">¶</a></dt>
+<dd><p>Parabolic eccentric anomaly from mean anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>M</strong> (<em>Quantity</em>) – Mean anomaly.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>D</strong> – Parabolic eccentric anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.M_to_E">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">M_to_E</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.M_to_E" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentric anomaly from mean anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>Quantity</em>) – Mean anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>E</strong> – Eccentric anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.M_to_F">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">M_to_F</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.M_to_F" title="Link to this definition">¶</a></dt>
+<dd><p>Hyperbolic eccentric anomaly from mean anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>Quantity</em>) – Mean anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>F</strong> – Hyperbolic eccentric anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.fp_angle">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">fp_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.fp_angle" title="Link to this definition">¶</a></dt>
+<dd><p>Flight path angle.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nu</strong> (<em>Quantity</em>) – True anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Algorithm taken from Vallado 2007, pp. 113.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.nu_to_D">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">nu_to_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.nu_to_D" title="Link to this definition">¶</a></dt>
+<dd><p>Parabolic eccentric anomaly from true anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nu</strong> (<em>Quantity</em>) – True anomaly.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>D</strong> – Hyperbolic eccentric anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Taken from Farnocchia, Davide, Davide Bracali Cioci, and Andrea Milani.
+“Robust resolution of Kepler’s equation in all eccentricity regimes.”
+Celestial Mechanics and Dynamical Astronomy 116, no. 1 (2013): 21-34.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.nu_to_E">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">nu_to_E</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.nu_to_E" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentric anomaly from true anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nu</strong> (<em>Quantity</em>) – True anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>E</strong> – Eccentric anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.core.twobody.angles.nu_to_F">
+<span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">nu_to_F</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.angles.nu_to_F" title="Link to this definition">¶</a></dt>
+<dd><p>Hyperbolic eccentric anomaly from true anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nu</strong> (<em>Quantity</em>) – True anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>F</strong> – Hyperbolic eccentric anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>Quantity</em></p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Taken from Curtis, H. (2013). <em>Orbital mechanics for engineering students</em>. 167</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core.twobody.angles</a><ul>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.D_to_M"><code class="docutils literal notranslate"><span class="pre">D_to_M()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.D_to_nu"><code class="docutils literal notranslate"><span class="pre">D_to_nu()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.E_to_M"><code class="docutils literal notranslate"><span class="pre">E_to_M()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.E_to_nu"><code class="docutils literal notranslate"><span class="pre">E_to_nu()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.F_to_M"><code class="docutils literal notranslate"><span class="pre">F_to_M()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.F_to_nu"><code class="docutils literal notranslate"><span class="pre">F_to_nu()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.M_to_D"><code class="docutils literal notranslate"><span class="pre">M_to_D()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.M_to_E"><code class="docutils literal notranslate"><span class="pre">M_to_E()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.M_to_F"><code class="docutils literal notranslate"><span class="pre">M_to_F()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.fp_angle"><code class="docutils literal notranslate"><span class="pre">fp_angle()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.nu_to_D"><code class="docutils literal notranslate"><span class="pre">nu_to_D()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.nu_to_E"><code class="docutils literal notranslate"><span class="pre">nu_to_E()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.angles.nu_to_F"><code class="docutils literal notranslate"><span class="pre">nu_to_F()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.core.twobody.html"
+                          title="previous chapter">poliastro.core.twobody</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.core.twobody.elements.html"
+                          title="next chapter">poliastro.core.twobody.elements</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.twobody.angles.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.twobody.elements.html" title="poliastro.core.twobody.elements"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.twobody.html" title="poliastro.core.twobody"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.twobody.html" >poliastro.core.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.twobody.angles</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

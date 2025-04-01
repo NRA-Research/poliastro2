@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.worldview.earth.atmosphere.base &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.worldview.earth.atmosphere.coesa62" href="poliastro.worldview.earth.atmosphere.coesa62.html" />
+    <link rel="prev" title="poliastro.worldview.earth.atmosphere" href="poliastro.worldview.earth.atmosphere.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.worldview.earth.atmosphere.coesa62.html" title="poliastro.worldview.earth.atmosphere.coesa62"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.worldview.earth.atmosphere.html" title="poliastro.worldview.earth.atmosphere"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.worldview.html" >poliastro.worldview</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.worldview.earth.html" >poliastro.worldview.earth</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="poliastro.worldview.earth.atmosphere.html" accesskey="U">poliastro.worldview.earth.atmosphere</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.worldview.earth.atmosphere.base</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.worldview.earth.atmosphere.base">
+<span id="poliastro-worldview-earth-atmosphere-base"></span><h1>poliastro.worldview.earth.atmosphere.base<a class="headerlink" href="#module-poliastro.worldview.earth.atmosphere.base" title="Link to this heading">¶</a></h1>
+<p>Holds different classes to model atmospheric models.</p>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA" title="poliastro.worldview.earth.atmosphere.base.COESA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">COESA</span></code></a>(*tables)</p></td>
+<td><p>Class for U.S Standard Atmosphere models.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.worldview.earth.atmosphere.base.</span></span><span class="sig-name descname"><span class="pre">COESA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">tables</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA" title="Link to this definition">¶</a></dt>
+<dd><p>Class for U.S Standard Atmosphere models.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA.Lb_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Lb_levels</span></span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA.Lb_levels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA.Tb_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Tb_levels</span></span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA.Tb_levels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA._check_altitude">
+<span class="sig-name descname"><span class="pre">_check_altitude</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geometric</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA._check_altitude" title="Link to this definition">¶</a></dt>
+<dd><p>Checks if altitude is inside valid range.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>alt</strong> (<em>Quantity</em>) – Altitude to be checked.</p></li>
+<li><p><strong>r0</strong> (<em>Quantity</em>) – Attractor radius.</p></li>
+<li><p><strong>geometric</strong> (<em>bool</em>) – If <cite>True</cite>, assumes geometric altitude kind.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>z</strong> (<em>~astropy.units.Quantity</em>) – Geometric altitude.</p></li>
+<li><p><strong>h</strong> (<em>~astropy.units.Quantity</em>) – Geopotential altitude.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA._get_index">
+<span class="sig-name descname"><span class="pre">_get_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_levels</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA._get_index" title="Link to this definition">¶</a></dt>
+<dd><p>Finds element in list and returns index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>Quantity</em>) – Element to be searched.</p></li>
+<li><p><strong>x_levels</strong> (<em>Quantity</em>) – List for searching.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>i</strong> – Index for the value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA.b_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">b_levels</span></span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA.b_levels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA.hb_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">hb_levels</span></span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA.hb_levels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA.pb_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pb_levels</span></span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA.pb_levels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.worldview.earth.atmosphere.base.COESA.zb_levels">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">zb_levels</span></span><a class="headerlink" href="#poliastro.worldview.earth.atmosphere.base.COESA.zb_levels" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.worldview.earth.atmosphere.base</a><ul>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA"><code class="docutils literal notranslate"><span class="pre">COESA</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA.Lb_levels"><code class="docutils literal notranslate"><span class="pre">COESA.Lb_levels</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA.Tb_levels"><code class="docutils literal notranslate"><span class="pre">COESA.Tb_levels</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA._check_altitude"><code class="docutils literal notranslate"><span class="pre">COESA._check_altitude()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA._get_index"><code class="docutils literal notranslate"><span class="pre">COESA._get_index()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA.b_levels"><code class="docutils literal notranslate"><span class="pre">COESA.b_levels</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA.hb_levels"><code class="docutils literal notranslate"><span class="pre">COESA.hb_levels</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA.pb_levels"><code class="docutils literal notranslate"><span class="pre">COESA.pb_levels</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.worldview.earth.atmosphere.base.COESA.zb_levels"><code class="docutils literal notranslate"><span class="pre">COESA.zb_levels</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.worldview.earth.atmosphere.html"
+                          title="previous chapter">poliastro.worldview.earth.atmosphere</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.worldview.earth.atmosphere.coesa62.html"
+                          title="next chapter">poliastro.worldview.earth.atmosphere.coesa62</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.worldview.earth.atmosphere.base.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.worldview.earth.atmosphere.coesa62.html" title="poliastro.worldview.earth.atmosphere.coesa62"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.worldview.earth.atmosphere.html" title="poliastro.worldview.earth.atmosphere"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.worldview.html" >poliastro.worldview</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.worldview.earth.html" >poliastro.worldview.earth</a> &#187;</li>
+          <li class="nav-item nav-item-4"><a href="poliastro.worldview.earth.atmosphere.html" >poliastro.worldview.earth.atmosphere</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.worldview.earth.atmosphere.base</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.core.actions" href="poliastro.core.actions.html" />
+    <link rel="prev" title="API" href="../api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.actions.html" title="poliastro.core.actions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="API"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" accesskey="U">API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core">
+<span id="poliastro-core"></span><h1>poliastro.core<a class="headerlink" href="#module-poliastro.core" title="Link to this heading">¶</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
+<p>This subpackage contains specialized core routines for orbital mechanics and astrodynamics.
+It provides modules for ephemerides, event detection, and a variety of actions related
+to orbit propagation, maneuvers, and coordinate transformations.</p>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>ephem: Ephemeris computations.</p></li>
+<li><p>events: Event detection routines.</p></li>
+<li><p>actions: Subpackage containing maneuvers, propagation, and thrust routines.</p></li>
+<li><p>frames: Definitions and transformations for coordinate frames.</p></li>
+<li><p>math: Mathematical utilities supporting core routines.</p></li>
+<li><p>orbit: Functions for orbit creation and scalar computations.</p></li>
+<li><p>spacecraft: Spacecraft modeling routines.</p></li>
+<li><p>threebody: Tools for solving the three-body problem.</p></li>
+<li><p>twobody: Routines for two-body orbital mechanics.</p></li>
+</ul>
+</section>
+<p class="rubric">Modules</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.core.actions.html#module-poliastro.core.actions" title="poliastro.core.actions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">actions</span></code></a></p></td>
+<td><p>Description
+
+This subpackage groups together various action routines, including computations for maneuvers,
+propagation, and thrust maneuvers.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.core.ephem.html#module-poliastro.core.ephem" title="poliastro.core.ephem"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ephem</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.core.events.html#module-poliastro.core.events" title="poliastro.core.events"><code class="xref py py-obj docutils literal notranslate"><span class="pre">events</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.core.frames.html#module-poliastro.core.frames" title="poliastro.core.frames"><code class="xref py py-obj docutils literal notranslate"><span class="pre">frames</span></code></a></p></td>
+<td><p>Description
+
+This subpackage provides definitions and utilities for coordinate frames used
+in orbital mechanics. It supports various reference frames and transformations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.core.math.html#module-poliastro.core.math" title="poliastro.core.math"><code class="xref py py-obj docutils literal notranslate"><span class="pre">math</span></code></a></p></td>
+<td><p>Description
+
+Mathematical functions and utilities for orbital mechanics involving poliastro2 core methods.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.core.orbit.html#module-poliastro.core.orbit" title="poliastro.core.orbit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">orbit</span></code></a></p></td>
+<td><p>Description
+
+This subpackage provides functions to create and manipulate orbital models.
+It includes routines for orbit creation and scalar computations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.core.spacecraft.html#module-poliastro.core.spacecraft" title="poliastro.core.spacecraft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spacecraft</span></code></a></p></td>
+<td><p>Description
+
+A module to represent a spacecraft with properties, and manipulation/calculation methods.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro.core.threebody.html#module-poliastro.core.threebody" title="poliastro.core.threebody"><code class="xref py py-obj docutils literal notranslate"><span class="pre">threebody</span></code></a></p></td>
+<td><p>Description
+
+This subpackage contains routines for solving the three-body problem,
+including characteristic quantity computations and flyby dynamics.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro.core.twobody.html#module-poliastro.core.twobody" title="poliastro.core.twobody"><code class="xref py py-obj docutils literal notranslate"><span class="pre">twobody</span></code></a></p></td>
+<td><p>Description
+
+This subpackage contains routines for solving the two-body problem, It includes routines for
+calculating orbital elements, sampling orbits, and computing angular parameters.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../api.html"
+                          title="previous chapter">API</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.core.actions.html"
+                          title="next chapter">poliastro.core.actions</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.actions.html" title="poliastro.core.actions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../api.html" title="API"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

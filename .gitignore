@@ -1,0 +1,7 @@
+.qodo
+.__pycache__
+*.pyc
+
+# X.L dev ignore
+convert122.py
+fail_report.txt

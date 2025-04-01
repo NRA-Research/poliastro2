@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core.twobody.states &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.math" href="poliastro.math.html" />
+    <link rel="prev" title="poliastro.core.twobody.sampling" href="poliastro.core.twobody.sampling.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.html" title="poliastro.math"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.twobody.sampling.html" title="poliastro.core.twobody.sampling"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.twobody.html" accesskey="U">poliastro.core.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.twobody.states</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core.twobody.states">
+<span id="poliastro-core-twobody-states"></span><h1>poliastro.core.twobody.states<a class="headerlink" href="#module-poliastro.core.twobody.states" title="Link to this heading">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.states.BaseState" title="poliastro.core.twobody.states.BaseState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseState</span></code></a>(attractor, elements, plane)</p></td>
+<td><p>Base State class, meant to be subclassed.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState" title="poliastro.core.twobody.states.ClassicalState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ClassicalState</span></code></a>(attractor, elements, plane)</p></td>
+<td><p>State defined by its classical orbital elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState" title="poliastro.core.twobody.states.ModifiedEquinoctialState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ModifiedEquinoctialState</span></code></a>(attractor, ...)</p></td>
+<td><p>State defined by modified equinoctial elements representation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.twobody.states.RVState" title="poliastro.core.twobody.states.RVState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RVState</span></code></a>(attractor, elements, plane)</p></td>
+<td><p>State defined by its position and velocity vectors.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.states.</span></span><span class="sig-name descname"><span class="pre">BaseState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState" title="Link to this definition">¶</a></dt>
+<dd><p>Base State class, meant to be subclassed.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.attractor">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">attractor</span></span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.attractor" title="Link to this definition">¶</a></dt>
+<dd><p>Main attractor.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.n">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.n" title="Link to this definition">¶</a></dt>
+<dd><p>Mean motion.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.period">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">period</span></span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.period" title="Link to this definition">¶</a></dt>
+<dd><p>Period of the orbit.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.plane">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">plane</span></span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.plane" title="Link to this definition">¶</a></dt>
+<dd><p>Fundamental plane of the frame.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.r_a">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r_a</span></span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.r_a" title="Link to this definition">¶</a></dt>
+<dd><p>Radius of apocenter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.r_p">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r_p</span></span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.r_p" title="Link to this definition">¶</a></dt>
+<dd><p>Radius of pericenter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.t_p">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">t_p</span></span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.t_p" title="Link to this definition">¶</a></dt>
+<dd><p>Elapsed time since latest perifocal passage.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.to_classical">
+<span class="sig-name descname"><span class="pre">to_classical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.to_classical" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to classical orbital elements representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState" title="poliastro.core.twobody.states.ClassicalState">ClassicalState</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.to_equinoctial">
+<span class="sig-name descname"><span class="pre">to_equinoctial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.to_equinoctial" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to modified equinoctial elements representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState" title="poliastro.core.twobody.states.ModifiedEquinoctialState">ModifiedEquinoctialState</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.to_tuple">
+<span class="sig-name descname"><span class="pre">to_tuple</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.to_tuple" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.to_value">
+<span class="sig-name descname"><span class="pre">to_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.to_value" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to raw values with appropriate units.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.BaseState.to_vectors">
+<span class="sig-name descname"><span class="pre">to_vectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.BaseState.to_vectors" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to position and velocity vector representation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#poliastro.core.twobody.states.RVState" title="poliastro.core.twobody.states.RVState">RVState</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.states.</span></span><span class="sig-name descname"><span class="pre">ClassicalState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState" title="Link to this definition">¶</a></dt>
+<dd><p>State defined by its classical orbital elements.</p>
+<p>Orbital elements:</p>
+<dl class="simple">
+<dt>p<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Semilatus rectum.</p>
+</dd>
+<dt>ecc<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Eccentricity.</p>
+</dd>
+<dt>inc<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Inclination.</p>
+</dd>
+<dt>raan<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Right ascension of the ascending node.</p>
+</dd>
+<dt>argp<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Argument of the perigee.</p>
+</dd>
+<dt>nu<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>True anomaly.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.a">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">a</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.a" title="Link to this definition">¶</a></dt>
+<dd><p>Semimajor axis.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.argp">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">argp</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.argp" title="Link to this definition">¶</a></dt>
+<dd><p>Argument of the perigee.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.ecc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ecc</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.ecc" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.inc">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">inc</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.inc" title="Link to this definition">¶</a></dt>
+<dd><p>Inclination.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.nu">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nu</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.p">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">p</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.p" title="Link to this definition">¶</a></dt>
+<dd><p>Semilatus rectum.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.raan">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">raan</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.raan" title="Link to this definition">¶</a></dt>
+<dd><p>Right ascension of the ascending node.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.to_classical">
+<span class="sig-name descname"><span class="pre">to_classical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.to_classical" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to classical orbital elements representation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.to_equinoctial">
+<span class="sig-name descname"><span class="pre">to_equinoctial</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.to_equinoctial" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to modified equinoctial elements representation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.to_value">
+<span class="sig-name descname"><span class="pre">to_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.to_value" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to raw values with appropriate units.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ClassicalState.to_vectors">
+<span class="sig-name descname"><span class="pre">to_vectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ClassicalState.to_vectors" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to position and velocity vector representation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.states.</span></span><span class="sig-name descname"><span class="pre">ModifiedEquinoctialState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState" title="Link to this definition">¶</a></dt>
+<dd><p>State defined by modified equinoctial elements representation.</p>
+<p>Orbital elements:</p>
+<dl class="simple">
+<dt>p<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Semilatus rectum.</p>
+</dd>
+<dt>f<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Second modified equinoctial element.</p>
+</dd>
+<dt>g<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Third modified equinoctial element.</p>
+</dd>
+<dt>h<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Fourth modified equinoctial element.</p>
+</dd>
+<dt>k<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Fifth modified equinoctial element.</p>
+</dd>
+<dt>L<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>True longitude.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.L">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">L</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.L" title="Link to this definition">¶</a></dt>
+<dd><p>True longitude.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.f">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">f</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.f" title="Link to this definition">¶</a></dt>
+<dd><p>Second modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.g">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">g</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.g" title="Link to this definition">¶</a></dt>
+<dd><p>Third modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.h">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">h</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.h" title="Link to this definition">¶</a></dt>
+<dd><p>Fourth modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.k">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">k</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.k" title="Link to this definition">¶</a></dt>
+<dd><p>Fifth modified equinoctial element.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.p">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">p</span></span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.p" title="Link to this definition">¶</a></dt>
+<dd><p>Semilatus rectum.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.to_classical">
+<span class="sig-name descname"><span class="pre">to_classical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.to_classical" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to classical orbital elements representation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.to_value">
+<span class="sig-name descname"><span class="pre">to_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.to_value" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to raw values with appropriate units.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.ModifiedEquinoctialState.to_vectors">
+<span class="sig-name descname"><span class="pre">to_vectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.to_vectors" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to position and velocity vector representation.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.RVState">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.twobody.states.</span></span><span class="sig-name descname"><span class="pre">RVState</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">elements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.RVState" title="Link to this definition">¶</a></dt>
+<dd><p>State defined by its position and velocity vectors.</p>
+<p>Orbital elements:</p>
+<dl class="simple">
+<dt>r<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Position vector wrt attractor center.</p>
+</dd>
+<dt>v<span class="classifier">~astropy.units.Quantity</span></dt><dd><p>Velocity vector.</p>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.RVState.r">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">r</span></span><a class="headerlink" href="#poliastro.core.twobody.states.RVState.r" title="Link to this definition">¶</a></dt>
+<dd><p>Position vector.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.RVState.to_classical">
+<span class="sig-name descname"><span class="pre">to_classical</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.RVState.to_classical" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to classical orbital elements representation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.RVState.to_value">
+<span class="sig-name descname"><span class="pre">to_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.RVState.to_value" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to raw values with appropriate units.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.RVState.to_vectors">
+<span class="sig-name descname"><span class="pre">to_vectors</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.twobody.states.RVState.to_vectors" title="Link to this definition">¶</a></dt>
+<dd><p>Converts to position and velocity vector representation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.twobody.states.RVState.v">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">v</span></span><a class="headerlink" href="#poliastro.core.twobody.states.RVState.v" title="Link to this definition">¶</a></dt>
+<dd><p>Velocity vector.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core.twobody.states</a><ul>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState"><code class="docutils literal notranslate"><span class="pre">BaseState</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.attractor"><code class="docutils literal notranslate"><span class="pre">BaseState.attractor</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.n"><code class="docutils literal notranslate"><span class="pre">BaseState.n</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.period"><code class="docutils literal notranslate"><span class="pre">BaseState.period</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.plane"><code class="docutils literal notranslate"><span class="pre">BaseState.plane</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.r_a"><code class="docutils literal notranslate"><span class="pre">BaseState.r_a</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.r_p"><code class="docutils literal notranslate"><span class="pre">BaseState.r_p</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.t_p"><code class="docutils literal notranslate"><span class="pre">BaseState.t_p</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.to_classical"><code class="docutils literal notranslate"><span class="pre">BaseState.to_classical()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.to_equinoctial"><code class="docutils literal notranslate"><span class="pre">BaseState.to_equinoctial()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.to_tuple"><code class="docutils literal notranslate"><span class="pre">BaseState.to_tuple()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.to_value"><code class="docutils literal notranslate"><span class="pre">BaseState.to_value()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.BaseState.to_vectors"><code class="docutils literal notranslate"><span class="pre">BaseState.to_vectors()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState"><code class="docutils literal notranslate"><span class="pre">ClassicalState</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.a"><code class="docutils literal notranslate"><span class="pre">ClassicalState.a</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.argp"><code class="docutils literal notranslate"><span class="pre">ClassicalState.argp</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.ecc"><code class="docutils literal notranslate"><span class="pre">ClassicalState.ecc</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.inc"><code class="docutils literal notranslate"><span class="pre">ClassicalState.inc</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.nu"><code class="docutils literal notranslate"><span class="pre">ClassicalState.nu</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.p"><code class="docutils literal notranslate"><span class="pre">ClassicalState.p</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.raan"><code class="docutils literal notranslate"><span class="pre">ClassicalState.raan</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.to_classical"><code class="docutils literal notranslate"><span class="pre">ClassicalState.to_classical()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.to_equinoctial"><code class="docutils literal notranslate"><span class="pre">ClassicalState.to_equinoctial()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.to_value"><code class="docutils literal notranslate"><span class="pre">ClassicalState.to_value()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ClassicalState.to_vectors"><code class="docutils literal notranslate"><span class="pre">ClassicalState.to_vectors()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.L"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.L</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.f"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.f</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.g"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.g</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.h"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.h</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.k"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.k</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.p"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.p</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.to_classical"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.to_classical()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.to_value"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.to_value()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.ModifiedEquinoctialState.to_vectors"><code class="docutils literal notranslate"><span class="pre">ModifiedEquinoctialState.to_vectors()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.RVState"><code class="docutils literal notranslate"><span class="pre">RVState</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.RVState.r"><code class="docutils literal notranslate"><span class="pre">RVState.r</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.RVState.to_classical"><code class="docutils literal notranslate"><span class="pre">RVState.to_classical()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.RVState.to_value"><code class="docutils literal notranslate"><span class="pre">RVState.to_value()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.RVState.to_vectors"><code class="docutils literal notranslate"><span class="pre">RVState.to_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.twobody.states.RVState.v"><code class="docutils literal notranslate"><span class="pre">RVState.v</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.core.twobody.sampling.html"
+                          title="previous chapter">poliastro.core.twobody.sampling</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.math.html"
+                          title="next chapter">poliastro.math</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.twobody.states.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.html" title="poliastro.math"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.twobody.sampling.html" title="poliastro.core.twobody.sampling"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.twobody.html" >poliastro.core.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.twobody.states</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

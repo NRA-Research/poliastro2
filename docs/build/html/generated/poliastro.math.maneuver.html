@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.math.maneuver &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.math.ode" href="poliastro.math.ode.html" />
+    <link rel="prev" title="poliastro.math.linalg" href="poliastro.math.linalg.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.ode.html" title="poliastro.math.ode"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.linalg.html" title="poliastro.math.linalg"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.math.html" accesskey="U">poliastro.math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.math.maneuver</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.math.maneuver">
+<span id="poliastro-math-maneuver"></span><h1>poliastro.math.maneuver<a class="headerlink" href="#module-poliastro.math.maneuver" title="Link to this heading">¶</a></h1>
+<p>Low level maneuver implementations.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.math.maneuver.bielliptic" title="poliastro.math.maneuver.bielliptic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bielliptic</span></code></a>(k, r_b, r_f, rv)</p></td>
+<td><p>Calculate the increments in the velocities and the time of flight of the maneuver.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.math.maneuver.correct_pericenter" title="poliastro.math.maneuver.correct_pericenter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">correct_pericenter</span></code></a>(k, R, J2, max_delta_r, v, ...)</p></td>
+<td><p>Calculates the time before burning and the velocity vector in direction of the burn.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.math.maneuver.hohmann" title="poliastro.math.maneuver.hohmann"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hohmann</span></code></a>(k, rv, r_f)</p></td>
+<td><p>Calculate the Hohmann maneuver velocities and the duration of the maneuver.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.maneuver.bielliptic">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.maneuver.</span></span><span class="sig-name descname"><span class="pre">bielliptic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.maneuver.bielliptic" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the increments in the velocities and the time of flight of the
+maneuver.</p>
+<p>The bielliptic maneuver employs two Hohmann transfers, therefore two
+intermediate orbits are established. We define the different radius
+relationships as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    a_{trans1} &amp;= \frac{r_{i} + r_{b}}{2}\\
+    a_{trans2} &amp;= \frac{r_{b} + r_{f}}{2}\\
+\end{align}\end{split}\]</div>
+<p>The increments in the velocity are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \Delta v_{a} &amp;= \sqrt{\frac{2\mu}{r_{i}} - \frac{\mu}{a_{trans1}}} - v_{i}\\
+    \Delta v_{b} &amp;= \sqrt{\frac{2\mu}{r_{b}} - \frac{\mu}{a_{trans2}}} - \sqrt{\frac{2\mu}{r_{b}} - \frac{\mu}{a_trans{1}}}\\
+    \Delta v_{c} &amp;= \sqrt{\frac{\mu}{r_{f}}} - \sqrt{\frac{2\mu}{r_{f}} - \frac{\mu}{a_{trans2}}}\\
+\end{align}\end{split}\]</div>
+<p>The time of flight for this maneuver is the addition of the time needed for both transition orbits, following the same formula as
+Hohmann:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \tau_{trans1} &amp;= \pi \sqrt{\frac{a_{trans1}^{3}}{\mu}}\\
+    \tau_{trans2} &amp;= \pi \sqrt{\frac{a_{trans2}^{3}}{\mu}}\\
+\end{align}\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard Gravitational parameter</p></li>
+<li><p><strong>r_b</strong> (<em>float</em>) – Altitude of the intermediate orbit</p></li>
+<li><p><strong>r_f</strong> (<em>float</em>) – Final orbital radius</p></li>
+<li><p><strong>rv</strong> (<em>numpy.ndarray</em><em>, </em><em>numpy.ndarray</em>) – Position and velocity vectors</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.maneuver.correct_pericenter">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.maneuver.</span></span><span class="sig-name descname"><span class="pre">correct_pericenter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_delta_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.maneuver.correct_pericenter" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates the time before burning and the velocity vector in direction of the
+burn.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard Gravitational parameter</p></li>
+<li><p><strong>R</strong> (<em>float</em>) – Radius of the attractor</p></li>
+<li><p><strong>J2</strong> (<em>float</em>) – Oblateness factor</p></li>
+<li><p><strong>max_delta_r</strong> (<em>float</em>) – Maximum satellite’s geocentric distance</p></li>
+<li><p><strong>v</strong> (<em>numpy.ndarray</em>) – Velocity vector</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – Semi-major axis</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – Inclination</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The algorithm was obtained from “Fundamentals of Astrodynamics and Applications, 4th ed (2013)” by David A.
+Vallado, page 885.
+Given a max_delta_r, we determine the maximum perigee drift before we do an orbit-adjustment burn
+to restore the perigee to its nominal value. We estimate the time until this burn using the allowable drift
+delta_w and the drift rate <span class="math notranslate nohighlight">\(|dw|\)</span>.
+For positive delta_v, the change in the eccentricity is positive for perigee burns and negative for apogee burns.
+The opposite holds for a delta_v applied against the velocity vector, which decreases the satellite’s velocity.
+Perigee drift are mainly due to the zonal harmonics, which cause variations in the altitude by changing the
+argument of perigee.
+Please note that ecc ≈ 0.001, so the error incurred by assuming a small eccentricity is on the order of 0.1%.
+This is smaller than typical variations in thruster performance between burns.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro.math.maneuver.hohmann">
+<span class="sig-prename descclassname"><span class="pre">poliastro.math.maneuver.</span></span><span class="sig-name descname"><span class="pre">hohmann</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_f</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.math.maneuver.hohmann" title="Link to this definition">¶</a></dt>
+<dd><p>Calculate the Hohmann maneuver velocities and the duration of the maneuver.</p>
+<p>By defining the relationship between orbit radius:</p>
+<div class="math notranslate nohighlight">
+\[a_{trans} = \frac{r_{i} + r_{f}}{2}\]</div>
+<p>The Hohmann maneuver velocities can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \Delta v_{a} &amp;= \sqrt{\frac{2\mu}{r_{i}} - \frac{\mu}{a_{trans}}} - v_{i}\\
+    \Delta v_{b} &amp;= \sqrt{\frac{\mu}{r_{f}}} - \sqrt{\frac{2\mu}{r_{f}} - \frac{\mu}{a_{trans}}}
+\end{align}\end{split}\]</div>
+<p>The time that takes to complete the maneuver can be computed as:</p>
+<div class="math notranslate nohighlight">
+\[\tau_{trans} = \pi \sqrt{\frac{(a_{trans})^{3}}{\mu}}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard Gravitational parameter</p></li>
+<li><p><strong>rv</strong> (<em>numpy.ndarray</em><em>, </em><em>numpy.ndarray</em>) – Position and velocity vectors</p></li>
+<li><p><strong>r_f</strong> (<em>float</em>) – Final orbital radius</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.math.maneuver</a><ul>
+<li><a class="reference internal" href="#poliastro.math.maneuver.bielliptic"><code class="docutils literal notranslate"><span class="pre">bielliptic()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.maneuver.correct_pericenter"><code class="docutils literal notranslate"><span class="pre">correct_pericenter()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.math.maneuver.hohmann"><code class="docutils literal notranslate"><span class="pre">hohmann()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.math.linalg.html"
+                          title="previous chapter">poliastro.math.linalg</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.math.ode.html"
+                          title="next chapter">poliastro.math.ode</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.math.maneuver.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.ode.html" title="poliastro.math.ode"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.math.linalg.html" title="poliastro.math.linalg"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.math.html" >poliastro.math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.math.maneuver</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

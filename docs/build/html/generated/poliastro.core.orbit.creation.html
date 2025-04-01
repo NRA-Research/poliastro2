@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core.orbit.creation &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.core.orbit.scalar" href="poliastro.core.orbit.scalar.html" />
+    <link rel="prev" title="poliastro.core.orbit" href="poliastro.core.orbit.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.orbit.scalar.html" title="poliastro.core.orbit.scalar"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.orbit.html" title="poliastro.core.orbit"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.orbit.html" accesskey="U">poliastro.core.orbit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.orbit.creation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core.orbit.creation">
+<span id="poliastro-core-orbit-creation"></span><h1>poliastro.core.orbit.creation<a class="headerlink" href="#module-poliastro.core.orbit.creation" title="Link to this heading">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin" title="poliastro.core.orbit.creation.OrbitCreationMixin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">OrbitCreationMixin</span></code></a>(*_, **__)</p></td>
+<td><p>OrbitCreationMixin provides a collection of class methods to create orbital states from various representations such as position and velocity vectors, classical orbital elements, equinoctial elements, ephemerides, and more.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.orbit.creation.</span></span><span class="sig-name descname"><span class="pre">OrbitCreationMixin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">__</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin" title="Link to this definition">¶</a></dt>
+<dd><p>OrbitCreationMixin provides a collection of class methods to create orbital
+states from various representations such as position and velocity vectors, classical
+orbital elements, equinoctial elements, ephemerides, and more. It also includes
+utility methods to generate specific types of orbits like circular, stationary,
+synchronous, heliosynchronous, parabolic, and frozen orbits.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.from_vectors">
+<span class="sig-name descname"><span class="pre">from_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_vectors" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an orbit from position and velocity vectors.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.from_coords">
+<span class="sig-name descname"><span class="pre">from_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_coords" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an orbit from an attractor and astropy SkyCoord or BaseCoordinateFrame instance.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.from_classical">
+<span class="sig-name descname"><span class="pre">from_classical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_classical" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an orbit from classical orbital elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.from_equinoctial">
+<span class="sig-name descname"><span class="pre">from_equinoctial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_equinoctial" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an orbit from modified equinoctial elements.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.from_ephem">
+<span class="sig-name descname"><span class="pre">from_ephem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ephem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_ephem" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an osculating orbit from ephemerides at a given epoch.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.from_sbdb">
+<span class="sig-name descname"><span class="pre">from_sbdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*\*kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_sbdb" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an orbit using SBDB data from Astroquery.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.circular">
+<span class="sig-name descname"><span class="pre">circular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arglat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.circular" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a circular orbit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.stationary">
+<span class="sig-name descname"><span class="pre">stationary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.stationary" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a stationary orbit for the given attractor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.synchronous">
+<span class="sig-name descname"><span class="pre">synchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period_mul</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span> <span class="pre">*</span> <span class="pre">u.one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.one</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arglat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.synchronous" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a synchronous orbit where the orbital period matches the attractor’s rotation rate.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.heliosynchronous">
+<span class="sig-name descname"><span class="pre">heliosynchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.heliosynchronous" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a Sun-synchronous orbit using J2 perturbation.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.parabolic">
+<span class="sig-name descname"><span class="pre">parabolic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.parabolic" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a parabolic orbit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.frozen">
+<span class="sig-name descname"><span class="pre">frozen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arglat</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">*</span> <span class="pre">u.deg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">J2000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.frozen" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a frozen orbit by nullifying perturbations using critical inclinations and arguments of pericenter.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro.core.orbit.creation.OrbitCreationMixin.None">
+<span class="sig-name descname"><span class="pre">None</span></span><a class="headerlink" href="#poliastro.core.orbit.creation.OrbitCreationMixin.None" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">circular</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arglat=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><p>Return circular <cite>Orbit</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p></li>
+<li><p><strong>alt</strong> (<em>Quantity</em>) – Altitude over surface.</p></li>
+<li><p><strong>inc</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Inclination, default to 0 deg (equatorial orbit).</p></li>
+<li><p><strong>raan</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Right ascension of the ascending node, default to 0 deg.</p></li>
+<li><p><strong>arglat</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Argument of latitude, default to 0 deg.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_classical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd><p>Return <cite>Orbit</cite> from classical orbital elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p></li>
+<li><p><strong>a</strong> (<em>Quantity</em>) – Semi-major axis.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+<li><p><strong>inc</strong> (<em>Quantity</em>) – Inclination</p></li>
+<li><p><strong>raan</strong> (<em>Quantity</em>) – Right ascension of the ascending node.</p></li>
+<li><p><strong>argp</strong> (<em>Quantity</em>) – Argument of the pericenter.</p></li>
+<li><p><strong>nu</strong> (<em>Quantity</em>) – True anomaly.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_coords</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coord</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd><p>Creates an <cite>Orbit</cite> from an attractor and astropy <cite>SkyCoord</cite> or
+<cite>BaseCoordinateFrame</cite> instance.</p>
+<p>This method accepts position
+and velocity in any reference frame unlike <cite>Orbit.from_vector</cite>
+which can accept inputs in only inertial reference frame centred
+at attractor. Also note that the frame information is lost after
+creation of the orbit and only the inertial reference frame at
+body centre will be used for all purposes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor</p></li>
+<li><p><strong>coord</strong> (<em>SkyCoord</em><em> or </em><em>BaseCoordinateFrame</em>) – Position and velocity vectors in any reference frame. Note that coord must have
+a representation and its differential with respect to time.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em><em>, </em><em>optional</em>) – Final orbit plane, default to Earth Equator.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_ephem</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ephem</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Link to this definition">¶</a></dt>
+<dd><p>Create osculating orbit from ephemerides at a given epoch.</p>
+<p>This will assume that the <cite>Ephem</cite> coordinates
+are expressed with respect the given body.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ephem</strong> (<em>Ephem</em>) – Ephemerides object to use.</p></li>
+<li><p><strong>attractor</strong> (<em>Body</em>) – Body to use as attractor.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em>) – Epoch to retrieve the osculating orbit at.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_equinoctial</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Link to this definition">¶</a></dt>
+<dd><p>Return <cite>Orbit</cite> from modified equinoctial elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p></li>
+<li><p><strong>p</strong> (<em>Quantity</em>) – Semilatus rectum.</p></li>
+<li><p><strong>f</strong> (<em>Quantity</em>) – Second modified equinoctial element.</p></li>
+<li><p><strong>g</strong> (<em>Quantity</em>) – Third modified equinoctial element.</p></li>
+<li><p><strong>h</strong> (<em>Quantity</em>) – Fourth modified equinoctial element.</p></li>
+<li><p><strong>k</strong> (<em>Quantity</em>) – Fifth modified equinoctial element.</p></li>
+<li><p><strong>L</strong> (<em>Quantity</em>) – True longitude.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id5">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_sbdb</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id5" title="Link to this definition">¶</a></dt>
+<dd><p>Return osculating <cite>Orbit</cite> by using <cite>SBDB</cite> from Astroquery.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – Name of the body to make the request.</p></li>
+<li><p><strong>**kwargs</strong> – Extra kwargs for astroquery.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ss</strong> – Orbit corresponding to body_name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>poliastro.twobody.orbit.Orbit</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">poliastro.twobody.orbit</span><span class="w"> </span><span class="kn">import</span> <span class="n">Orbit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">apophis_orbit</span> <span class="o">=</span> <span class="n">Orbit</span><span class="o">.</span><span class="n">from_sbdb</span><span class="p">(</span><span class="s1">&#39;apophis&#39;</span><span class="p">)</span>  
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id6">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_vectors</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id6" title="Link to this definition">¶</a></dt>
+<dd><p>Return <cite>Orbit</cite> from position and velocity vectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p></li>
+<li><p><strong>r</strong> (<em>Quantity</em>) – Position vector wrt attractor center.</p></li>
+<li><p><strong>v</strong> (<em>Quantity</em>) – Velocity vector.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id7">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">frozen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arglat=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id7" title="Link to this definition">¶</a></dt>
+<dd><p>Return a frozen Orbit. If any of the given arguments results in an
+impossibility, some values will be overwritten.</p>
+<p>To achieve frozen orbit these two equations have to be set to zero.</p>
+<div class="math notranslate nohighlight">
+\[\dfrac {d\overline {e}}{dt}=\dfrac {-3\overline {n}J_{3}R^{3}_{E}\sin \left( \overline {i}\right) }{2a^{3}\left( 1-\overline {e}^{2}\right) ^{2}}\left( 1-\dfrac {5}{4}\sin ^{2}\overline {i}\right) \cos \overline {w}\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac {d\overline {\omega }}{dt}=\dfrac {3\overline {n}J_{2}R^{2}_{E}}{a^{2}\left( 1-\overline {e}^{2}\right) ^{2}}\left( 1-\dfrac {5}{4}\sin ^{2}\overline {i}\right) \left[ 1+\dfrac {J_{3}R_{E}}{2J_{2}\overline {a}\left( 1-\overline {e}^{2}\right) }\left( \dfrac {\sin ^{2}\overline {i}-\overline {e}\cos ^{2}\overline {i}}{\sin \overline {i}}\right) \dfrac {\sin \overline {w}}{\overline {e}}\right]\]</div>
+<p>The first approach would be to nullify following term to zero:</p>
+<div class="math notranslate nohighlight">
+\[( 1-\dfrac {5}{4}\sin ^{2})\]</div>
+<p>For which one obtains the so-called critical inclinations: i = 63.4349 or 116.5651 degrees. To escape the inclination requirement, the argument of periapsis can be set to w = 90 or 270 degrees to nullify the second equation. Then, one should nullify the right-hand side of the first equation, which yields an expression that correlates the inclination of the object and the eccentricity of the orbit:</p>
+<div class="math notranslate nohighlight">
+\[\overline {e}=-\dfrac {J_{3}R_{E}}{2J_{2}\overline {a}\left( 1-\overline {e}^{2}\right) }\left( \dfrac {\sin ^{2}\overline {i}-\overline {e}\cos ^{2} \overline {i}}{\sin \overline {i}}\right)\]</div>
+<p>Assuming that e is negligible compared to J2, it can be shown that:</p>
+<div class="math notranslate nohighlight">
+\[\overline {e}\approx -\dfrac {J_{3}R_{E}}{2J_{2}\overline {a}}\sin \overline {i}\]</div>
+<p>The implementation is divided in the following cases:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p>When the user gives a negative altitude, the method will raise a ValueError</p></li>
+<li><p>When the attractor has not defined J2 or J3, the method will raise an AttributeError</p></li>
+<li><p>When the attractor has J2/J3 outside of range 1 to 10 , the method will raise an NotImplementedError. Special case for Venus.See “Extension of the critical inclination” by Xiaodong Liu, Hexi Baoyin, and Xingrui Ma</p></li>
+<li><p>If argp is not given or the given argp is a critical value:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if eccentricity is none and inclination is none, the inclination is set with a critical value and the eccentricity is obtained from the last formula mentioned</p></li>
+<li><p>if only eccentricity is none, we calculate this value with the last formula mentioned</p></li>
+<li><p>if only inclination is none ,we calculate this value with the formula for eccentricity with critical argp.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>If inc is not given or the given inc is critical:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>if the argp and the eccentricity is given we keep these values to create the orbit</p></li>
+<li><p>if the eccentricity is given we keep this value, if not, default to the eccentricity of the Moon’s orbit around the Earth</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>if it’s not possible to create an orbit with the the argp and the inclination given, both of them are set to the critical values and the eccentricity is calculate with the last formula</p></li>
+</ol>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p></li>
+<li><p><strong>alt</strong> (<em>Quantity</em>) – Altitude over surface.</p></li>
+<li><p><strong>inc</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Inclination, default to critical value.</p></li>
+<li><p><strong>argp</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Argument of the pericenter, default to critical value.</p></li>
+<li><p><strong>raan</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Right ascension of the ascending node, default to 0 deg.</p></li>
+<li><p><strong>arglat</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Argument of latitude, default to 0 deg.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity, default to the eccentricity of the Moon’s orbit around the Earth</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id8">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">heliosynchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id8" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a Sun-Synchronous orbit.</p>
+<p>These orbits make use of the J2
+perturbation to precess in order to be always towards Sun. At least
+two parameters of the set {a, ecc, inc} are needed in order to solve
+for these kind of orbits.</p>
+<p>Relationships among them are given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    a &amp;= \left (\frac{-3R_{\bigoplus}J_{2}\sqrt{\mu}\cos(i)}{2\dot{\Omega}(1-e^2)^2}  \right ) ^ {\frac{2}{7}}\\
+    e &amp;= \sqrt{1 - \sqrt{\frac{-3R_{\bigoplus}J_{2}\sqrt{\mu}cos(i)}{2a^{\frac{7}{2}}\dot{\Omega}}}}\\
+    i &amp;= \arccos{\left ( \frac{-2a^{\frac{7}{2}}\dot{\Omega}(1-e^2)^2}{3R_{\bigoplus}J_{2}\sqrt{\mu}} \right )}\\
+\end{align}\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<em>SolarSystemPlanet</em>) – Attractor.</p></li>
+<li><p><strong>a</strong> (<em>Quantity</em>) – Semi-major axis.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+<li><p><strong>inc</strong> (<em>Quantity</em>) – Inclination.</p></li>
+<li><p><strong>raan</strong> (<em>Quantity</em>) – Right ascension of the ascending node.</p></li>
+<li><p><strong>argp</strong> (<em>Quantity</em>) – Argument of the pericenter.</p></li>
+<li><p><strong>nu</strong> (<em>Quantity</em>) – True anomaly.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id9">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parabolic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id9" title="Link to this definition">¶</a></dt>
+<dd><p>Return a parabolic <cite>Orbit</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p></li>
+<li><p><strong>p</strong> (<em>Quantity</em>) – Semilatus rectum or parameter.</p></li>
+<li><p><strong>inc</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Inclination.</p></li>
+<li><p><strong>raan</strong> (<em>Quantity</em>) – Right ascension of the ascending node.</p></li>
+<li><p><strong>argp</strong> (<em>Quantity</em>) – Argument of the pericenter.</p></li>
+<li><p><strong>nu</strong> (<em>Quantity</em>) – True anomaly.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id10">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stationary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id10" title="Link to this definition">¶</a></dt>
+<dd><p>Return the stationary orbit for the given attractor and its rotational speed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New orbit.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="poliastro.core.orbit.html#poliastro.core.orbit.Orbit" title="poliastro.core.orbit.Orbit">Orbit</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id11">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">synchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period_mul=&lt;Quantity</span> <span class="pre">1.&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc=&lt;Quantity</span> <span class="pre">0.&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arglat=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan=&lt;Quantity</span> <span class="pre">0.</span> <span class="pre">deg&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epoch=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane=Planes.EARTH_EQUATOR</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id11" title="Link to this definition">¶</a></dt>
+<dd><p>Returns an orbit where the orbital period equals the rotation rate of the
+orbited body.  The synchronous altitude for any central body can directly be
+obtained from Kepler’s Third Law by setting the orbit period P<sub>sync</sub>,
+equal to the rotation period of the central body relative to the fixed stars D<sup>*</sup>. In order to obtain this, it’s important to match orbital period with
+sidereal rotation period.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<a class="reference internal" href="poliastro.worldview.solar_sys.bodies.html#poliastro.worldview.solar_sys.bodies.Body" title="poliastro.worldview.solar_sys.bodies.Body"><em>Body</em></a>) – Main attractor.</p></li>
+<li><p><strong>period_mul</strong> (<em>Quantity</em>) – Multiplier, default to 1 to indicate that the period of the body is
+equal to the sidereal rotational period of the body being orbited,
+0.5 a period equal to half the average rotational period of the body
+being orbited, indicates a semi-synchronous orbit.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity,default to 0 as a stationary orbit.</p></li>
+<li><p><strong>inc</strong> (<em>Quantity</em>) – Inclination,default to 0 deg.</p></li>
+<li><p><strong>raan</strong> (<em>Quantity</em>) – Right ascension of the ascending node,default to 0 deg.</p></li>
+<li><p><strong>argp</strong> (<em>Quantity</em>) – Argument of the pericenter,default to 0 deg.</p></li>
+<li><p><strong>arglat</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Argument of latitude, default to 0 deg.</p></li>
+<li><p><strong>epoch</strong> (<em>Time</em><em>, </em><em>optional</em>) – Epoch, default to J2000.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>New orbit.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="poliastro.core.orbit.html#poliastro.core.orbit.Orbit" title="poliastro.core.orbit.Orbit">Orbit</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the pericenter is smaller than the attractor’s radius.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>Thus:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}P_{s y n c}=D^{*} \\\end{split}\\\begin{split}a_{s y n c}=\left(\mu / 4 \pi^{2}\right)^{1 / 3}\left(D^{*}\right)^{2 / 3}\\\end{split}\\\begin{split}H_{s y n c}=a_{s y n c} - R_{p l a n e t}\\\end{split}\end{aligned}\end{align} \]</div>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core.orbit.creation</a><ul>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_vectors"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_coords"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_coords()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_classical"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_classical()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_equinoctial"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_equinoctial()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_ephem"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_ephem()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.from_sbdb"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_sbdb()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.circular"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.circular()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.stationary"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.stationary()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.synchronous"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.synchronous()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.heliosynchronous"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.heliosynchronous()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.parabolic"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.parabolic()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.frozen"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.frozen()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.orbit.creation.OrbitCreationMixin.None"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.None</span></code></a></li>
+<li><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.circular()</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_classical()</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_coords()</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_ephem()</span></code></a></li>
+<li><a class="reference internal" href="#id4"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_equinoctial()</span></code></a></li>
+<li><a class="reference internal" href="#id5"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_sbdb()</span></code></a></li>
+<li><a class="reference internal" href="#id6"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.from_vectors()</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.frozen()</span></code></a></li>
+<li><a class="reference internal" href="#id8"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.heliosynchronous()</span></code></a></li>
+<li><a class="reference internal" href="#id9"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.parabolic()</span></code></a></li>
+<li><a class="reference internal" href="#id10"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.stationary()</span></code></a></li>
+<li><a class="reference internal" href="#id11"><code class="docutils literal notranslate"><span class="pre">OrbitCreationMixin.synchronous()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.core.orbit.html"
+                          title="previous chapter">poliastro.core.orbit</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.core.orbit.scalar.html"
+                          title="next chapter">poliastro.core.orbit.scalar</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.orbit.creation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.orbit.scalar.html" title="poliastro.core.orbit.scalar"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.orbit.html" title="poliastro.core.orbit"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro.core.orbit.html" >poliastro.core.orbit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.orbit.creation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

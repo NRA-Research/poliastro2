@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro.core.events &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro.core.frames" href="poliastro.core.frames.html" />
+    <link rel="prev" title="poliastro.core.ephem" href="poliastro.core.ephem.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.frames.html" title="poliastro.core.frames"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.ephem.html" title="poliastro.core.ephem"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" accesskey="U">poliastro.core</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.events</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro.core.events">
+<span id="poliastro-core-events"></span><h1>poliastro.core.events<a class="headerlink" href="#module-poliastro.core.events" title="Link to this heading">¶</a></h1>
+<p class="rubric">Classes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.events.AltitudeCrossEvent" title="poliastro.core.events.AltitudeCrossEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">AltitudeCrossEvent</span></code></a>(alt, R[, terminal, direction])</p></td>
+<td><p>Detect if a satellite crosses a specific threshold altitude.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.events.EclipseEvent" title="poliastro.core.events.EclipseEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">EclipseEvent</span></code></a>(orbit[, terminal, direction])</p></td>
+<td><p>Base class for the eclipse event.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.events.Event" title="poliastro.core.events.Event"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Event</span></code></a>(terminal, direction)</p></td>
+<td><p>Base class for event functionalities.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.events.LatitudeCrossEvent" title="poliastro.core.events.LatitudeCrossEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LatitudeCrossEvent</span></code></a>(orbit, lat[, terminal, ...])</p></td>
+<td><p>Detect if a satellite crosses a specific threshold latitude.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.events.LithobrakeEvent" title="poliastro.core.events.LithobrakeEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LithobrakeEvent</span></code></a>(R[, terminal])</p></td>
+<td><p>Terminal event that detects impact with the attractor surface.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.events.LosEvent" title="poliastro.core.events.LosEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LosEvent</span></code></a>(attractor, pos_coords[, terminal, ...])</p></td>
+<td><p>Detect whether there exists a LOS between two satellites.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.events.NodeCrossEvent" title="poliastro.core.events.NodeCrossEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NodeCrossEvent</span></code></a>([terminal, direction])</p></td>
+<td><p>Detect equatorial node (ascending or descending) crossings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro.core.events.PenumbraEvent" title="poliastro.core.events.PenumbraEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PenumbraEvent</span></code></a>(orbit[, terminal, direction])</p></td>
+<td><p>Detect whether a satellite is in penumbra or not.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro.core.events.UmbraEvent" title="poliastro.core.events.UmbraEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">UmbraEvent</span></code></a>(orbit[, terminal, direction])</p></td>
+<td><p>Detect whether a satellite is in umbra or not.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.AltitudeCrossEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">AltitudeCrossEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.AltitudeCrossEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Detect if a satellite crosses a specific threshold altitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>alt</strong> (<em>float</em>) – Threshold altitude (km).</p></li>
+<li><p><strong>R</strong> (<em>float</em>) – Radius of the attractor (km).</p></li>
+<li><p><strong>terminal</strong> (<em>bool</em>) – Whether to terminate integration if this event occurs.</p></li>
+<li><p><strong>direction</strong> (<em>float</em>) – Handle triggering of event based on whether altitude is crossed from above
+or below, defaults to -1, i.e., event is triggered only if altitude is
+crossed from above (decreasing altitude).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.EclipseEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">EclipseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.EclipseEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Base class for the eclipse event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orbit</strong> (<em>poliastro.twobody.orbit.Orbit</em>) – Orbit of the satellite.</p></li>
+<li><p><strong>terminal</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to terminate integration when the event occurs, defaults to False.</p></li>
+<li><p><strong>direction</strong> (<em>float</em><em>, </em><em>optional</em>) – Specify which direction must the event trigger, defaults to 0.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.Event">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.Event" title="Link to this definition">¶</a></dt>
+<dd><p>Base class for event functionalities.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>terminal</strong> (<em>bool</em>) – Whether to terminate integration if this event occurs.</p></li>
+<li><p><strong>direction</strong> (<em>float</em>) – Handle triggering of event.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.events.Event.direction">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">direction</span></span><a class="headerlink" href="#poliastro.core.events.Event.direction" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.events.Event.last_t">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_t</span></span><a class="headerlink" href="#poliastro.core.events.Event.last_t" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="poliastro.core.events.Event.terminal">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">terminal</span></span><a class="headerlink" href="#poliastro.core.events.Event.terminal" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.LatitudeCrossEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">LatitudeCrossEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.LatitudeCrossEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Detect if a satellite crosses a specific threshold latitude.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orbit</strong> (<em>Orbit</em>) – Orbit.</p></li>
+<li><p><strong>lat</strong> (<em>astropy.quantity.Quantity</em>) – Threshold latitude.</p></li>
+<li><p><strong>terminal</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to terminate integration if this event occurs, defaults to True.</p></li>
+<li><p><strong>direction</strong> (<em>float</em><em>, </em><em>optional</em>) – Handle triggering of event based on whether latitude is crossed from above
+or below, defaults to 0, i.e., event is triggered while traversing from both directions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.LithobrakeEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">LithobrakeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.LithobrakeEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Terminal event that detects impact with the attractor surface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R</strong> (<em>float</em>) – Radius of the attractor (km).</p></li>
+<li><p><strong>terminal</strong> (<em>bool</em>) – Whether to terminate integration if this event occurs.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.LosEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">LosEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_coords</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.LosEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Detect whether there exists a LOS between two satellites.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<em>body</em>) – The central attractor with respect to which the position vectors of the satellites are defined.</p></li>
+<li><p><strong>pos_coords</strong> (<em>Quantity</em>) – A list of position coordinates for the secondary body. These coordinates
+can be found by propagating the body for a desired amount of time.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.NodeCrossEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">NodeCrossEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.NodeCrossEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Detect equatorial node (ascending or descending) crossings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>terminal</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to terminate integration when the event occurs, defaults to False.</p></li>
+<li><p><strong>direction</strong> (<em>float</em><em>, </em><em>optional</em>) – Handle triggering of event based on whether the node is crossed from above
+i.e. descending node, or is crossed from below i.e. ascending node, defaults to 0,
+i.e. event is triggered during both crossings.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.PenumbraEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">PenumbraEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.PenumbraEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Detect whether a satellite is in penumbra or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orbit</strong> (<em>poliastro.twobody.orbit.Orbit</em>) – Orbit of the satellite.</p></li>
+<li><p><strong>terminal</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to terminate integration when the event occurs, defaults to False.</p></li>
+<li><p><strong>direction</strong> (<em>float</em><em>, </em><em>optional</em>) – Handle triggering of event based on whether entry is into or out of
+penumbra, defaults to 0, i.e., event is triggered at both, entry and exit points.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro.core.events.UmbraEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro.core.events.</span></span><span class="sig-name descname"><span class="pre">UmbraEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orbit</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro.core.events.UmbraEvent" title="Link to this definition">¶</a></dt>
+<dd><p>Detect whether a satellite is in umbra or not.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orbit</strong> (<em>poliastro.twobody.orbit.Orbit</em>) – Orbit of the satellite.</p></li>
+<li><p><strong>terminal</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to terminate integration when the event occurs, defaults to False.</p></li>
+<li><p><strong>direction</strong> (<em>float</em><em>, </em><em>optional</em>) – Handle triggering of event based on whether entry is into or out of
+umbra, defaults to 0, i.e., event is triggered at both, entry and exit points.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro.core.events</a><ul>
+<li><a class="reference internal" href="#poliastro.core.events.AltitudeCrossEvent"><code class="docutils literal notranslate"><span class="pre">AltitudeCrossEvent</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.EclipseEvent"><code class="docutils literal notranslate"><span class="pre">EclipseEvent</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.Event"><code class="docutils literal notranslate"><span class="pre">Event</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro.core.events.Event.direction"><code class="docutils literal notranslate"><span class="pre">Event.direction</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.Event.last_t"><code class="docutils literal notranslate"><span class="pre">Event.last_t</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.Event.terminal"><code class="docutils literal notranslate"><span class="pre">Event.terminal</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro.core.events.LatitudeCrossEvent"><code class="docutils literal notranslate"><span class="pre">LatitudeCrossEvent</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.LithobrakeEvent"><code class="docutils literal notranslate"><span class="pre">LithobrakeEvent</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.LosEvent"><code class="docutils literal notranslate"><span class="pre">LosEvent</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.NodeCrossEvent"><code class="docutils literal notranslate"><span class="pre">NodeCrossEvent</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.PenumbraEvent"><code class="docutils literal notranslate"><span class="pre">PenumbraEvent</span></code></a></li>
+<li><a class="reference internal" href="#poliastro.core.events.UmbraEvent"><code class="docutils literal notranslate"><span class="pre">UmbraEvent</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro.core.ephem.html"
+                          title="previous chapter">poliastro.core.ephem</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro.core.frames.html"
+                          title="next chapter">poliastro.core.frames</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro.core.events.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.frames.html" title="poliastro.core.frames"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro.core.ephem.html" title="poliastro.core.ephem"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro.core.html" >poliastro.core</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro.core.events</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>
