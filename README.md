@@ -1,3 +1,4 @@
+![poliastro2 logo](docs/poliastro2_logo.png)
 This repository is a work in progress, so no production release just yet! 🚧 But don't worry – hit `Star` and join the adventure as we keep building it together! 🚀
 
 ## Installation of poliastro2
