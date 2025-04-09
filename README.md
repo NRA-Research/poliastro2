@@ -12,7 +12,7 @@ Currently, only github installation of the development repo is avaliable.
 Or setup the development repo via setup.py
 ```bash
 $ cd your-repo
-$ setup.py develop
+$ python setup.py develop
 ```
 
 ## poli122: Poliastro to Poliastro2 Migration Tool
