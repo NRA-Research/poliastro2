@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.math.iod.base_iod &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.math.iod.izzo" href="poliastro2.math.iod.izzo.html" />
+    <link rel="prev" title="poliastro2.math.iod" href="poliastro2.math.iod.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.iod.izzo.html" title="poliastro2.math.iod.izzo"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.iod.html" title="poliastro2.math.iod"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.iod.html" accesskey="U">poliastro2.math.iod</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.iod.base_iod</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.math.iod.base_iod">
+<span id="poliastro2-math-iod-base-iod"></span><h1>poliastro2.math.iod.base_iod<a class="headerlink" href="#module-poliastro2.math.iod.base_iod" title="Link to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.iod.base_iod.izzo" title="poliastro2.math.iod.base_iod.izzo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">izzo</span></code></a>(k, r1, r2, tof, M, prograde, lowpath, ...)</p></td>
+<td><p>Aplies izzo algorithm to solve Lambert's problem.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.iod.base_iod.vallado" title="poliastro2.math.iod.base_iod.vallado"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vallado</span></code></a>(k, r0, r, tof, M, prograde, lowpath, ...)</p></td>
+<td><p>Solves the Lambert's problem.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._compute_T_min">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_compute_T_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._compute_T_min" title="Link to this definition">¶</a></dt>
+<dd><p>Compute minimum T.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._compute_psi">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_compute_psi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._compute_psi" title="Link to this definition">¶</a></dt>
+<dd><p>Computes psi.</p>
+<p>“The auxiliary angle psi is computed using Eq.(17) by the
+appropriate inverse function”</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._compute_y">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_compute_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._compute_y" title="Link to this definition">¶</a></dt>
+<dd><p>Computes y.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._find_xy">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_find_xy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._find_xy" title="Link to this definition">¶</a></dt>
+<dd><p>Computes all x, y for given number of revolutions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._halley">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_halley</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._halley" title="Link to this definition">¶</a></dt>
+<dd><p>Find a minimum of time of flight equation using the Halley method.</p>
+<p class="rubric">Notes</p>
+<p>This function is private because it assumes a calling convention specific to
+this module and is not really reusable.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._householder">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_householder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._householder" title="Link to this definition">¶</a></dt>
+<dd><p>Find a zero of time of flight equation using the Householder method.</p>
+<p class="rubric">Notes</p>
+<p>This function is private because it assumes a calling convention specific to
+this module and is not really reusable.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._initial_guess">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_initial_guess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowpath</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._initial_guess" title="Link to this definition">¶</a></dt>
+<dd><p>Initial guess.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._reconstruct">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_reconstruct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._reconstruct" title="Link to this definition">¶</a></dt>
+<dd><p>Reconstruct solution velocity vectors.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._tof_equation">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_tof_equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._tof_equation" title="Link to this definition">¶</a></dt>
+<dd><p>Time of flight equation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._tof_equation_p">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_tof_equation_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._tof_equation_p" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._tof_equation_p2">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_tof_equation_p2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._tof_equation_p2" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._tof_equation_p3">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_tof_equation_p3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddT</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._tof_equation_p3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod._tof_equation_y">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">_tof_equation_y</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ll</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod._tof_equation_y" title="Link to this definition">¶</a></dt>
+<dd><p>Time of flight equation with externally computated y.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod.izzo">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">izzo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prograde</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod.izzo" title="Link to this definition">¶</a></dt>
+<dd><p>Aplies izzo algorithm to solve Lambert’s problem.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Gravitational Constant</p></li>
+<li><p><strong>r1</strong> (<em>numpy.ndarray</em>) – Initial position vector</p></li>
+<li><p><strong>r2</strong> (<em>numpy.ndarray</em>) – Final position vector</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight between both positions</p></li>
+<li><p><strong>M</strong> (<em>int</em>) – Number of revolutions</p></li>
+<li><p><strong>prograde</strong> (<em>boolean</em>) – Controls the desired inclination of the transfer orbit.</p></li>
+<li><p><strong>lowpath</strong> (<em>boolean</em>) – If <cite>True</cite> or <cite>False</cite>, gets the transfer orbit whose vacant focus is
+below or above the chord line, respectively.</p></li>
+<li><p><strong>numiter</strong> (<em>int</em>) – Number of iterations</p></li>
+<li><p><strong>rtol</strong> (<em>float</em>) – Error tolerance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>v1</strong> (<em>numpy.ndarray</em>) – Initial velocity vector</p></li>
+<li><p><strong>v2</strong> (<em>numpy.ndarray</em>) – Final velocity vector</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.iod.base_iod.vallado">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.iod.base_iod.</span></span><span class="sig-name descname"><span class="pre">vallado</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prograde</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowpath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numiter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.iod.base_iod.vallado" title="Link to this definition">¶</a></dt>
+<dd><p>Solves the Lambert’s problem.</p>
+<p>The algorithm returns the initial velocity vector and the final one, these are
+computed by the following expresions:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v_{o}} &amp;= \frac{1}{g}(\vec{r} - f\vec{r_{0}}) \\
+\vec{v} &amp;= \frac{1}{g}(\dot{g}\vec{r} - \vec{r_{0}})\end{split}\]</div>
+<p>Therefore, the lagrange coefficients need to be computed. For the case of
+Lamber’s problem, they can be expressed by terms of the initial and final vector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    f = 1 -\frac{y}{r_{o}} \\
+    g = A\sqrt{\frac{y}{\mu}} \\
+    \dot{g} = 1 - \frac{y}{r} \\
+\end{align}\end{split}\]</div>
+<p>Where y(z) is a function that depends on the <code class="xref py py-mod docutils literal notranslate"><span class="pre">poliastro.core.stumpff</span></code> coefficients:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}y = r_{o} + r + A\frac{zS(z)-1}{\sqrt{C(z)}} \\
+A = \sin{(\Delta \nu)}\sqrt{\frac{rr_{o}}{1 - \cos{(\Delta \nu)}}}\end{split}\]</div>
+<p>The value of z to evaluate the stump functions is solved by applying a Numerical method to
+the following equation:</p>
+<div class="math notranslate nohighlight">
+\[z_{i+1} = z_{i} - \frac{F(z_{i})}{F{}'(z_{i})}\]</div>
+<p>Function F(z)  to the expression:</p>
+<div class="math notranslate nohighlight">
+\[F(z) = \left [\frac{y(z)}{C(z)}  \right ]^{\frac{3}{2}}S(z) + A\sqrt{y(z)} - \sqrt{\mu}\Delta t\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Gravitational Parameter</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Initial position vector</p></li>
+<li><p><strong>r</strong> (<em>numpy.ndarray</em>) – Final position vector</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight</p></li>
+<li><p><strong>M</strong> (<em>int</em>) – Number of revolutions</p></li>
+<li><p><strong>prograde</strong> (<em>boolean</em>) – Controls the desired inclination of the transfer orbit.</p></li>
+<li><p><strong>lowpath</strong> (<em>boolean</em>) – If <cite>True</cite> or <cite>False</cite>, gets the transfer orbit whose vacant focus is
+below or above the chord line, respectively.</p></li>
+<li><p><strong>numiter</strong> (<em>int</em>) – Number of iterations to</p></li>
+<li><p><strong>rtol</strong> (<em>int</em>) – Number of revolutions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Initial velocity vector</p></li>
+<li><p><strong>v</strong> (<em>numpy.ndarray</em>) – Final velocity vector</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">poliastro.core.iod</span><span class="w"> </span><span class="kn">import</span> <span class="n">vallado</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">poliastro.bodies</span><span class="w"> </span><span class="kn">import</span> <span class="n">Earth</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="n">Earth</span><span class="o">.</span><span class="n">k</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">,</span> <span class="mi">2100</span><span class="p">])</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="c1"># Initial position vector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mi">14600</span><span class="p">,</span> <span class="mi">2500</span><span class="p">,</span> <span class="mi">7000</span><span class="p">])</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="c1"># Final position vector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tof</span> <span class="o">=</span> <span class="mi">3600</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span> <span class="c1"># Time of flight</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span> <span class="o">=</span> <span class="n">vallado</span><span class="p">(</span><span class="n">k</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">r1</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">r2</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">tof</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">M</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">prograde</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">lowpath</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">numiter</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v1</span> <span class="o">=</span> <span class="n">v1</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v2</span> <span class="o">=</span> <span class="n">v2</span> <span class="o">*</span> <span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="p">,</span> <span class="n">v2</span><span class="p">)</span>
+<span class="go">[-5.99249503  1.92536671  3.24563805] km / s [-3.31245851 -4.19661901 -0.38528906] km / s</span>
+</pre></div>
+</div>
+<p class="rubric">Notes</p>
+<p>This procedure can be found in section 5.3 of Curtis, with all the
+theoretical description of the problem. Analytical example can be found
+in the same book under name Example 5.2.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.math.iod.base_iod</a><ul>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._compute_T_min"><code class="docutils literal notranslate"><span class="pre">_compute_T_min()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._compute_psi"><code class="docutils literal notranslate"><span class="pre">_compute_psi()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._compute_y"><code class="docutils literal notranslate"><span class="pre">_compute_y()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._find_xy"><code class="docutils literal notranslate"><span class="pre">_find_xy()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._halley"><code class="docutils literal notranslate"><span class="pre">_halley()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._householder"><code class="docutils literal notranslate"><span class="pre">_householder()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._initial_guess"><code class="docutils literal notranslate"><span class="pre">_initial_guess()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._reconstruct"><code class="docutils literal notranslate"><span class="pre">_reconstruct()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._tof_equation"><code class="docutils literal notranslate"><span class="pre">_tof_equation()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._tof_equation_p"><code class="docutils literal notranslate"><span class="pre">_tof_equation_p()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._tof_equation_p2"><code class="docutils literal notranslate"><span class="pre">_tof_equation_p2()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._tof_equation_p3"><code class="docutils literal notranslate"><span class="pre">_tof_equation_p3()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod._tof_equation_y"><code class="docutils literal notranslate"><span class="pre">_tof_equation_y()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod.izzo"><code class="docutils literal notranslate"><span class="pre">izzo()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.iod.base_iod.vallado"><code class="docutils literal notranslate"><span class="pre">vallado()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.math.iod.html"
+                          title="previous chapter">poliastro2.math.iod</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.math.iod.izzo.html"
+                          title="next chapter">poliastro2.math.iod.izzo</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.math.iod.base_iod.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.iod.izzo.html" title="poliastro2.math.iod.izzo"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.iod.html" title="poliastro2.math.iod"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.iod.html" >poliastro2.math.iod</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.iod.base_iod</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

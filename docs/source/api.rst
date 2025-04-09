@@ -5,10 +5,10 @@ API
    :recursive:
    :toctree: generated/
 
-      poliastro.core
-      poliastro.math
-      poliastro.plotting
-      poliastro.sensor
-      poliastro.worldview
-      poliastro.czml
+      poliastro2.core
+      poliastro2.math
+      poliastro2.plotting
+      poliastro2.sensor
+      poliastro2.worldview
+      poliastro2.czml
    

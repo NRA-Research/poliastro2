@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.math.ode.ivp &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.math.optimize" href="poliastro2.math.optimize.html" />
+    <link rel="prev" title="poliastro2.math.ode.integrate" href="poliastro2.math.ode.integrate.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.optimize.html" title="poliastro2.math.optimize"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.ode.integrate.html" title="poliastro2.math.ode.integrate"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.ode.html" accesskey="U">poliastro2.math.ode</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.ode.ivp</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.math.ode.ivp">
+<span id="poliastro2-math-ode-ivp"></span><h1>poliastro2.math.ode.ivp<a class="headerlink" href="#module-poliastro2.math.ode.ivp" title="Link to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">poliastro2.math.ode.ivp.</span></span><span class="sig-name descname"><span class="pre">DOP853</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_bound</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">atol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">extraneous</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853" title="Link to this definition">¶</a></dt>
+<dd><p>Explicit Runge-Kutta method of order 8.</p>
+<p>This is a Python implementation of “DOP853” algorithm originally written
+in Fortran <a href="#id34"><span class="problematic" id="id1">[1]_</span></a>, <a href="#id35"><span class="problematic" id="id2">[2]_</span></a>. Note that this is not a literate translation, but
+the algorithmic core and coefficients are the same.</p>
+<p>Can be applied in the complex domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fun</strong> (<em>callable</em>) – Right-hand side of the system. The calling signature is <code class="docutils literal notranslate"><span class="pre">fun(t,</span> <span class="pre">y)</span></code>.
+Here, <code class="docutils literal notranslate"><span class="pre">t</span></code> is a scalar, and there are two options for the ndarray <code class="docutils literal notranslate"><span class="pre">y</span></code>:
+It can either have shape (n,); then <code class="docutils literal notranslate"><span class="pre">fun</span></code> must return array_like with
+shape (n,). Alternatively it can have shape (n, k); then <code class="docutils literal notranslate"><span class="pre">fun</span></code>
+must return an array_like with shape (n, k), i.e. each column
+corresponds to a single column in <code class="docutils literal notranslate"><span class="pre">y</span></code>. The choice between the two
+options is determined by <cite>vectorized</cite> argument (see below).</p></li>
+<li><p><strong>t0</strong> (<em>float</em>) – Initial time.</p></li>
+<li><p><strong>y0</strong> (<em>array_like</em><em>, </em><em>shape</em><em> (</em><em>n</em><em>,</em><em>)</em>) – Initial state.</p></li>
+<li><p><strong>t_bound</strong> (<em>float</em>) – Boundary time - the integration won’t continue beyond it. It also
+determines the direction of the integration.</p></li>
+<li><p><strong>first_step</strong> (<em>float</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Initial step size. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code> which means that the algorithm
+should choose.</p></li>
+<li><p><strong>max_step</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum allowed step size. Default is np.inf, i.e. the step size is not
+bounded and determined solely by the solver.</p></li>
+<li><p><strong>rtol</strong> (<em>float and array_like</em><em>, </em><em>optional</em>) – Relative and absolute tolerances. The solver keeps the local error
+estimates less than <code class="docutils literal notranslate"><span class="pre">atol</span> <span class="pre">+</span> <span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code>. Here <cite>rtol</cite> controls a
+relative accuracy (number of correct digits), while <cite>atol</cite> controls
+absolute accuracy (number of correct decimal places). To achieve the
+desired <cite>rtol</cite>, set <cite>atol</cite> to be smaller than the smallest value that
+can be expected from <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> so that <cite>rtol</cite> dominates the
+allowable error. If <cite>atol</cite> is larger than <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> the
+number of correct digits is not guaranteed. Conversely, to achieve the
+desired <cite>atol</cite> set <cite>rtol</cite> such that <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> is always smaller
+than <cite>atol</cite>. If components of y have different scales, it might be
+beneficial to set different <cite>atol</cite> values for different components by
+passing array_like with shape (n,) for <cite>atol</cite>. Default values are
+1e-3 for <cite>rtol</cite> and 1e-6 for <cite>atol</cite>.</p></li>
+<li><p><strong>atol</strong> (<em>float and array_like</em><em>, </em><em>optional</em>) – Relative and absolute tolerances. The solver keeps the local error
+estimates less than <code class="docutils literal notranslate"><span class="pre">atol</span> <span class="pre">+</span> <span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code>. Here <cite>rtol</cite> controls a
+relative accuracy (number of correct digits), while <cite>atol</cite> controls
+absolute accuracy (number of correct decimal places). To achieve the
+desired <cite>rtol</cite>, set <cite>atol</cite> to be smaller than the smallest value that
+can be expected from <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> so that <cite>rtol</cite> dominates the
+allowable error. If <cite>atol</cite> is larger than <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> the
+number of correct digits is not guaranteed. Conversely, to achieve the
+desired <cite>atol</cite> set <cite>rtol</cite> such that <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> is always smaller
+than <cite>atol</cite>. If components of y have different scales, it might be
+beneficial to set different <cite>atol</cite> values for different components by
+passing array_like with shape (n,) for <cite>atol</cite>. Default values are
+1e-3 for <cite>rtol</cite> and 1e-6 for <cite>atol</cite>.</p></li>
+<li><p><strong>vectorized</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether <cite>fun</cite> is implemented in a vectorized fashion. Default is False.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.n">
+<span class="sig-name descname"><span class="pre">n</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.n" title="Link to this definition">¶</a></dt>
+<dd><p>Number of equations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.status" title="Link to this definition">¶</a></dt>
+<dd><p>Current status of the solver: ‘running’, ‘finished’ or ‘failed’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.t_bound">
+<span class="sig-name descname"><span class="pre">t_bound</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.t_bound" title="Link to this definition">¶</a></dt>
+<dd><p>Boundary time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.direction">
+<span class="sig-name descname"><span class="pre">direction</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.direction" title="Link to this definition">¶</a></dt>
+<dd><p>Integration direction: +1 or -1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.t">
+<span class="sig-name descname"><span class="pre">t</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.t" title="Link to this definition">¶</a></dt>
+<dd><p>Current time.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.y">
+<span class="sig-name descname"><span class="pre">y</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.y" title="Link to this definition">¶</a></dt>
+<dd><p>Current state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.t_old">
+<span class="sig-name descname"><span class="pre">t_old</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.t_old" title="Link to this definition">¶</a></dt>
+<dd><p>Previous time. None if no steps were made yet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.step_size">
+<span class="sig-name descname"><span class="pre">step_size</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.step_size" title="Link to this definition">¶</a></dt>
+<dd><p>Size of the last successful step. None if no steps were made yet.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.nfev">
+<span class="sig-name descname"><span class="pre">nfev</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.nfev" title="Link to this definition">¶</a></dt>
+<dd><p>Number evaluations of the system’s right-hand side.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.njev">
+<span class="sig-name descname"><span class="pre">njev</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.njev" title="Link to this definition">¶</a></dt>
+<dd><p>Number of evaluations of the Jacobian. Is always 0 for this solver
+as it does not use the Jacobian.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.nlu">
+<span class="sig-name descname"><span class="pre">nlu</span></span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.nlu" title="Link to this definition">¶</a></dt>
+<dd><p>Number of LU decompositions. Is always 0 for this solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>E. Hairer, S. P. Norsett G. Wanner, “Solving Ordinary Differential
+Equations I: Nonstiff Problems”, Sec. II.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://www.unige.ch/~hairer/software.html">Page with original Fortran code of DOP853</a>.</p>
+</aside>
+</aside>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.A">
+<span class="sig-name descname"><span class="pre">A</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([[</span> <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">5.26001520e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">1.97250570e-02,</span>&#160; <span class="pre">5.91751710e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">2.95875855e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">8.87627564e-02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">2.41365134e-01,</span>&#160; <span class="pre">0.00000000e+00,</span> <span class="pre">-8.84549479e-01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">9.24834003e-01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">3.70370370e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.70828609e-01,</span>&#160; <span class="pre">1.25467688e-01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">3.71093750e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.70252211e-01,</span>&#160; <span class="pre">6.02165390e-02,</span> <span class="pre">-1.75781250e-02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">3.70920001e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.70383926e-01,</span>&#160; <span class="pre">1.07262030e-01,</span> <span class="pre">-1.53194377e-02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">8.27378916e-03,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">6.24110959e-01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-3.36089263e+00,</span> <span class="pre">-8.68219347e-01,</span>&#160; <span class="pre">2.75920997e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">2.01540676e+01,</span> <span class="pre">-4.34898842e+01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">4.77662536e-01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-2.48811462e+00,</span> <span class="pre">-5.90290827e-01,</span>&#160; <span class="pre">2.12300514e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.52792336e+01,</span> <span class="pre">-3.32882110e+01,</span> <span class="pre">-2.03312017e-02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[-9.37142430e-01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">5.18637243e+00,</span>&#160; <span class="pre">1.09143735e+00,</span> <span class="pre">-8.14978701e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-1.85200657e+01,</span>&#160; <span class="pre">2.27394871e+01,</span>&#160; <span class="pre">2.49360555e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-3.04676447e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">2.27331015e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-1.05344955e+01,</span> <span class="pre">-2.00087206e+00,</span> <span class="pre">-1.79589319e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">2.79488845e+01,</span> <span class="pre">-2.85899828e+00,</span> <span class="pre">-8.87285693e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.23605672e+01,</span>&#160; <span class="pre">6.43392746e-01,</span>&#160; <span class="pre">0.00000000e+00]])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.A" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.A_EXTRA">
+<span class="sig-name descname"><span class="pre">A_EXTRA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([[</span> <span class="pre">5.61675023e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">2.53500210e-01,</span> <span class="pre">-2.46239037e-01,</span> <span class="pre">-1.24191423e-01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.53291798e-01,</span>&#160; <span class="pre">8.20105230e-03,</span>&#160; <span class="pre">7.56789766e-03,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-8.29800000e-03,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">3.18346482e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">2.83009097e-02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">5.35419883e-02,</span> <span class="pre">-5.49237486e-02,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span> <span class="pre">-1.08347329e-04,</span>&#160; <span class="pre">3.82571091e-04,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-3.40465009e-04,</span>&#160; <span class="pre">1.41312444e-01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[-4.28896302e-01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span> <span class="pre">-4.69762142e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">7.68342120e+00,</span>&#160; <span class="pre">4.06898982e+00,</span>&#160; <span class="pre">3.56727187e-01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-1.39902417e-03,</span>&#160; <span class="pre">2.94751479e+00,</span> <span class="pre">-9.15095847e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00]])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.A_EXTRA" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.B">
+<span class="sig-name descname"><span class="pre">B</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([</span> <span class="pre">0.05429373,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">4.45031289,</span>&#160; <span class="pre">1.8915179</span> <span class="pre">,</span> <span class="pre">-5.80120396,</span>&#160; <span class="pre">0.31116437,</span> <span class="pre">-0.15216095,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.2013654</span> <span class="pre">,</span>&#160; <span class="pre">0.04471062])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.B" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.C">
+<span class="sig-name descname"><span class="pre">C</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span> <span class="pre">0.05260015,</span> <span class="pre">0.07890023,</span> <span class="pre">0.11835034,</span> <span class="pre">0.28164966,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.33333333,</span> <span class="pre">0.25</span>&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span> <span class="pre">0.30769231,</span> <span class="pre">0.65128205,</span> <span class="pre">0.6</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.85714286,</span> <span class="pre">1.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.C" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.C_EXTRA">
+<span class="sig-name descname"><span class="pre">C_EXTRA</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([0.1</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span> <span class="pre">0.2</span>&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span> <span class="pre">0.77777778])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.C_EXTRA" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.D">
+<span class="sig-name descname"><span class="pre">D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([[-8.42893828e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">5.66714954e-01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-3.06894995e+00,</span>&#160; <span class="pre">2.38466766e+00,</span>&#160; <span class="pre">2.11703458e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-8.71391584e-01,</span>&#160; <span class="pre">2.24043743e+00,</span>&#160; <span class="pre">6.31578779e-01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-8.89903365e-02,</span>&#160; <span class="pre">1.81485055e+01,</span> <span class="pre">-9.19463239e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-4.43603639e+00],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">1.04275086e+01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">2.42283492e+02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.65200452e+02,</span> <span class="pre">-3.74546755e+02,</span> <span class="pre">-2.21136669e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">7.73343267e+00,</span> <span class="pre">-3.06740847e+01,</span> <span class="pre">-9.33213053e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.56972381e+01,</span> <span class="pre">-3.11394032e+01,</span> <span class="pre">-9.35292436e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">3.58168415e+01],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[</span> <span class="pre">1.99850532e+01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span> <span class="pre">-3.87037309e+02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-1.89178138e+02,</span>&#160; <span class="pre">5.27808159e+02,</span> <span class="pre">-1.15739025e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">6.88123269e+00,</span> <span class="pre">-1.00060510e+00,</span>&#160; <span class="pre">7.77713780e-01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-2.77820575e+00,</span> <span class="pre">-6.01966952e+01,</span>&#160; <span class="pre">8.43204055e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">1.19922911e+01],</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">[-2.56939335e+01,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.00000000e+00,</span>&#160; <span class="pre">0.00000000e+00,</span> <span class="pre">-1.54189749e+02,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-2.31529379e+02,</span>&#160; <span class="pre">3.57639118e+02,</span>&#160; <span class="pre">9.34053242e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-3.74583231e+01,</span>&#160; <span class="pre">1.04099650e+02,</span>&#160; <span class="pre">2.98402934e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-4.35334566e+01,</span>&#160; <span class="pre">9.63245540e+01,</span> <span class="pre">-3.91772617e+01,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-1.49726836e+02]])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.D" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.E3">
+<span class="sig-name descname"><span class="pre">E3</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([-0.18980075,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">4.45031289,</span>&#160; <span class="pre">1.8915179</span> <span class="pre">,</span> <span class="pre">-5.80120396,</span> <span class="pre">-0.42268232,</span> <span class="pre">-0.15216095,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.2013654</span> <span class="pre">,</span>&#160; <span class="pre">0.02265179,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.E3" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.E5">
+<span class="sig-name descname"><span class="pre">E5</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">array([</span> <span class="pre">0.01312004,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">-1.22515645,</span> <span class="pre">-0.49575895,</span>&#160; <span class="pre">1.66437718,</span> <span class="pre">-0.35032885,</span>&#160; <span class="pre">0.33417912,</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">0.08192321,</span> <span class="pre">-0.02235531,</span>&#160; <span class="pre">0.</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">])</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.E5" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853._dense_output_impl">
+<span class="sig-name descname"><span class="pre">_dense_output_impl</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853._dense_output_impl" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853._estimate_error">
+<span class="sig-name descname"><span class="pre">_estimate_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853._estimate_error" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853._estimate_error_norm">
+<span class="sig-name descname"><span class="pre">_estimate_error_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">K</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853._estimate_error_norm" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.error_estimator_order">
+<span class="sig-name descname"><span class="pre">error_estimator_order</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">7</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.error_estimator_order" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.n_stages">
+<span class="sig-name descname"><span class="pre">n_stages</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">12</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.n_stages" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.DOP853.order">
+<span class="sig-name descname"><span class="pre">order</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">8</span></em><a class="headerlink" href="#poliastro2.math.ode.ivp.DOP853.order" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.ode.ivp.solve_ivp">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.ode.ivp.</span></span><span class="sig-name descname"><span class="pre">solve_ivp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_span</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RK45'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">t_eval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dense_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">events</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vectorized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.ode.ivp.solve_ivp" title="Link to this definition">¶</a></dt>
+<dd><p>Solve an initial value problem for a system of ODEs.</p>
+<p>This function numerically integrates a system of ordinary differential
+equations given an initial value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dy</span> <span class="o">/</span> <span class="n">dt</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">y</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span> <span class="o">=</span> <span class="n">y0</span>
+</pre></div>
+</div>
+<p>Here t is a 1-D independent variable (time), y(t) is an
+N-D vector-valued function (state), and an N-D
+vector-valued function f(t, y) determines the differential equations.
+The goal is to find y(t) approximately satisfying the differential
+equations, given an initial value y(t0)=y0.</p>
+<p>Some of the solvers support integration in the complex domain, but note
+that for stiff ODE solvers, the right-hand side must be
+complex-differentiable (satisfy Cauchy-Riemann equations <a class="footnote-reference brackets" href="#id28" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>).
+To solve a problem in the complex domain, pass y0 with a complex data type.
+Another option always available is to rewrite your problem for real and
+imaginary parts separately.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fun</strong> (<em>callable</em>) – Right-hand side of the system: the time derivative of the state <code class="docutils literal notranslate"><span class="pre">y</span></code>
+at time <code class="docutils literal notranslate"><span class="pre">t</span></code>. The calling signature is <code class="docutils literal notranslate"><span class="pre">fun(t,</span> <span class="pre">y)</span></code>, where <code class="docutils literal notranslate"><span class="pre">t</span></code> is a
+scalar and <code class="docutils literal notranslate"><span class="pre">y</span></code> is an ndarray with <code class="docutils literal notranslate"><span class="pre">len(y)</span> <span class="pre">=</span> <span class="pre">len(y0)</span></code>. <code class="docutils literal notranslate"><span class="pre">fun</span></code> must
+return an array of the same shape as <code class="docutils literal notranslate"><span class="pre">y</span></code>. See <cite>vectorized</cite> for more
+information.</p></li>
+<li><p><strong>t_span</strong> (<em>2-member sequence</em>) – Interval of integration (t0, tf). The solver starts with t=t0 and
+integrates until it reaches t=tf. Both t0 and tf must be floats
+or values interpretable by the float conversion function.</p></li>
+<li><p><strong>y0</strong> (<em>array_like</em><em>, </em><em>shape</em><em> (</em><em>n</em><em>,</em><em>)</em>) – Initial state. For problems in the complex domain, pass <cite>y0</cite> with a
+complex data type (even if the initial value is purely real).</p></li>
+<li><p><strong>method</strong> (string or <cite>OdeSolver</cite>, optional) – <p>Integration method to use:</p>
+<blockquote>
+<div><ul>
+<li><p>’RK45’ (default): Explicit Runge-Kutta method of order 5(4) <a href="#id36"><span class="problematic" id="id6">[1]_</span></a>.
+The error is controlled assuming accuracy of the fourth-order
+method, but steps are taken using the fifth-order accurate
+formula (local extrapolation is done). A quartic interpolation
+polynomial is used for the dense output <a href="#id37"><span class="problematic" id="id7">[2]_</span></a>. Can be applied in
+the complex domain.</p></li>
+<li><p>’RK23’: Explicit Runge-Kutta method of order 3(2) <a class="footnote-reference brackets" href="#id20" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. The error
+is controlled assuming accuracy of the second-order method, but
+steps are taken using the third-order accurate formula (local
+extrapolation is done). A cubic Hermite polynomial is used for the
+dense output. Can be applied in the complex domain.</p></li>
+<li><p>’DOP853’: Explicit Runge-Kutta method of order 8 <a class="footnote-reference brackets" href="#id30" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.
+Python implementation of the “DOP853” algorithm originally
+written in Fortran <a class="footnote-reference brackets" href="#id31" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>. A 7-th order interpolation polynomial
+accurate to 7-th order is used for the dense output.
+Can be applied in the complex domain.</p></li>
+<li><p>’Radau’: Implicit Runge-Kutta method of the Radau IIA family of
+order 5 <a class="footnote-reference brackets" href="#id21" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>. The error is controlled with a third-order accurate
+embedded formula. A cubic polynomial which satisfies the
+collocation conditions is used for the dense output.</p></li>
+<li><p>’BDF’: Implicit multi-step variable-order (1 to 5) method based
+on a backward differentiation formula for the derivative
+approximation <a class="footnote-reference brackets" href="#id22" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. The implementation follows the one described
+in <a class="footnote-reference brackets" href="#id23" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. A quasi-constant step scheme is used and accuracy is
+enhanced using the NDF modification. Can be applied in the
+complex domain.</p></li>
+<li><p>’LSODA’: Adams/BDF method with automatic stiffness detection and
+switching <a class="footnote-reference brackets" href="#id24" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>, <a class="footnote-reference brackets" href="#id25" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>. This is a wrapper of the Fortran solver
+from ODEPACK.</p></li>
+</ul>
+</div></blockquote>
+<p>Explicit Runge-Kutta methods (‘RK23’, ‘RK45’, ‘DOP853’) should be used
+for non-stiff problems and implicit methods (‘Radau’, ‘BDF’) for
+stiff problems <a class="footnote-reference brackets" href="#id26" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>. Among Runge-Kutta methods, ‘DOP853’ is recommended
+for solving with high precision (low values of <cite>rtol</cite> and <cite>atol</cite>).</p>
+<p>If not sure, first try to run ‘RK45’. If it makes unusually many
+iterations, diverges, or fails, your problem is likely to be stiff and
+you should use ‘Radau’ or ‘BDF’. ‘LSODA’ can also be a good universal
+choice, but it might be somewhat less convenient to work with as it
+wraps old Fortran code.</p>
+<p>You can also pass an arbitrary class derived from <cite>OdeSolver</cite> which
+implements the solver.</p>
+</p></li>
+<li><p><strong>t_eval</strong> (<em>array_like</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Times at which to store the computed solution, must be sorted and lie
+within <cite>t_span</cite>. If None (default), use points selected by the solver.</p></li>
+<li><p><strong>dense_output</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to compute a continuous solution. Default is False.</p></li>
+<li><p><strong>events</strong> (<em>callable</em><em>, or </em><em>list</em><em> of </em><em>callables</em><em>, </em><em>optional</em>) – <p>Events to track. If None (default), no events will be tracked.
+Each event occurs at the zeros of a continuous function of time and
+state. Each function must have the signature <code class="docutils literal notranslate"><span class="pre">event(t,</span> <span class="pre">y)</span></code> and return
+a float. The solver will find an accurate value of <cite>t</cite> at which
+<code class="docutils literal notranslate"><span class="pre">event(t,</span> <span class="pre">y(t))</span> <span class="pre">=</span> <span class="pre">0</span></code> using a root-finding algorithm. By default, all
+zeros will be found. The solver looks for a sign change over each step,
+so if multiple zero crossings occur within one step, events may be
+missed. Additionally each <cite>event</cite> function might have the following
+attributes:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>terminal: bool, optional</dt><dd><p>Whether to terminate integration if this event occurs.
+Implicitly False if not assigned.</p>
+</dd>
+<dt>direction: float, optional</dt><dd><p>Direction of a zero crossing. If <cite>direction</cite> is positive,
+<cite>event</cite> will only trigger when going from negative to positive,
+and vice versa if <cite>direction</cite> is negative. If 0, then either
+direction will trigger event. Implicitly 0 if not assigned.</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>You can assign attributes like <code class="docutils literal notranslate"><span class="pre">event.terminal</span> <span class="pre">=</span> <span class="pre">True</span></code> to any
+function in Python.</p>
+</p></li>
+<li><p><strong>vectorized</strong> (<em>bool</em><em>, </em><em>optional</em>) – <p>Whether <cite>fun</cite> can be called in a vectorized fashion. Default is False.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">vectorized</span></code> is False, <cite>fun</cite> will always be called with <code class="docutils literal notranslate"><span class="pre">y</span></code> of
+shape <code class="docutils literal notranslate"><span class="pre">(n,)</span></code>, where <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">len(y0)</span></code>.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">vectorized</span></code> is True, <cite>fun</cite> may be called with <code class="docutils literal notranslate"><span class="pre">y</span></code> of shape
+<code class="docutils literal notranslate"><span class="pre">(n,</span> <span class="pre">k)</span></code>, where <code class="docutils literal notranslate"><span class="pre">k</span></code> is an integer. In this case, <cite>fun</cite> must behave
+such that <code class="docutils literal notranslate"><span class="pre">fun(t,</span> <span class="pre">y)[:,</span> <span class="pre">i]</span> <span class="pre">==</span> <span class="pre">fun(t,</span> <span class="pre">y[:,</span> <span class="pre">i])</span></code> (i.e. each column of
+the returned array is the time derivative of the state corresponding
+with a column of <code class="docutils literal notranslate"><span class="pre">y</span></code>).</p>
+<p>Setting <code class="docutils literal notranslate"><span class="pre">vectorized=True</span></code> allows for faster finite difference
+approximation of the Jacobian by methods ‘Radau’ and ‘BDF’, but
+will result in slower execution for other methods and for ‘Radau’ and
+‘BDF’ in some circumstances (e.g. small <code class="docutils literal notranslate"><span class="pre">len(y0)</span></code>).</p>
+</p></li>
+<li><p><strong>args</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Additional arguments to pass to the user-defined functions.  If given,
+the additional arguments are passed to all user-defined functions.
+So if, for example, <cite>fun</cite> has the signature <code class="docutils literal notranslate"><span class="pre">fun(t,</span> <span class="pre">y,</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c)</span></code>,
+then <cite>jac</cite> (if given) and any event functions must have the same
+signature, and <cite>args</cite> must be a tuple of length 3.</p></li>
+<li><p><strong>**options</strong> – Options passed to a chosen solver. All options available for already
+implemented solvers are listed below.</p></li>
+<li><p><strong>first_step</strong> (<em>float</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Initial step size. Default is <cite>None</cite> which means that the algorithm
+should choose.</p></li>
+<li><p><strong>max_step</strong> (<em>float</em><em>, </em><em>optional</em>) – Maximum allowed step size. Default is np.inf, i.e., the step size is not
+bounded and determined solely by the solver.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em><em> or </em><em>array_like</em><em>, </em><em>optional</em>) – Relative and absolute tolerances. The solver keeps the local error
+estimates less than <code class="docutils literal notranslate"><span class="pre">atol</span> <span class="pre">+</span> <span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code>. Here <cite>rtol</cite> controls a
+relative accuracy (number of correct digits), while <cite>atol</cite> controls
+absolute accuracy (number of correct decimal places). To achieve the
+desired <cite>rtol</cite>, set <cite>atol</cite> to be smaller than the smallest value that
+can be expected from <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> so that <cite>rtol</cite> dominates the
+allowable error. If <cite>atol</cite> is larger than <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> the
+number of correct digits is not guaranteed. Conversely, to achieve the
+desired <cite>atol</cite> set <cite>rtol</cite> such that <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> is always smaller
+than <cite>atol</cite>. If components of y have different scales, it might be
+beneficial to set different <cite>atol</cite> values for different components by
+passing array_like with shape (n,) for <cite>atol</cite>. Default values are
+1e-3 for <cite>rtol</cite> and 1e-6 for <cite>atol</cite>.</p></li>
+<li><p><strong>atol</strong> (<em>float</em><em> or </em><em>array_like</em><em>, </em><em>optional</em>) – Relative and absolute tolerances. The solver keeps the local error
+estimates less than <code class="docutils literal notranslate"><span class="pre">atol</span> <span class="pre">+</span> <span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code>. Here <cite>rtol</cite> controls a
+relative accuracy (number of correct digits), while <cite>atol</cite> controls
+absolute accuracy (number of correct decimal places). To achieve the
+desired <cite>rtol</cite>, set <cite>atol</cite> to be smaller than the smallest value that
+can be expected from <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> so that <cite>rtol</cite> dominates the
+allowable error. If <cite>atol</cite> is larger than <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> the
+number of correct digits is not guaranteed. Conversely, to achieve the
+desired <cite>atol</cite> set <cite>rtol</cite> such that <code class="docutils literal notranslate"><span class="pre">rtol</span> <span class="pre">*</span> <span class="pre">abs(y)</span></code> is always smaller
+than <cite>atol</cite>. If components of y have different scales, it might be
+beneficial to set different <cite>atol</cite> values for different components by
+passing array_like with shape (n,) for <cite>atol</cite>. Default values are
+1e-3 for <cite>rtol</cite> and 1e-6 for <cite>atol</cite>.</p></li>
+<li><p><strong>jac</strong> (<em>array_like</em><em>, </em><em>sparse_matrix</em><em>, </em><em>callable</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – <p>Jacobian matrix of the right-hand side of the system with respect
+to y, required by the ‘Radau’, ‘BDF’ and ‘LSODA’ method. The
+Jacobian matrix has shape (n, n) and its element (i, j) is equal to
+<code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">f_i</span> <span class="pre">/</span> <span class="pre">d</span> <span class="pre">y_j</span></code>.  There are three ways to define the Jacobian:</p>
+<blockquote>
+<div><ul>
+<li><p>If array_like or sparse_matrix, the Jacobian is assumed to
+be constant. Not supported by ‘LSODA’.</p></li>
+<li><p>If callable, the Jacobian is assumed to depend on both
+t and y; it will be called as <code class="docutils literal notranslate"><span class="pre">jac(t,</span> <span class="pre">y)</span></code>, as necessary.
+For ‘Radau’ and ‘BDF’ methods, the return value might be a
+sparse matrix.</p></li>
+<li><p>If None (default), the Jacobian will be approximated by
+finite differences.</p></li>
+</ul>
+</div></blockquote>
+<p>It is generally recommended to provide the Jacobian rather than
+relying on a finite-difference approximation.</p>
+</p></li>
+<li><p><strong>jac_sparsity</strong> (<em>array_like</em><em>, </em><em>sparse matrix</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Defines a sparsity structure of the Jacobian matrix for a finite-
+difference approximation. Its shape must be (n, n). This argument
+is ignored if <cite>jac</cite> is not <cite>None</cite>. If the Jacobian has only few
+non-zero elements in <em>each</em> row, providing the sparsity structure
+will greatly speed up the computations <a class="footnote-reference brackets" href="#id27" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>. A zero entry means that
+a corresponding element in the Jacobian is always zero. If None
+(default), the Jacobian is assumed to be dense.
+Not supported by ‘LSODA’, see <cite>lband</cite> and <cite>uband</cite> instead.</p></li>
+<li><p><strong>lband</strong> (<em>int</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Parameters defining the bandwidth of the Jacobian for the ‘LSODA’
+method, i.e., <code class="docutils literal notranslate"><span class="pre">jac[i,</span> <span class="pre">j]</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">only</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">lband</span> <span class="pre">&lt;=</span> <span class="pre">j</span> <span class="pre">&lt;=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">uband</span></code>.
+Default is None. Setting these requires your jac routine to return the
+Jacobian in the packed format: the returned array must have <code class="docutils literal notranslate"><span class="pre">n</span></code>
+columns and <code class="docutils literal notranslate"><span class="pre">uband</span> <span class="pre">+</span> <span class="pre">lband</span> <span class="pre">+</span> <span class="pre">1</span></code> rows in which Jacobian diagonals are
+written. Specifically <code class="docutils literal notranslate"><span class="pre">jac_packed[uband</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">j</span> <span class="pre">,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">jac[i,</span> <span class="pre">j]</span></code>.
+The same format is used in <cite>scipy.linalg.solve_banded</cite> (check for an
+illustration).  These parameters can be also used with <code class="docutils literal notranslate"><span class="pre">jac=None</span></code> to
+reduce the number of Jacobian elements estimated by finite differences.</p></li>
+<li><p><strong>uband</strong> (<em>int</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Parameters defining the bandwidth of the Jacobian for the ‘LSODA’
+method, i.e., <code class="docutils literal notranslate"><span class="pre">jac[i,</span> <span class="pre">j]</span> <span class="pre">!=</span> <span class="pre">0</span> <span class="pre">only</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">lband</span> <span class="pre">&lt;=</span> <span class="pre">j</span> <span class="pre">&lt;=</span> <span class="pre">i</span> <span class="pre">+</span> <span class="pre">uband</span></code>.
+Default is None. Setting these requires your jac routine to return the
+Jacobian in the packed format: the returned array must have <code class="docutils literal notranslate"><span class="pre">n</span></code>
+columns and <code class="docutils literal notranslate"><span class="pre">uband</span> <span class="pre">+</span> <span class="pre">lband</span> <span class="pre">+</span> <span class="pre">1</span></code> rows in which Jacobian diagonals are
+written. Specifically <code class="docutils literal notranslate"><span class="pre">jac_packed[uband</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">-</span> <span class="pre">j</span> <span class="pre">,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">jac[i,</span> <span class="pre">j]</span></code>.
+The same format is used in <cite>scipy.linalg.solve_banded</cite> (check for an
+illustration).  These parameters can be also used with <code class="docutils literal notranslate"><span class="pre">jac=None</span></code> to
+reduce the number of Jacobian elements estimated by finite differences.</p></li>
+<li><p><strong>min_step</strong> (<em>float</em><em>, </em><em>optional</em>) – The minimum allowed step size for ‘LSODA’ method.
+By default <cite>min_step</cite> is zero.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul>
+<li><p><em>Bunch object with the following fields defined</em></p></li>
+<li><p><strong>t</strong> (<em>ndarray, shape (n_points,)</em>) – Time points.</p></li>
+<li><p><strong>y</strong> (<em>ndarray, shape (n, n_points)</em>) – Values of the solution at <cite>t</cite>.</p></li>
+<li><p><strong>sol</strong> (<cite>OdeSolution</cite> or None) – Found solution as <cite>OdeSolution</cite> instance; None if <cite>dense_output</cite> was
+set to False.</p></li>
+<li><p><strong>t_events</strong> (<em>list of ndarray or None</em>) – Contains for each event type a list of arrays at which an event of
+that type event was detected. None if <cite>events</cite> was None.</p></li>
+<li><p><strong>y_events</strong> (<em>list of ndarray or None</em>) – For each value of <cite>t_events</cite>, the corresponding value of the solution.
+None if <cite>events</cite> was None.</p></li>
+<li><p><strong>nfev</strong> (<em>int</em>) – Number of evaluations of the right-hand side.</p></li>
+<li><p><strong>njev</strong> (<em>int</em>) – Number of evaluations of the Jacobian.</p></li>
+<li><p><strong>nlu</strong> (<em>int</em>) – Number of LU decompositions.</p></li>
+<li><p><strong>status</strong> (<em>int</em>) –</p>
+<p>Reason for algorithm termination:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>-1: Integration step failed.</p></li>
+<li><p>0: The solver successfully reached the end of <cite>tspan</cite>.</p></li>
+<li><p>1: A termination event occurred.</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>message</strong> (<em>string</em>) – Human-readable description of the termination reason.</p></li>
+<li><p><strong>success</strong> (<em>bool</em>) – True if the solver reached the interval end or a termination event
+occurred (<code class="docutils literal notranslate"><span class="pre">status</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>J. R. Dormand, P. J. Prince, “A family of embedded Runge-Kutta
+formulae”, Journal of Computational and Applied Mathematics, Vol. 6,
+No. 1, pp. 19-26, 1980.</p>
+</aside>
+<aside class="footnote brackets" id="id19" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<p>L. W. Shampine, “Some Practical Runge-Kutta Formulas”, Mathematics
+of Computation,, Vol. 46, No. 173, pp. 135-150, 1986.</p>
+</aside>
+<aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">3</a><span class="fn-bracket">]</span></span>
+<p>P. Bogacki, L.F. Shampine, “A 3(2) Pair of Runge-Kutta Formulas”,
+Appl. Math. Lett. Vol. 2, No. 4. pp. 321-325, 1989.</p>
+</aside>
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">4</a><span class="fn-bracket">]</span></span>
+<p>E. Hairer, G. Wanner, “Solving Ordinary Differential Equations II:
+Stiff and Differential-Algebraic Problems”, Sec. IV.8.</p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">5</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Backward_differentiation_formula">Backward Differentiation Formula</a>
+on Wikipedia.</p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">6</a><span class="fn-bracket">]</span></span>
+<p>L. F. Shampine, M. W. Reichelt, “THE MATLAB ODE SUITE”, SIAM J. SCI.
+COMPUTE., Vol. 18, No. 1, pp. 1-22, January 1997.</p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">7</a><span class="fn-bracket">]</span></span>
+<p>A. C. Hindmarsh, “ODEPACK, A Systematized Collection of ODE
+Solvers,” IMACS Transactions on Scientific Computation, Vol 1.,
+pp. 55-64, 1983.</p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">8</a><span class="fn-bracket">]</span></span>
+<p>L. Petzold, “Automatic selection of methods for solving stiff and
+nonstiff systems of ordinary differential equations”, SIAM Journal
+on Scientific and Statistical Computing, Vol. 4, No. 1, pp. 136-148,
+1983.</p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">9</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Stiff_equation">Stiff equation</a> on
+Wikipedia.</p>
+</aside>
+<aside class="footnote brackets" id="id27" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">10</a><span class="fn-bracket">]</span></span>
+<p>A. Curtis, M. J. D. Powell, and J. Reid, “On the estimation of
+sparse Jacobian matrices”, Journal of the Institute of Mathematics
+and its Applications, 13, pp. 117-120, 1974.</p>
+</aside>
+<aside class="footnote brackets" id="id28" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">11</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Cauchy-Riemann_equations">Cauchy-Riemann equations</a> on
+Wikipedia.</p>
+</aside>
+<aside class="footnote brackets" id="id29" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">12</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equations">Lotka-Volterra equations</a>
+on Wikipedia.</p>
+</aside>
+<aside class="footnote brackets" id="id30" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">13</a><span class="fn-bracket">]</span></span>
+<p>E. Hairer, S. P. Norsett G. Wanner, “Solving Ordinary Differential
+Equations I: Nonstiff Problems”, Sec. II.</p>
+</aside>
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">14</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="http://www.unige.ch/~hairer/software.html">Page with original Fortran code of DOP853</a>.</p>
+</aside>
+</aside>
+<p class="rubric">Examples</p>
+<p>Basic exponential decay showing automatically chosen time points.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">exponential_decay</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="o">-</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">y</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">exponential_decay</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="go">[ 0.          0.11487653  1.26364188  3.06061781  4.81611105  6.57445806</span>
+<span class="go">  8.33328988 10.        ]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="go">[[2.         1.88836035 1.06327177 0.43319312 0.18017253 0.07483045</span>
+<span class="go">  0.03107158 0.01350781]</span>
+<span class="go"> [4.         3.7767207  2.12654355 0.86638624 0.36034507 0.14966091</span>
+<span class="go">  0.06214316 0.02701561]</span>
+<span class="go"> [8.         7.5534414  4.25308709 1.73277247 0.72069014 0.29932181</span>
+<span class="go">  0.12428631 0.05403123]]</span>
+</pre></div>
+</div>
+<p>Specifying points where the solution is desired.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">exponential_decay</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="n">t_eval</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="go">[ 0  1  2  4 10]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="go">[[2.         1.21305369 0.73534021 0.27066736 0.01350938]</span>
+<span class="go"> [4.         2.42610739 1.47068043 0.54133472 0.02701876]</span>
+<span class="go"> [8.         4.85221478 2.94136085 1.08266944 0.05403753]]</span>
+</pre></div>
+</div>
+<p>Cannon fired upward with terminal event upon impact. The <code class="docutils literal notranslate"><span class="pre">terminal</span></code> and
+<code class="docutils literal notranslate"><span class="pre">direction</span></code> fields of an event are applied by monkey patching a function.
+Here <code class="docutils literal notranslate"><span class="pre">y[0]</span></code> is position and <code class="docutils literal notranslate"><span class="pre">y[1]</span></code> is velocity. The projectile starts
+at position 0 with velocity +10. Note that the integration never reaches
+t=100 because the event is terminal.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">upward_cannon</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="p">[</span><span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">hit_ground</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hit_ground</span><span class="o">.</span><span class="n">terminal</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hit_ground</span><span class="o">.</span><span class="n">direction</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">upward_cannon</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span> <span class="n">events</span><span class="o">=</span><span class="n">hit_ground</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t_events</span><span class="p">)</span>
+<span class="go">[array([40.])]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="go">[0.00000000e+00 9.99900010e-05 1.09989001e-03 1.10988901e-02</span>
+<span class="go"> 1.11088891e-01 1.11098890e+00 1.11099890e+01 4.00000000e+01]</span>
+</pre></div>
+</div>
+<p>Use <cite>dense_output</cite> and <cite>events</cite> to find position, which is 100, at the apex
+of the cannonball’s trajectory. Apex is not defined as terminal, so both
+apex and hit_ground are found. There is no information at t=20, so the sol
+attribute is used to evaluate the solution. The sol attribute is returned
+by setting <code class="docutils literal notranslate"><span class="pre">dense_output=True</span></code>. Alternatively, the <cite>y_events</cite> attribute
+can be used to access the solution at the time of the event.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">apex</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> <span class="k">return</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">upward_cannon</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+<span class="gp">... </span>                <span class="n">events</span><span class="o">=</span><span class="p">(</span><span class="n">hit_ground</span><span class="p">,</span> <span class="n">apex</span><span class="p">),</span> <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t_events</span><span class="p">)</span>
+<span class="go">[array([40.]), array([20.])]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t</span><span class="p">)</span>
+<span class="go">[0.00000000e+00 9.99900010e-05 1.09989001e-03 1.10988901e-02</span>
+<span class="go"> 1.11088891e-01 1.11098890e+00 1.11099890e+01 4.00000000e+01]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">sol</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">t_events</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]))</span>
+<span class="go">[100.   0.]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sol</span><span class="o">.</span><span class="n">y_events</span><span class="p">)</span>
+<span class="go">[array([[-5.68434189e-14, -1.00000000e+01]]), array([[1.00000000e+02, 1.77635684e-15]])]</span>
+</pre></div>
+</div>
+<p>As an example of a system with additional parameters, we’ll implement
+the Lotka-Volterra equations <a class="footnote-reference brackets" href="#id29" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">lotkavolterra</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">z</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="p">[</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="p">]</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+<p>We pass in the parameter values a=1.5, b=1, c=3 and d=1 with the <cite>args</cite>
+argument.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sol</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">lotkavolterra</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+<span class="gp">... </span>                <span class="n">dense_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Compute a dense solution and plot it.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">sol</span><span class="o">.</span><span class="n">sol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">],</span> <span class="n">shadow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Lotka-Volterra System&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.math.ode.ivp</a><ul>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853"><code class="docutils literal notranslate"><span class="pre">DOP853</span></code></a><ul>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.n"><code class="docutils literal notranslate"><span class="pre">DOP853.n</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.status"><code class="docutils literal notranslate"><span class="pre">DOP853.status</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.t_bound"><code class="docutils literal notranslate"><span class="pre">DOP853.t_bound</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.direction"><code class="docutils literal notranslate"><span class="pre">DOP853.direction</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.t"><code class="docutils literal notranslate"><span class="pre">DOP853.t</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.y"><code class="docutils literal notranslate"><span class="pre">DOP853.y</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.t_old"><code class="docutils literal notranslate"><span class="pre">DOP853.t_old</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.step_size"><code class="docutils literal notranslate"><span class="pre">DOP853.step_size</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.nfev"><code class="docutils literal notranslate"><span class="pre">DOP853.nfev</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.njev"><code class="docutils literal notranslate"><span class="pre">DOP853.njev</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.nlu"><code class="docutils literal notranslate"><span class="pre">DOP853.nlu</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.A"><code class="docutils literal notranslate"><span class="pre">DOP853.A</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.A_EXTRA"><code class="docutils literal notranslate"><span class="pre">DOP853.A_EXTRA</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.B"><code class="docutils literal notranslate"><span class="pre">DOP853.B</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.C"><code class="docutils literal notranslate"><span class="pre">DOP853.C</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.C_EXTRA"><code class="docutils literal notranslate"><span class="pre">DOP853.C_EXTRA</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.D"><code class="docutils literal notranslate"><span class="pre">DOP853.D</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.E3"><code class="docutils literal notranslate"><span class="pre">DOP853.E3</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.E5"><code class="docutils literal notranslate"><span class="pre">DOP853.E5</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853._dense_output_impl"><code class="docutils literal notranslate"><span class="pre">DOP853._dense_output_impl()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853._estimate_error"><code class="docutils literal notranslate"><span class="pre">DOP853._estimate_error()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853._estimate_error_norm"><code class="docutils literal notranslate"><span class="pre">DOP853._estimate_error_norm()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.error_estimator_order"><code class="docutils literal notranslate"><span class="pre">DOP853.error_estimator_order</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.n_stages"><code class="docutils literal notranslate"><span class="pre">DOP853.n_stages</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.DOP853.order"><code class="docutils literal notranslate"><span class="pre">DOP853.order</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#poliastro2.math.ode.ivp.solve_ivp"><code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.math.ode.integrate.html"
+                          title="previous chapter">poliastro2.math.ode.integrate</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.math.optimize.html"
+                          title="next chapter">poliastro2.math.optimize</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.math.ode.ivp.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.optimize.html" title="poliastro2.math.optimize"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.ode.integrate.html" title="poliastro2.math.ode.integrate"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.ode.html" >poliastro2.math.ode</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.ode.ivp</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

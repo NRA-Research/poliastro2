@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.math.twobody.angles &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.math.twobody.elements" href="poliastro2.math.twobody.elements.html" />
+    <link rel="prev" title="poliastro2.math.twobody" href="poliastro2.math.twobody.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.twobody.elements.html" title="poliastro2.math.twobody.elements"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.twobody.html" title="poliastro2.math.twobody"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.twobody.html" accesskey="U">poliastro2.math.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.twobody.angles</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.math.twobody.angles">
+<span id="poliastro2-math-twobody-angles"></span><h1>poliastro2.math.twobody.angles<a class="headerlink" href="#module-poliastro2.math.twobody.angles" title="Link to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.D_to_M" title="poliastro2.math.twobody.angles.D_to_M"><code class="xref py py-obj docutils literal notranslate"><span class="pre">D_to_M</span></code></a>(D)</p></td>
+<td><p>Mean anomaly from parabolic anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.D_to_nu" title="poliastro2.math.twobody.angles.D_to_nu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">D_to_nu</span></code></a>(D)</p></td>
+<td><p>True anomaly from parabolic anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.E_to_M" title="poliastro2.math.twobody.angles.E_to_M"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E_to_M</span></code></a>(E, ecc)</p></td>
+<td><p>Mean anomaly from eccentric anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.E_to_nu" title="poliastro2.math.twobody.angles.E_to_nu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">E_to_nu</span></code></a>(E, ecc)</p></td>
+<td><p>True anomaly from eccentric anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.F_to_M" title="poliastro2.math.twobody.angles.F_to_M"><code class="xref py py-obj docutils literal notranslate"><span class="pre">F_to_M</span></code></a>(F, ecc)</p></td>
+<td><p>Mean anomaly from hyperbolic anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.F_to_nu" title="poliastro2.math.twobody.angles.F_to_nu"><code class="xref py py-obj docutils literal notranslate"><span class="pre">F_to_nu</span></code></a>(F, ecc)</p></td>
+<td><p>True anomaly from hyperbolic anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.M_to_D" title="poliastro2.math.twobody.angles.M_to_D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">M_to_D</span></code></a>(M)</p></td>
+<td><p>Parabolic anomaly from mean anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.M_to_E" title="poliastro2.math.twobody.angles.M_to_E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">M_to_E</span></code></a>(M, ecc)</p></td>
+<td><p>Eccentric anomaly from mean anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.M_to_F" title="poliastro2.math.twobody.angles.M_to_F"><code class="xref py py-obj docutils literal notranslate"><span class="pre">M_to_F</span></code></a>(M, ecc)</p></td>
+<td><p>Hyperbolic anomaly from mean anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.fp_angle" title="poliastro2.math.twobody.angles.fp_angle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fp_angle</span></code></a>(nu, ecc)</p></td>
+<td><p>Returns the flight path angle.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.newton_factory" title="poliastro2.math.twobody.angles.newton_factory"><code class="xref py py-obj docutils literal notranslate"><span class="pre">newton_factory</span></code></a>(func, fprime)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.nu_to_D" title="poliastro2.math.twobody.angles.nu_to_D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nu_to_D</span></code></a>(nu)</p></td>
+<td><p>Parabolic anomaly from true anomaly.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.nu_to_E" title="poliastro2.math.twobody.angles.nu_to_E"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nu_to_E</span></code></a>(nu, ecc)</p></td>
+<td><p>Eccentric anomaly from true anomaly.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.angles.nu_to_F" title="poliastro2.math.twobody.angles.nu_to_F"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nu_to_F</span></code></a>(nu, ecc)</p></td>
+<td><p>Hyperbolic anomaly from true anomaly.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.D_to_M">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">D_to_M</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">D</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.D_to_M" title="Link to this definition">¶</a></dt>
+<dd><p>Mean anomaly from parabolic anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>D</strong> (<em>float</em>) – Parabolic anomaly.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> – Mean anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>We use this definition:</p>
+<div class="math notranslate nohighlight">
+\[M = B + \frac{B^3}{3}\]</div>
+<p>Notice that M &lt; ν until ν ~ 100 degrees,
+then it reaches π when ν ~ 120 degrees,
+and grows without bounds after that.
+Therefore, it can hardly be called an “anomaly”
+since it is by no means an angle.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.D_to_nu">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">D_to_nu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">D</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.D_to_nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly from parabolic anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>D</strong> (<em>float</em>) – Eccentric anomaly.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>nu</strong> – True anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>From <a class="footnote-reference brackets" href="#id12" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\nu = 2 \arctan{D}\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.E_to_M">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">E_to_M</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.E_to_M" title="Link to this definition">¶</a></dt>
+<dd><p>Mean anomaly from eccentric anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>E</strong> (<em>float</em>) – Eccentric anomaly in radians.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> – Mean anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The mean anomaly will be outside of (-π, π]
+if the eccentric anomaly is.
+No validation or wrapping is performed.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The implementation uses the plain original Kepler equation:</p>
+<div class="math notranslate nohighlight">
+\[M = E - e \sin{E}\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.E_to_nu">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">E_to_nu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.E_to_nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly from eccentric anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>E</strong> (<em>float</em>) – Eccentric anomaly in radians.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>nu</strong> – True anomaly, between -π and π radians.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The true anomaly will be between -π and π radians,
+no matter the value of the eccentric anomaly.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The implementation uses the half-angle formula from <a class="footnote-reference brackets" href="#id14" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\nu = 2 \arctan \left( \sqrt{\frac{1 + e}{1 - e}} \tan{\frac{E}{2}} \right)
+\in (-\pi, \pi]\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.F_to_M">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">F_to_M</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.F_to_M" title="Link to this definition">¶</a></dt>
+<dd><p>Mean anomaly from hyperbolic anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>float</em>) – Hyperbolic anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>M</strong> – Mean anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>As noted in <a class="footnote-reference brackets" href="#id16" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>, by manipulating
+the parametric equations of the hyperbola
+we can derive a quantity that is equivalent
+to the mean anomaly in the elliptic case:</p>
+<div class="math notranslate nohighlight">
+\[M = e \sinh{F} - F\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.F_to_nu">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">F_to_nu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.F_to_nu" title="Link to this definition">¶</a></dt>
+<dd><p>True anomaly from hyperbolic anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>float</em>) – Hyperbolic anomaly.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>nu</strong> – True anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The implementation uses the half-angle formula from <a class="footnote-reference brackets" href="#id14" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[\nu = 2 \arctan \left( \sqrt{\frac{e + 1}{e - 1}} \tanh{\frac{F}{2}} \right)
+\in (-\pi, \pi]\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.M_to_D">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">M_to_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.M_to_D" title="Link to this definition">¶</a></dt>
+<dd><p>Parabolic anomaly from mean anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>M</strong> (<em>float</em>) – Mean anomaly in radians.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>D</strong> – Parabolic anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This uses the analytical solution of Barker’s equation from <a class="footnote-reference brackets" href="#id16" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.M_to_E">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">M_to_E</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.M_to_E" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentric anomaly from mean anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>float</em>) – Mean anomaly in radians.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>E</strong> – Eccentric anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This uses a Newton iteration on the Kepler equation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.M_to_F">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">M_to_F</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.M_to_F" title="Link to this definition">¶</a></dt>
+<dd><p>Hyperbolic anomaly from mean anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<em>float</em>) – Mean anomaly in radians.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>F</strong> – Hyperbolic anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This uses a Newton iteration on the hyperbolic Kepler equation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles._kepler_equation">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">_kepler_equation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles._kepler_equation" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles._kepler_equation_hyper">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">_kepler_equation_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles._kepler_equation_hyper" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles._kepler_equation_prime">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">_kepler_equation_prime</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles._kepler_equation_prime" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles._kepler_equation_prime_hyper">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">_kepler_equation_prime_hyper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles._kepler_equation_prime_hyper" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles._newton_elliptic">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">_newton_elliptic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.48e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles._newton_elliptic" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles._newton_hyperbolic">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">_newton_hyperbolic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.48e-08</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles._newton_hyperbolic" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.fp_angle">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">fp_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.fp_angle" title="Link to this definition">¶</a></dt>
+<dd><p>Returns the flight path angle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nu</strong> (<em>float</em>) – True anomaly in radians.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>fp_angle</strong> – Flight path angle</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>From <a class="footnote-reference brackets" href="#id14" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, pp. 113:</p>
+<div class="math notranslate nohighlight">
+\[\phi = \arctan(\frac {e \sin{\nu}}{1 + e \cos{\nu}})\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.newton_factory">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">newton_factory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fprime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.newton_factory" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.nu_to_D">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">nu_to_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.nu_to_D" title="Link to this definition">¶</a></dt>
+<dd><p>Parabolic anomaly from true anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>nu</strong> (<em>float</em>) – True anomaly in radians.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>D</strong> – Parabolic anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The parabolic anomaly will be continuous in (-∞, ∞)
+only if the true anomaly is in (-π, π].
+No validation or wrapping is performed.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The treatment of the parabolic case is heterogeneous in the literature,
+and that includes the use of an equivalent quantity to the eccentric anomaly:
+<a class="footnote-reference brackets" href="#id12" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> calls it “parabolic eccentric anomaly” D,
+<a class="footnote-reference brackets" href="#id13" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> also uses the letter D but calls it just “parabolic anomaly”,
+<a class="footnote-reference brackets" href="#id14" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> uses the letter B citing indirectly <a class="footnote-reference brackets" href="#id15" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>
+(which however calls it “parabolic time argument”),
+and <a class="footnote-reference brackets" href="#id16" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> does not bother to define it.</p>
+<p>We use this definition:</p>
+<div class="math notranslate nohighlight">
+\[B = \tan{\frac{\nu}{2}}\]</div>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id7">2</a>)</span>
+<p>Farnocchia, Davide, Davide Bracali Cioci, and Andrea Milani.
+“Robust resolution of Kepler’s equation in all eccentricity regimes.”</p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">2</a><span class="fn-bracket">]</span></span>
+<p>Bate, Muller, White.</p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id4">2</a>,<a role="doc-backlink" href="#id6">3</a>,<a role="doc-backlink" href="#id9">4</a>,<a role="doc-backlink" href="#id17">5</a>,<a role="doc-backlink" href="#id18">6</a>)</span>
+<p>Vallado, David. “Fundamentals of Astrodynamics and Applications”,
+2013.</p>
+</aside>
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">4</a><span class="fn-bracket">]</span></span>
+<p>IAU VIth General Assembly, 1938.</p>
+</aside>
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id5">2</a>,<a role="doc-backlink" href="#id11">3</a>)</span>
+<p>Battin, Richard H. “An introduction to the Mathematics and Methods
+of Astrodynamics, Revised Edition”, 1999.</p>
+</aside>
+</aside>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.nu_to_E">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">nu_to_E</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.nu_to_E" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentric anomaly from true anomaly.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 0.4.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nu</strong> (<em>float</em>) – True anomaly in radians.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>E</strong> – Eccentric anomaly, between -π and π radians.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The eccentric anomaly will be between -π and π radians,
+no matter the value of the true anomaly.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The implementation uses the half-angle formula from <a class="footnote-reference brackets" href="#id14" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[E = 2 \arctan \left ( \sqrt{\frac{1 - e}{1 + e}} \tan{\frac{\nu}{2}} \right)
+\in (-\pi, \pi]\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.angles.nu_to_F">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.angles.</span></span><span class="sig-name descname"><span class="pre">nu_to_F</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.angles.nu_to_F" title="Link to this definition">¶</a></dt>
+<dd><p>Hyperbolic anomaly from true anomaly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nu</strong> (<em>float</em>) – True anomaly in radians.</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity (&gt;1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>F</strong> – Hyperbolic anomaly.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The hyperbolic anomaly will be continuous in (-∞, ∞)
+only if the true anomaly is in (-π, π],
+which should happen anyway
+because the true anomaly is limited for hyperbolic orbits.
+No validation or wrapping is performed.</p>
+</div>
+<p class="rubric">Notes</p>
+<p>The implementation uses the half-angle formula from <a class="footnote-reference brackets" href="#id14" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>:</p>
+<div class="math notranslate nohighlight">
+\[F = 2 \operatorname{arctanh} \left( \sqrt{\frac{e-1}{e+1}} \tan{\frac{\nu}{2}} \right)\]</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.math.twobody.angles</a><ul>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.D_to_M"><code class="docutils literal notranslate"><span class="pre">D_to_M()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.D_to_nu"><code class="docutils literal notranslate"><span class="pre">D_to_nu()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.E_to_M"><code class="docutils literal notranslate"><span class="pre">E_to_M()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.E_to_nu"><code class="docutils literal notranslate"><span class="pre">E_to_nu()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.F_to_M"><code class="docutils literal notranslate"><span class="pre">F_to_M()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.F_to_nu"><code class="docutils literal notranslate"><span class="pre">F_to_nu()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.M_to_D"><code class="docutils literal notranslate"><span class="pre">M_to_D()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.M_to_E"><code class="docutils literal notranslate"><span class="pre">M_to_E()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.M_to_F"><code class="docutils literal notranslate"><span class="pre">M_to_F()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles._kepler_equation"><code class="docutils literal notranslate"><span class="pre">_kepler_equation()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles._kepler_equation_hyper"><code class="docutils literal notranslate"><span class="pre">_kepler_equation_hyper()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles._kepler_equation_prime"><code class="docutils literal notranslate"><span class="pre">_kepler_equation_prime()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles._kepler_equation_prime_hyper"><code class="docutils literal notranslate"><span class="pre">_kepler_equation_prime_hyper()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles._newton_elliptic"><code class="docutils literal notranslate"><span class="pre">_newton_elliptic()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles._newton_hyperbolic"><code class="docutils literal notranslate"><span class="pre">_newton_hyperbolic()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.fp_angle"><code class="docutils literal notranslate"><span class="pre">fp_angle()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.newton_factory"><code class="docutils literal notranslate"><span class="pre">newton_factory()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.nu_to_D"><code class="docutils literal notranslate"><span class="pre">nu_to_D()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.nu_to_E"><code class="docutils literal notranslate"><span class="pre">nu_to_E()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.angles.nu_to_F"><code class="docutils literal notranslate"><span class="pre">nu_to_F()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.math.twobody.html"
+                          title="previous chapter">poliastro2.math.twobody</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.math.twobody.elements.html"
+                          title="next chapter">poliastro2.math.twobody.elements</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.math.twobody.angles.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.twobody.elements.html" title="poliastro2.math.twobody.elements"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.twobody.html" title="poliastro2.math.twobody"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.twobody.html" >poliastro2.math.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.twobody.angles</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

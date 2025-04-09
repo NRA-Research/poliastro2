@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.math.optimize &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.math.perturbations" href="poliastro2.math.perturbations.html" />
+    <link rel="prev" title="poliastro2.math.ode.ivp" href="poliastro2.math.ode.ivp.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.perturbations.html" title="poliastro2.math.perturbations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.ode.ivp.html" title="poliastro2.math.ode.ivp"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" accesskey="U">poliastro2.math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.optimize</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.math.optimize">
+<span id="poliastro2-math-optimize"></span><h1>poliastro2.math.optimize<a class="headerlink" href="#module-poliastro2.math.optimize" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.optimize.brentq">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.optimize.</span></span><span class="sig-name descname"><span class="pre">brentq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8.881784197001252e-16</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxiter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">disp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.optimize.brentq" title="Link to this definition">¶</a></dt>
+<dd><p>Find a root of a function in a bracketing interval using Brent’s method.</p>
+<p>Uses the classic Brent’s method to find a root of the function <cite>f</cite> on
+the sign changing interval [a , b]. Generally considered the best of the
+rootfinding routines here. It is a safe version of the secant method that
+uses inverse quadratic extrapolation. Brent’s method combines root
+bracketing, interval bisection, and inverse quadratic interpolation. It is
+sometimes known as the van Wijngaarden-Dekker-Brent method. Brent (1973)
+claims convergence is guaranteed for functions computable within [a,b].</p>
+<p><a class="reference internal" href="#brent1973" id="id1"><span>[Brent1973]</span></a> provides the classic description of the algorithm. Another
+description can be found in a recent edition of Numerical Recipes, including
+<a class="reference internal" href="#pressetal1992" id="id2"><span>[PressEtal1992]</span></a>. A third description is at
+<a class="reference external" href="http://mathworld.wolfram.com/BrentsMethod.html">http://mathworld.wolfram.com/BrentsMethod.html</a>. It should be easy to
+understand the algorithm just by reading our code. Our code diverges a bit
+from standard presentations: we choose a different formula for the
+extrapolation step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>function</em>) – Python function returning a number. The function <span class="math notranslate nohighlight">\(f\)</span>
+must be continuous, and <span class="math notranslate nohighlight">\(f(a)\)</span> and <span class="math notranslate nohighlight">\(f(b)\)</span> must
+have opposite signs.</p></li>
+<li><p><strong>a</strong> (<em>scalar</em>) – One end of the bracketing interval <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p><strong>b</strong> (<em>scalar</em>) – The other end of the bracketing interval <span class="math notranslate nohighlight">\([a, b]\)</span>.</p></li>
+<li><p><strong>xtol</strong> (<em>number</em><em>, </em><em>optional</em>) – The computed root <code class="docutils literal notranslate"><span class="pre">x0</span></code> will satisfy <code class="docutils literal notranslate"><span class="pre">np.allclose(x,</span> <span class="pre">x0,</span>
+<span class="pre">atol=xtol,</span> <span class="pre">rtol=rtol)</span></code>, where <code class="docutils literal notranslate"><span class="pre">x</span></code> is the exact root. The
+parameter must be positive. For nice functions, Brent’s
+method will often satisfy the above condition with <code class="docutils literal notranslate"><span class="pre">xtol/2</span></code>
+and <code class="docutils literal notranslate"><span class="pre">rtol/2</span></code>. <a class="reference internal" href="#brent1973" id="id3"><span>[Brent1973]</span></a></p></li>
+<li><p><strong>rtol</strong> (<em>number</em><em>, </em><em>optional</em>) – The computed root <code class="docutils literal notranslate"><span class="pre">x0</span></code> will satisfy <code class="docutils literal notranslate"><span class="pre">np.allclose(x,</span> <span class="pre">x0,</span>
+<span class="pre">atol=xtol,</span> <span class="pre">rtol=rtol)</span></code>, where <code class="docutils literal notranslate"><span class="pre">x</span></code> is the exact root. The
+parameter cannot be smaller than its default value of
+<code class="docutils literal notranslate"><span class="pre">4*np.finfo(float).eps</span></code>. For nice functions, Brent’s
+method will often satisfy the above condition with <code class="docutils literal notranslate"><span class="pre">xtol/2</span></code>
+and <code class="docutils literal notranslate"><span class="pre">rtol/2</span></code>. <a class="reference internal" href="#brent1973" id="id4"><span>[Brent1973]</span></a></p></li>
+<li><p><strong>maxiter</strong> (<em>int</em><em>, </em><em>optional</em>) – If convergence is not achieved in <cite>maxiter</cite> iterations, an error is
+raised. Must be &gt;= 0.</p></li>
+<li><p><strong>args</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Containing extra arguments for the function <cite>f</cite>.
+<cite>f</cite> is called by <code class="docutils literal notranslate"><span class="pre">apply(f,</span> <span class="pre">(x)+args)</span></code>.</p></li>
+<li><p><strong>full_output</strong> (<em>bool</em><em>, </em><em>optional</em>) – If <cite>full_output</cite> is False, the root is returned. If <cite>full_output</cite> is
+True, the return value is <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">r)</span></code>, where <cite>x</cite> is the root, and <cite>r</cite> is
+a <cite>RootResults</cite> object.</p></li>
+<li><p><strong>disp</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, raise RuntimeError if the algorithm didn’t converge.
+Otherwise, the convergence status is recorded in any <cite>RootResults</cite>
+return object.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>root</strong> (<em>float</em>) – Root of <cite>f</cite> between <cite>a</cite> and <cite>b</cite>.</p></li>
+<li><p><strong>r</strong> (<cite>RootResults</cite> (present if <code class="docutils literal notranslate"><span class="pre">full_output</span> <span class="pre">=</span> <span class="pre">True</span></code>)) – Object containing information about the convergence. In particular,
+<code class="docutils literal notranslate"><span class="pre">r.converged</span></code> is True if the routine converged.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p><cite>f</cite> must be continuous.  f(a) and f(b) must have opposite signs.</p>
+<p>Related functions fall into several classes:</p>
+<dl class="simple">
+<dt>multivariate local optimizers</dt><dd><p><cite>fmin</cite>, <cite>fmin_powell</cite>, <cite>fmin_cg</cite>, <cite>fmin_bfgs</cite>, <cite>fmin_ncg</cite></p>
+</dd>
+<dt>nonlinear least squares minimizer</dt><dd><p><cite>leastsq</cite></p>
+</dd>
+<dt>constrained multivariate optimizers</dt><dd><p><cite>fmin_l_bfgs_b</cite>, <cite>fmin_tnc</cite>, <cite>fmin_cobyla</cite></p>
+</dd>
+<dt>global optimizers</dt><dd><p><cite>basinhopping</cite>, <cite>brute</cite>, <cite>differential_evolution</cite></p>
+</dd>
+<dt>local scalar minimizers</dt><dd><p><cite>fminbound</cite>, <cite>brent</cite>, <cite>golden</cite>, <cite>bracket</cite></p>
+</dd>
+<dt>N-D root-finding</dt><dd><p><cite>fsolve</cite></p>
+</dd>
+<dt>1-D root-finding</dt><dd><p><cite>brenth</cite>, <cite>ridder</cite>, <cite>bisect</cite>, <cite>newton</cite></p>
+</dd>
+<dt>scalar fixed-point finder</dt><dd><p><cite>fixed_point</cite></p>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<div role="list" class="citation-list">
+<div class="citation" id="brent1973" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Brent1973<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>,<a role="doc-backlink" href="#id4">3</a>)</span>
+<p>Brent, R. P.,
+<em>Algorithms for Minimization Without Derivatives</em>.
+Englewood Cliffs, NJ: Prentice-Hall, 1973. Ch. 3-4.</p>
+</div>
+<div class="citation" id="pressetal1992" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">PressEtal1992</a><span class="fn-bracket">]</span></span>
+<p>Press, W. H.; Flannery, B. P.; Teukolsky, S. A.; and Vetterling, W. T.
+<em>Numerical Recipes in FORTRAN: The Art of Scientific Computing</em>, 2nd ed.
+Cambridge, England: Cambridge University Press, pp. 352-355, 1992.
+Section 9.3:  “Van Wijngaarden-Dekker-Brent Method.”</p>
+</div>
+</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span>
+<span class="go">-1.0</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">root</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">root</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.math.optimize</a><ul>
+<li><a class="reference internal" href="#poliastro2.math.optimize.brentq"><code class="docutils literal notranslate"><span class="pre">brentq()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.math.ode.ivp.html"
+                          title="previous chapter">poliastro2.math.ode.ivp</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.math.perturbations.html"
+                          title="next chapter">poliastro2.math.perturbations</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.math.optimize.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.perturbations.html" title="poliastro2.math.perturbations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.ode.ivp.html" title="poliastro2.math.ode.ivp"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.optimize</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

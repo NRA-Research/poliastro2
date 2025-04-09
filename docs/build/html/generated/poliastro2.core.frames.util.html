@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.core.frames.util &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.core.math" href="poliastro2.core.math.html" />
+    <link rel="prev" title="poliastro2.core.frames.fixed" href="poliastro2.core.frames.fixed.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.math.html" title="poliastro2.core.math"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.frames.fixed.html" title="poliastro2.core.frames.fixed"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.core.html" >poliastro2.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.core.frames.html" accesskey="U">poliastro2.core.frames</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.core.frames.util</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.core.frames.util">
+<span id="poliastro2-core-frames-util"></span><h1>poliastro2.core.frames.util<a class="headerlink" href="#module-poliastro2.core.frames.util" title="Link to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.frames.util.get_frame" title="poliastro2.core.frames.util.get_frame"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_frame</span></code></a>(attractor, plane[, obstime])</p></td>
+<td><p>Returns an appropriate reference frame from an attractor and a plane.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.frames.util.get_frame">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.frames.util.</span></span><span class="sig-name descname"><span class="pre">get_frame</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attractor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plane</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obstime=&lt;Time</span> <span class="pre">object:</span> <span class="pre">scale='tt'</span> <span class="pre">format='jyear_str'</span> <span class="pre">value=J2000.000&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.frames.util.get_frame" title="Link to this definition">¶</a></dt>
+<dd><p>Returns an appropriate reference frame from an attractor and a plane.</p>
+<p>Available planes are Earth equator (parallel to GCRS) and Earth ecliptic.
+The fundamental direction of both is the equinox of epoch (J2000).
+An obstime is needed to properly locate the attractor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>attractor</strong> (<em>Body</em>) – Body that serves as the center of the frame.</p></li>
+<li><p><strong>plane</strong> (<em>Planes</em>) – Fundamental plane of the frame.</p></li>
+<li><p><strong>obstime</strong> (<em>Time</em>) – Time of the frame.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.core.frames.util</a><ul>
+<li><a class="reference internal" href="#poliastro2.core.frames.util.get_frame"><code class="docutils literal notranslate"><span class="pre">get_frame()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.core.frames.fixed.html"
+                          title="previous chapter">poliastro2.core.frames.fixed</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.core.math.html"
+                          title="next chapter">poliastro2.core.math</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.core.frames.util.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.math.html" title="poliastro2.core.math"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.frames.fixed.html" title="poliastro2.core.frames.fixed"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.core.html" >poliastro2.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.core.frames.html" >poliastro2.core.frames</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.core.frames.util</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

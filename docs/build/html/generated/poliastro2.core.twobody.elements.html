@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.core.twobody.elements &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.core.twobody.mean_elements" href="poliastro2.core.twobody.mean_elements.html" />
+    <link rel="prev" title="poliastro2.core.twobody.angles" href="poliastro2.core.twobody.angles.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.twobody.mean_elements.html" title="poliastro2.core.twobody.mean_elements"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.twobody.angles.html" title="poliastro2.core.twobody.angles"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.core.html" >poliastro2.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.core.twobody.html" accesskey="U">poliastro2.core.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.core.twobody.elements</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.core.twobody.elements">
+<span id="poliastro2-core-twobody-elements"></span><h1>poliastro2.core.twobody.elements<a class="headerlink" href="#module-poliastro2.core.twobody.elements" title="Link to this heading">¶</a></h1>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.circular_velocity" title="poliastro2.core.twobody.elements.circular_velocity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circular_velocity</span></code></a>(k, a)</p></td>
+<td><p>Circular velocity for a given body (k) and semimajor axis (a).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.coe2rv" title="poliastro2.core.twobody.elements.coe2rv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coe2rv</span></code></a>(k, p, ecc, inc, raan, argp, nu)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.coe2rv_many" title="poliastro2.core.twobody.elements.coe2rv_many"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coe2rv_many</span></code></a>(k_arr, p_arr, ecc_arr, inc_arr, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.eccentricity_vector" title="poliastro2.core.twobody.elements.eccentricity_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eccentricity_vector</span></code></a>(k, r, v)</p></td>
+<td><p>Eccentricity vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.energy" title="poliastro2.core.twobody.elements.energy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">energy</span></code></a>(k, r, v)</p></td>
+<td><p>Specific energy.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.get_eccentricity_critical_argp" title="poliastro2.core.twobody.elements.get_eccentricity_critical_argp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_eccentricity_critical_argp</span></code></a>(R, J2, J3, a, inc)</p></td>
+<td><p>Cccentricity for frozen orbits when the argument of perigee is critical.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.get_eccentricity_critical_inc" title="poliastro2.core.twobody.elements.get_eccentricity_critical_inc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_eccentricity_critical_inc</span></code></a>([ecc])</p></td>
+<td><p>Eccentricity for frozen orbits when the inclination is critical.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.get_inclination_critical_argp" title="poliastro2.core.twobody.elements.get_inclination_critical_argp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_inclination_critical_argp</span></code></a>(R, J2, J3, a, ecc)</p></td>
+<td><p>Inclination for frozen orbits when the argument of perigee is critical and the eccentricity is given.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.heliosynchronous" title="poliastro2.core.twobody.elements.heliosynchronous"><code class="xref py py-obj docutils literal notranslate"><span class="pre">heliosynchronous</span></code></a>(k, R, J2, n_sunsync[, a, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.hyp_nu_limit" title="poliastro2.core.twobody.elements.hyp_nu_limit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hyp_nu_limit</span></code></a>(ecc[, r_max_ratio])</p></td>
+<td><p>Limit true anomaly for hyperbolic orbits.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.mean_motion" title="poliastro2.core.twobody.elements.mean_motion"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean_motion</span></code></a>(k, a)</p></td>
+<td><p>Mean motion given body (k) and semimajor axis (a).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.period" title="poliastro2.core.twobody.elements.period"><code class="xref py py-obj docutils literal notranslate"><span class="pre">period</span></code></a>(k, a)</p></td>
+<td><p>Period given body (k) and semimajor axis (a).</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.core.twobody.elements.t_p" title="poliastro2.core.twobody.elements.t_p"><code class="xref py py-obj docutils literal notranslate"><span class="pre">t_p</span></code></a>(nu, ecc, k, r_p)</p></td>
+<td><p>Elapsed time since latest perifocal passage.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.circular_velocity">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">circular_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.circular_velocity" title="Link to this definition">¶</a></dt>
+<dd><p>Circular velocity for a given body (k) and semimajor axis (a).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.coe2rv">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">coe2rv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.coe2rv" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.coe2rv_many">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">coe2rv_many</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp_arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu_arr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.coe2rv_many" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.eccentricity_vector">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">eccentricity_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.eccentricity_vector" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity vector.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.energy">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">energy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.energy" title="Link to this definition">¶</a></dt>
+<dd><p>Specific energy.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.get_eccentricity_critical_argp">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">get_eccentricity_critical_argp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.get_eccentricity_critical_argp" title="Link to this definition">¶</a></dt>
+<dd><p>Cccentricity for frozen orbits when the argument of perigee is critical.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R</strong> (<em>Quantity</em>) – Planet radius.</p></li>
+<li><p><strong>J2</strong> (<em>Quantity</em>) – Planet J2 coefficient.</p></li>
+<li><p><strong>J3</strong> (<em>Quantity</em>) – Planet J3 coefficient.</p></li>
+<li><p><strong>a</strong> (<em>Quantity</em>) – Orbit’s semimajor axis</p></li>
+<li><p><strong>inc</strong> (<em>Quantity</em>) – Inclination.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.get_eccentricity_critical_inc">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">get_eccentricity_critical_inc</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ecc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.get_eccentricity_critical_inc" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity for frozen orbits when the inclination is critical.</p>
+<p>If ecc is None we set an arbitrary value which is the Moon eccentricity
+because it seems reasonable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ecc</strong> (<em>Quantity</em><em>, </em><em>optional</em>) – Eccentricity, default to None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.get_inclination_critical_argp">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">get_inclination_critical_argp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.get_inclination_critical_argp" title="Link to this definition">¶</a></dt>
+<dd><p>Inclination for frozen orbits when the argument of perigee is critical and the
+eccentricity is given.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>R</strong> (<em>Quantity</em>) – Planet radius.</p></li>
+<li><p><strong>J2</strong> (<em>Quantity</em>) – Planet J2 coefficient.</p></li>
+<li><p><strong>J3</strong> (<em>Quantity</em>) – Planet J3 coefficient.</p></li>
+<li><p><strong>a</strong> (<em>Quantity</em>) – Semimajor axis.</p></li>
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.heliosynchronous">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">heliosynchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">J2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_sunsync</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.heliosynchronous" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.hyp_nu_limit">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">hyp_nu_limit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_max_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">inf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.hyp_nu_limit" title="Link to this definition">¶</a></dt>
+<dd><p>Limit true anomaly for hyperbolic orbits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ecc</strong> (<em>Quantity</em>) – Eccentricity, should be larger than 1.</p></li>
+<li><p><strong>r_max_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Value of <span class="math notranslate nohighlight">\(r_{\text{max}} / p\)</span> for this angle, default to infinity.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.mean_motion">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">mean_motion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.mean_motion" title="Link to this definition">¶</a></dt>
+<dd><p>Mean motion given body (k) and semimajor axis (a).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.period">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">period</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.period" title="Link to this definition">¶</a></dt>
+<dd><p>Period given body (k) and semimajor axis (a).</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.core.twobody.elements.t_p">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.core.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">t_p</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r_p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.core.twobody.elements.t_p" title="Link to this definition">¶</a></dt>
+<dd><p>Elapsed time since latest perifocal passage.</p>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.core.twobody.elements</a><ul>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.circular_velocity"><code class="docutils literal notranslate"><span class="pre">circular_velocity()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.coe2rv"><code class="docutils literal notranslate"><span class="pre">coe2rv()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.coe2rv_many"><code class="docutils literal notranslate"><span class="pre">coe2rv_many()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.eccentricity_vector"><code class="docutils literal notranslate"><span class="pre">eccentricity_vector()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.energy"><code class="docutils literal notranslate"><span class="pre">energy()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.get_eccentricity_critical_argp"><code class="docutils literal notranslate"><span class="pre">get_eccentricity_critical_argp()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.get_eccentricity_critical_inc"><code class="docutils literal notranslate"><span class="pre">get_eccentricity_critical_inc()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.get_inclination_critical_argp"><code class="docutils literal notranslate"><span class="pre">get_inclination_critical_argp()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.heliosynchronous"><code class="docutils literal notranslate"><span class="pre">heliosynchronous()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.hyp_nu_limit"><code class="docutils literal notranslate"><span class="pre">hyp_nu_limit()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.mean_motion"><code class="docutils literal notranslate"><span class="pre">mean_motion()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.period"><code class="docutils literal notranslate"><span class="pre">period()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.core.twobody.elements.t_p"><code class="docutils literal notranslate"><span class="pre">t_p()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.core.twobody.angles.html"
+                          title="previous chapter">poliastro2.core.twobody.angles</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.core.twobody.mean_elements.html"
+                          title="next chapter">poliastro2.core.twobody.mean_elements</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.core.twobody.elements.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.twobody.mean_elements.html" title="poliastro2.core.twobody.mean_elements"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.core.twobody.angles.html" title="poliastro2.core.twobody.angles"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.core.html" >poliastro2.core</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.core.twobody.html" >poliastro2.core.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.core.twobody.elements</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

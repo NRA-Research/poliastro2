@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.math.propagation.mikkola &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.math.propagation.pimienta" href="poliastro2.math.propagation.pimienta.html" />
+    <link rel="prev" title="poliastro2.math.propagation.markley" href="poliastro2.math.propagation.markley.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.propagation.pimienta.html" title="poliastro2.math.propagation.pimienta"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.propagation.markley.html" title="poliastro2.math.propagation.markley"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.propagation.html" accesskey="U">poliastro2.math.propagation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.propagation.mikkola</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="poliastro2-math-propagation-mikkola">
+<h1>poliastro2.math.propagation.mikkola<a class="headerlink" href="#poliastro2-math-propagation-mikkola" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.propagation.mikkola">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.propagation.</span></span><span class="sig-name descname"><span class="pre">mikkola</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tof</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rtol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.propagation.mikkola" title="Link to this definition">¶</a></dt>
+<dd><p>Raw algorithm for Mikkola’s Kepler solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter of the attractor.</p></li>
+<li><p><strong>r0</strong> (<em>numpy.ndarray</em>) – Position vector.</p></li>
+<li><p><strong>v0</strong> (<em>numpy.ndarray</em>) – Velocity vector.</p></li>
+<li><p><strong>tof</strong> (<em>float</em>) – Time of flight.</p></li>
+<li><p><strong>rtol</strong> (<em>float</em>) – This method does not require tolerance since it is non-iterative.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>rr</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+<li><p><strong>vv</strong> (<em>numpy.ndarray</em>) – Final velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Original paper: <a class="reference external" href="https://doi.org/10.1007/BF01235850">https://doi.org/10.1007/BF01235850</a></p>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.math.propagation.mikkola</a><ul>
+<li><a class="reference internal" href="#poliastro2.math.propagation.mikkola"><code class="docutils literal notranslate"><span class="pre">mikkola()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.math.propagation.markley.html"
+                          title="previous chapter">poliastro2.math.propagation.markley</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.math.propagation.pimienta.html"
+                          title="next chapter">poliastro2.math.propagation.pimienta</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.math.propagation.mikkola.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.propagation.pimienta.html" title="poliastro2.math.propagation.pimienta"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.propagation.markley.html" title="poliastro2.math.propagation.markley"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.propagation.html" >poliastro2.math.propagation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.propagation.mikkola</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

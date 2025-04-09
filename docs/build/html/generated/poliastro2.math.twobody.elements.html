@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.math.twobody.elements &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.math.util" href="poliastro2.math.util.html" />
+    <link rel="prev" title="poliastro2.math.twobody.angles" href="poliastro2.math.twobody.angles.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.util.html" title="poliastro2.math.util"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.twobody.angles.html" title="poliastro2.math.twobody.angles"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.twobody.html" accesskey="U">poliastro2.math.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.twobody.elements</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.math.twobody.elements">
+<span id="poliastro2-math-twobody-elements"></span><h1>poliastro2.math.twobody.elements<a class="headerlink" href="#module-poliastro2.math.twobody.elements" title="Link to this heading">¶</a></h1>
+<p>This module contains a set of functions that can be used to convert between different
+elements that define the orbit of a body.</p>
+<p class="rubric">Functions</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.circular_velocity" title="poliastro2.math.twobody.elements.circular_velocity"><code class="xref py py-obj docutils literal notranslate"><span class="pre">circular_velocity</span></code></a>(k, a)</p></td>
+<td><p>Compute circular velocity for a given body given thegravitational parameter and the semimajor axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.coe2mee" title="poliastro2.math.twobody.elements.coe2mee"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coe2mee</span></code></a>(p, ecc, inc, raan, argp, nu)</p></td>
+<td><p>Converts from classical orbital elements to modified equinoctial orbital elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.coe2rv" title="poliastro2.math.twobody.elements.coe2rv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coe2rv</span></code></a>(k, p, ecc, inc, raan, argp, nu)</p></td>
+<td><p>Converts from classical orbital to state vectors.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.coe2rv_many" title="poliastro2.math.twobody.elements.coe2rv_many"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coe2rv_many</span></code></a>(k, p, ecc, inc, raan, argp, nu)</p></td>
+<td><p>Parallel version of coe2rv.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.coe_rotation_matrix" title="poliastro2.math.twobody.elements.coe_rotation_matrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coe_rotation_matrix</span></code></a>(inc, raan, argp)</p></td>
+<td><p>Create a rotation matrix for coe transformation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.eccentricity_vector" title="poliastro2.math.twobody.elements.eccentricity_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eccentricity_vector</span></code></a>(k, r, v)</p></td>
+<td><p>Eccentricity vector.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.mee2coe" title="poliastro2.math.twobody.elements.mee2coe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mee2coe</span></code></a>(p, f, g, h, k, L)</p></td>
+<td><p>Converts from modified equinoctial orbital elements to classical orbital elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.mee2rv" title="poliastro2.math.twobody.elements.mee2rv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mee2rv</span></code></a>(p, f, g, h, k, L)</p></td>
+<td><p>Calculates position and velocity vector from modified equinoctial elements.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.rv2coe" title="poliastro2.math.twobody.elements.rv2coe"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rv2coe</span></code></a>(k, r, v[, tol])</p></td>
+<td><p>Converts from vectors to classical orbital elements.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.math.twobody.elements.rv_pqw" title="poliastro2.math.twobody.elements.rv_pqw"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rv_pqw</span></code></a>(k, p, ecc, nu)</p></td>
+<td><p>Returns r and v vectors in perifocal frame.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.circular_velocity">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">circular_velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.circular_velocity" title="Link to this definition">¶</a></dt>
+<dd><p>Compute circular velocity for a given body given thegravitational parameter and
+the semimajor axis.</p>
+<div class="math notranslate nohighlight">
+\[v = \sqrt{\frac{\mu}{a}}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Gravitational Parameter</p></li>
+<li><p><strong>a</strong> (<em>float</em>) – Semimajor Axis</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.coe2mee">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">coe2mee</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.coe2mee" title="Link to this definition">¶</a></dt>
+<dd><p>Converts from classical orbital elements to modified equinoctial orbital
+elements.</p>
+<p>The definition of the modified equinoctial orbital elements is taken from [Walker, 1985].</p>
+<p>The modified equinoctial orbital elements are a set of orbital elements that are useful for
+trajectory analysis and optimization. They are valid for circular, elliptic, and hyperbolic
+orbits. These direct modified equinoctial equations exhibit no singularity for zero
+eccentricity and orbital inclinations equal to 0 and 90 degrees. However, the h and k
+components are singular for an orbital inclination of 180 degrees since the retrograde factor
+is not yet supported.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum or parameter (km).</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – Inclination (rad).</p></li>
+<li><p><strong>raan</strong> (<em>float</em>) – Longitude of ascending node (rad).</p></li>
+<li><p><strong>argp</strong> (<em>float</em>) – Argument of perigee (rad).</p></li>
+<li><p><strong>nu</strong> (<em>float</em>) – True anomaly (rad).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum or parameter</p></li>
+<li><p><strong>f</strong> (<em>float</em>) – Equinoctial parameter f</p></li>
+<li><p><strong>g</strong> (<em>float</em>) – Equinoctial parameter g</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – Equinoctial parameter h</p></li>
+<li><p><strong>k</strong> (<em>float</em>) – Equinoctial parameter k</p></li>
+<li><p><strong>L</strong> (<em>float</em>) – Longitude</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The conversion equations are taken directly from the original paper:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+p &amp;= a(1-e^2) \\
+f &amp;= e\cos(\omega + \Omega) \\
+g &amp;= e\sin(\omega + \Omega) \\
+h &amp;= \tan(\frac{i}{2})\cos(\Omega) \\
+k &amp;= \tan(\frac{i}{2})\sin(\Omega) \\
+L &amp;= \Omega + \omega + \theta \\
+\end{align}\end{split}\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.coe2rv">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">coe2rv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.coe2rv" title="Link to this definition">¶</a></dt>
+<dd><p>Converts from classical orbital to state vectors.</p>
+<p>Classical orbital elements are converted into position and velocity
+vectors by <cite>rv_pqw</cite> algorithm. A rotation matrix is applied to position
+and velocity vectors to get them expressed in terms of an IJK basis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter (km^3 / s^2).</p></li>
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum or parameter (km).</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – Inclination (rad).</p></li>
+<li><p><strong>raan</strong> (<em>float</em>) – Longitude of ascending node, omega (rad).</p></li>
+<li><p><strong>argp</strong> (<em>float</em>) – Argument of perigee (rad).</p></li>
+<li><p><strong>nu</strong> (<em>float</em>) – True anomaly (rad).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>r_ijk</strong> (<em>numpy.ndarray</em>) – Position vector in basis ijk.</p></li>
+<li><p><strong>v_ijk</strong> (<em>numpy.ndarray</em>) – Velocity vector in basis ijk.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    \vec{r}_{IJK} &amp;= [ROT3(-\Omega)][ROT1(-i)][ROT3(-\omega)]\vec{r}_{PQW}
+                       = \left [ \frac{IJK}{PQW} \right ]\vec{r}_{PQW}\\
+    \vec{v}_{IJK} &amp;= [ROT3(-\Omega)][ROT1(-i)][ROT3(-\omega)]\vec{v}_{PQW}
+                       = \left [ \frac{IJK}{PQW} \right ]\vec{v}_{PQW}\\
+\end{align}\end{split}\]</div>
+<p>Previous rotations (3-1-3) can be expressed in terms of a single rotation matrix:</p>
+<div class="math notranslate nohighlight">
+\[\left [ \frac{IJK}{PQW} \right ]\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+\cos(\Omega)\cos(\omega) - \sin(\Omega)\sin(\omega)\cos(i) &amp; -\cos(\Omega)\sin(\omega) - \sin(\Omega)\cos(\omega)\cos(i) &amp; \sin(\Omega)\sin(i)\\
+\sin(\Omega)\cos(\omega) + \cos(\Omega)\sin(\omega)\cos(i) &amp; -\sin(\Omega)\sin(\omega) + \cos(\Omega)\cos(\omega)\cos(i) &amp; -\cos(\Omega)\sin(i)\\
+\sin(\omega)\sin(i) &amp; \cos(\omega)\sin(i) &amp; \cos(i)
+\end{bmatrix}\end{split}\]</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.coe2rv_many">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">coe2rv_many</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.coe2rv_many" title="Link to this definition">¶</a></dt>
+<dd><p>Parallel version of coe2rv.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.coe_rotation_matrix">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">coe_rotation_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">argp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.coe_rotation_matrix" title="Link to this definition">¶</a></dt>
+<dd><p>Create a rotation matrix for coe transformation.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.eccentricity_vector">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">eccentricity_vector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.eccentricity_vector" title="Link to this definition">¶</a></dt>
+<dd><p>Eccentricity vector.</p>
+<div class="math notranslate nohighlight">
+\[\vec{e} = \frac{1}{\mu} \left(
+    \left( v^{2} - \frac{\mu}{r}\right ) \vec{r}  - (\vec{r} \cdot \vec{v})\vec{v}
+\right)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter (km^3 / s^2).</p></li>
+<li><p><strong>r</strong> (<em>numpy.ndarray</em>) – Position vector (km)</p></li>
+<li><p><strong>v</strong> (<em>numpy.ndarray</em>) – Velocity vector (km / s)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.mee2coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">mee2coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.mee2coe" title="Link to this definition">¶</a></dt>
+<dd><p>Converts from modified equinoctial orbital elements to classical orbital
+elements.</p>
+<p>The definition of the modified equinoctial orbital elements is taken from
+[Walker, 1985].</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+    p &amp;= a(1 - e^{2})\\
+    e &amp;= \sqrt{f^{2} + g^{2}}\\
+    i &amp;= 2\arctan{(\sqrt{h^{2} + k^{2}})}\\
+    raan &amp;= atan2(k, h) \pmod{2\pi}\\
+    argp &amp;= (atan2(g, f) - raan) \pmod{2\pi}\\
+    nu &amp;= (L - atan2(g, f)) \pmod{2\pi}\\
+\end{align}\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum</p></li>
+<li><p><strong>f</strong> (<em>float</em>) – Equinoctial parameter f</p></li>
+<li><p><strong>g</strong> (<em>float</em>) – Equinoctial parameter g</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – Equinoctial parameter h</p></li>
+<li><p><strong>k</strong> (<em>float</em>) – Equinoctial parameter k</p></li>
+<li><p><strong>L</strong> (<em>float</em>) – Longitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity of the orbit</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – Inclination of the orbit</p></li>
+<li><p><strong>raan</strong> (<em>float</em>) – RAAN of orbit</p></li>
+<li><p><strong>argp</strong> (<em>float</em>) – Argument of the periapsis</p></li>
+<li><p><strong>nu</strong> (<em>float</em>) – True anomaly</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The conversion is always safe because arctan2 works also for 0, 0
+arguments.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.mee2rv">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">mee2rv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">f</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.mee2rv" title="Link to this definition">¶</a></dt>
+<dd><p>Calculates position and velocity vector from modified equinoctial elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum</p></li>
+<li><p><strong>f</strong> (<em>float</em>) – Equinoctial parameter f</p></li>
+<li><p><strong>g</strong> (<em>float</em>) – Equinoctial parameter g</p></li>
+<li><p><strong>h</strong> (<em>float</em>) – Equinoctial parameter h</p></li>
+<li><p><strong>k</strong> (<em>float</em>) – Equinoctial parameter k</p></li>
+<li><p><strong>L</strong> (<em>float</em>) – Longitude</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>r</strong> (<em>numpy.ndarray</em>) – Position vector.</p></li>
+<li><p><strong>v</strong> (<em>numpy.ndarray</em>) – Velocity vector.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The definition of <cite>r</cite> and <cite>v</cite> is taken from
+<a class="reference external" href="https://spsweb.fltops.jpl.nasa.gov/portaldataops/mpg/MPG_Docs/Source%20Docs/EquinoctalElements-modified.pdf">https://spsweb.fltops.jpl.nasa.gov/portaldataops/mpg/MPG_Docs/Source%20Docs/EquinoctalElements-modified.pdf</a>,
+Equation 3a and 3b.</p>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.rv2coe">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">rv2coe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-08</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.rv2coe" title="Link to this definition">¶</a></dt>
+<dd><p>Converts from vectors to classical orbital elements.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter (km^3 / s^2)</p></li>
+<li><p><strong>r</strong> (<em>numpy.ndarray</em>) – Position vector (km)</p></li>
+<li><p><strong>v</strong> (<em>numpy.ndarray</em>) – Velocity vector (km / s)</p></li>
+<li><p><strong>tol</strong> (<em>float</em><em>, </em><em>optional</em>) – Tolerance for eccentricity and inclination checks, default to 1e-8</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum of parameter (km)</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity</p></li>
+<li><p><strong>inc</strong> (<em>float</em>) – Inclination (rad)</p></li>
+<li><p><strong>raan</strong> (<em>float</em>) – Right ascension of the ascending nod (rad)</p></li>
+<li><p><strong>argp</strong> (<em>float</em>) – Argument of Perigee (rad)</p></li>
+<li><p><strong>nu</strong> (<em>float</em>) – True Anomaly (rad)</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>This example is a real exercise from Orbital Mechanics for Engineering
+students by Howard D.Curtis. This exercise is 4.3 of 3rd. Edition, page 200.</p>
+<ol class="arabic simple">
+<li><p>First the angular momentum is computed:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\vec{h} = \vec{r} \times \vec{v}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>With it the eccentricity can be solved:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\vec{e} &amp;= \frac{1}{\mu}\left [ \left ( v^{2} - \frac{\mu}{r}\right ) \vec{r}  - (\vec{r} \cdot \vec{v})\vec{v} \right ] \\
+e &amp;= \sqrt{\vec{e}\cdot\vec{e}} \\
+\end{align}\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>The node vector line is solved:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\vec{N} &amp;= \vec{k} \times \vec{h} \\
+N &amp;= \sqrt{\vec{N}\cdot\vec{N}}
+\end{align}\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>The rigth ascension node is computed:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\Omega = \left\{ \begin{array}{lcc}
+ cos^{-1}{\left ( \frac{N_{x}}{N} \right )} &amp;   if  &amp; N_{y} \geq  0 \\
+ \\ 360^{o} -cos^{-1}{\left ( \frac{N_{x}}{N} \right )} &amp;  if &amp; N_{y} &lt; 0 \\
+ \end{array}
+\right.\end{split}\]</div>
+<ol class="arabic simple" start="5">
+<li><p>The argument of perigee:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\omega  = \left\{ \begin{array}{lcc}
+ cos^{-1}{\left ( \frac{\vec{N}\vec{e}}{Ne} \right )} &amp;   if  &amp; e_{z} \geq  0 \\
+ \\ 360^{o} -cos^{-1}{\left ( \frac{\vec{N}\vec{e}}{Ne} \right )} &amp;  if &amp; e_{z} &lt; 0 \\
+ \end{array}
+\right.\end{split}\]</div>
+<ol class="arabic simple" start="6">
+<li><p>And finally the true anomaly:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nu  = \left\{ \begin{array}{lcc}
+ cos^{-1}{\left ( \frac{\vec{e}\vec{r}}{er} \right )} &amp;   if  &amp; v_{r} \geq  0 \\
+ \\ 360^{o} -cos^{-1}{\left ( \frac{\vec{e}\vec{r}}{er} \right )} &amp;  if &amp; v_{r} &lt; 0 \\
+ \end{array}
+\right.\end{split}\]</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">poliastro.bodies</span><span class="w"> </span><span class="kn">import</span> <span class="n">Earth</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">astropy</span><span class="w"> </span><span class="kn">import</span> <span class="n">units</span> <span class="k">as</span> <span class="n">u</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="n">Earth</span><span class="o">.</span><span class="n">k</span><span class="o">.</span><span class="n">to_value</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">km</span> <span class="o">**</span> <span class="mi">3</span> <span class="o">/</span> <span class="n">u</span><span class="o">.</span><span class="n">s</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">6045.</span><span class="p">,</span> <span class="o">-</span><span class="mf">3490.</span><span class="p">,</span> <span class="mf">2500.</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">3.457</span><span class="p">,</span> <span class="mf">6.618</span><span class="p">,</span> <span class="mf">2.533</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="p">,</span> <span class="n">ecc</span><span class="p">,</span> <span class="n">inc</span><span class="p">,</span> <span class="n">raan</span><span class="p">,</span> <span class="n">argp</span><span class="p">,</span> <span class="n">nu</span> <span class="o">=</span> <span class="n">rv2coe</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p:&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="s2">&quot;[km]&quot;</span><span class="p">)</span>  
+<span class="go">p: 8530.47436396927 [km]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ecc:&quot;</span><span class="p">,</span> <span class="n">ecc</span><span class="p">)</span>  
+<span class="go">ecc: 0.17121118195416898</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;inc:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">inc</span><span class="p">),</span> <span class="s2">&quot;[deg]&quot;</span><span class="p">)</span>  
+<span class="go">inc: 153.2492285182475 [deg]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;raan:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">raan</span><span class="p">),</span> <span class="s2">&quot;[deg]&quot;</span><span class="p">)</span>  
+<span class="go">raan: 255.27928533439618 [deg]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;argp:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">argp</span><span class="p">),</span> <span class="s2">&quot;[deg]&quot;</span><span class="p">)</span>  
+<span class="go">argp: 20.068139973005362 [deg]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nu:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">rad2deg</span><span class="p">(</span><span class="n">nu</span><span class="p">),</span> <span class="s2">&quot;[deg]&quot;</span><span class="p">)</span>  
+<span class="go">nu: 28.445804984192122 [deg]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="poliastro2.math.twobody.elements.rv_pqw">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.math.twobody.elements.</span></span><span class="sig-name descname"><span class="pre">rv_pqw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ecc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#poliastro2.math.twobody.elements.rv_pqw" title="Link to this definition">¶</a></dt>
+<dd><p>Returns r and v vectors in perifocal frame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>float</em>) – Standard gravitational parameter (km^3 / s^2).</p></li>
+<li><p><strong>p</strong> (<em>float</em>) – Semi-latus rectum or parameter (km).</p></li>
+<li><p><strong>ecc</strong> (<em>float</em>) – Eccentricity.</p></li>
+<li><p><strong>nu</strong> (<em>float</em>) – True anomaly (rad).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>r</strong> (<em>numpy.ndarray</em>) – Position. Dimension 3 vector</p></li>
+<li><p><strong>v</strong> (<em>numpy.ndarray</em>) – Velocity. Dimension 3 vector</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>These formulas can be checked at Curtis 3rd. Edition, page 110. Also the
+example proposed is 2.11 of Curtis 3rd Edition book.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}\vec{r} = \frac{h^2}{\mu}\frac{1}{1 + e\cos(\theta)}\begin{bmatrix}
+\cos(\theta)\\
+\sin(\theta)\\
+0
+\end{bmatrix} \\\\\\\end{split}\\\begin{split}\vec{v} = \frac{h^2}{\mu}\begin{bmatrix}
+-\sin(\theta)\\
+e+\cos(\theta)\\
+0
+\end{bmatrix}\end{split}\end{aligned}\end{align} \]</div>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">poliastro.constants</span><span class="w"> </span><span class="kn">import</span> <span class="n">GM_earth</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">k</span> <span class="o">=</span> <span class="n">GM_earth</span><span class="o">.</span><span class="n">value</span>  <span class="c1"># Earth gravitational parameter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ecc</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># Eccentricity</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="mf">60000e6</span>  <span class="c1"># Angular momentum of the orbit (m**2 / s)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>  <span class="c1"># True Anomaly (rad)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">h</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="n">k</span>  <span class="c1"># Parameter of the orbit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">rv_pqw</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">ecc</span><span class="p">,</span> <span class="n">nu</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Printing the results</span>
+<span class="go">r = [-5312706.25105345  9201877.15251336    0] [m]</span>
+<span class="go">v = [-5753.30180931 -1328.66813933  0] [m]/[s]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.math.twobody.elements</a><ul>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.circular_velocity"><code class="docutils literal notranslate"><span class="pre">circular_velocity()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.coe2mee"><code class="docutils literal notranslate"><span class="pre">coe2mee()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.coe2rv"><code class="docutils literal notranslate"><span class="pre">coe2rv()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.coe2rv_many"><code class="docutils literal notranslate"><span class="pre">coe2rv_many()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.coe_rotation_matrix"><code class="docutils literal notranslate"><span class="pre">coe_rotation_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.eccentricity_vector"><code class="docutils literal notranslate"><span class="pre">eccentricity_vector()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.mee2coe"><code class="docutils literal notranslate"><span class="pre">mee2coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.mee2rv"><code class="docutils literal notranslate"><span class="pre">mee2rv()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.rv2coe"><code class="docutils literal notranslate"><span class="pre">rv2coe()</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.math.twobody.elements.rv_pqw"><code class="docutils literal notranslate"><span class="pre">rv_pqw()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.math.twobody.angles.html"
+                          title="previous chapter">poliastro2.math.twobody.angles</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.math.util.html"
+                          title="next chapter">poliastro2.math.util</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.math.twobody.elements.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.util.html" title="poliastro2.math.util"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.math.twobody.angles.html" title="poliastro2.math.twobody.angles"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.math.html" >poliastro2.math</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.math.twobody.html" >poliastro2.math.twobody</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.math.twobody.elements</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>poliastro2.plotting.orbit.backends &#8212; poliastro2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/nature.css?v=279e0f84" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=04b36c4e" />
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="poliastro2.plotting.orbit.backends.matplotlib" href="poliastro2.plotting.orbit.backends.matplotlib.html" />
+    <link rel="prev" title="poliastro2.plotting.orbit" href="poliastro2.plotting.orbit.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.plotting.orbit.backends.matplotlib.html" title="poliastro2.plotting.orbit.backends.matplotlib"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.plotting.orbit.html" title="poliastro2.plotting.orbit"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.plotting.html" >poliastro2.plotting</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.plotting.orbit.html" accesskey="U">poliastro2.plotting.orbit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.plotting.orbit.backends</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-poliastro2.plotting.orbit.backends">
+<span id="poliastro2-plotting-orbit-backends"></span><h1>poliastro2.plotting.orbit.backends<a class="headerlink" href="#module-poliastro2.plotting.orbit.backends" title="Link to this heading">¶</a></h1>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
+<p>This subpackage collecting all support orbit plotter backends.</p>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>matplotlib: Backend implementation using Matplotlib.</p></li>
+<li><p>plotly: Backend implementation using Plotly.</p></li>
+<li><p>_base: Base classes and functions for plotting backends.</p></li>
+</ul>
+</section>
+<p class="rubric">Module Attributes</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_2D" title="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_2D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS_2D</span></code></a></p></td>
+<td><p>A dictionary relating 2D orbit plotter backends and their classes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_3D" title="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_3D"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS_3D</span></code></a></p></td>
+<td><p>A dictionary relating 3D orbit plotter backends and their classes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS" title="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS</span></code></a></p></td>
+<td><p>A dictionary relating orbit plotter backends and their classes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS" title="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS</span></code></a></p></td>
+<td><p>A dictionary relating orbit plotter backends for matplotlib and their classes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS" title="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS</span></code></a></p></td>
+<td><p>A dictionary relating orbit plotter backends for plotly and their classes.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py data">
+<dt class="sig sig-object py" id="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.plotting.orbit.backends.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'matplotlib2D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.matplotlib.Matplotlib2D'&gt;,</span> <span class="pre">'plotly2D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.plotly.Plotly2D'&gt;,</span> <span class="pre">'plotly3D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.plotly.Plotly3D'&gt;}</span></em><a class="headerlink" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary relating orbit plotter backends and their classes.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_2D">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.plotting.orbit.backends.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS_2D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'matplotlib2D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.matplotlib.Matplotlib2D'&gt;,</span> <span class="pre">'plotly2D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.plotly.Plotly2D'&gt;}</span></em><a class="headerlink" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_2D" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary relating 2D orbit plotter backends and their classes.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_3D">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.plotting.orbit.backends.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS_3D</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'plotly3D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.plotly.Plotly3D'&gt;}</span></em><a class="headerlink" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_3D" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary relating 3D orbit plotter backends and their classes.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.plotting.orbit.backends.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'matplotlib2D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.matplotlib.Matplotlib2D'&gt;}</span></em><a class="headerlink" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary relating orbit plotter backends for matplotlib and their classes.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS">
+<span class="sig-prename descclassname"><span class="pre">poliastro2.plotting.orbit.backends.</span></span><span class="sig-name descname"><span class="pre">DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'plotly2D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.plotly.Plotly2D'&gt;,</span> <span class="pre">'plotly3D':</span> <span class="pre">&lt;class</span> <span class="pre">'poliastro2.plotting.orbit.backends.plotly.Plotly3D'&gt;}</span></em><a class="headerlink" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS" title="Link to this definition">¶</a></dt>
+<dd><p>A dictionary relating orbit plotter backends for plotly and their classes.</p>
+</dd></dl>
+
+<p class="rubric">Modules</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="poliastro2.plotting.orbit.backends.matplotlib.html#module-poliastro2.plotting.orbit.backends.matplotlib" title="poliastro2.plotting.orbit.backends.matplotlib"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib</span></code></a></p></td>
+<td><p>A module implementing orbit plotter backends based on Matplotlib.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="poliastro2.plotting.orbit.backends.plotly.html#module-poliastro2.plotting.orbit.backends.plotly" title="poliastro2.plotting.orbit.backends.plotly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plotly</span></code></a></p></td>
+<td><p>A module implementing orbit plotter backends based on Plotly.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">poliastro2.plotting.orbit.backends</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+<li><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS"><code class="docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_2D"><code class="docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS_2D</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_BACKENDS_3D"><code class="docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_BACKENDS_3D</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS"><code class="docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_MATPLOTLIB_BACKENDS</span></code></a></li>
+<li><a class="reference internal" href="#poliastro2.plotting.orbit.backends.DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS"><code class="docutils literal notranslate"><span class="pre">DEFAULT_ORBIT_PLOTTER_PLOTLY_BACKENDS</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="poliastro2.plotting.orbit.html"
+                          title="previous chapter">poliastro2.plotting.orbit</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="poliastro2.plotting.orbit.backends.matplotlib.html"
+                          title="next chapter">poliastro2.plotting.orbit.backends.matplotlib</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/generated/poliastro2.plotting.orbit.backends.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.plotting.orbit.backends.matplotlib.html" title="poliastro2.plotting.orbit.backends.matplotlib"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="poliastro2.plotting.orbit.html" title="poliastro2.plotting.orbit"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">poliastro2  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="../api.html" >API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="poliastro2.plotting.html" >poliastro2.plotting</a> &#187;</li>
+          <li class="nav-item nav-item-3"><a href="poliastro2.plotting.orbit.html" >poliastro2.plotting.orbit</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">poliastro2.plotting.orbit.backends</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025 (Poliastro2) Xiyuan Li; 2013-2023, (Poliastro) Juan Luis Cano Rodríguez and the poliastro development team.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>
