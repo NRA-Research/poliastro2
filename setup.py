@@ -5,7 +5,7 @@ setup(
     version="0.2.dev0",
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    requires=[
+    install_requires=[
         "astropy >=5.0,<6",
         "astroquery >=0.3.9",
         "jplephem",
@@ -21,7 +21,7 @@ setup(
     author="Xiyuan Li",
     author_email="xli2522@uwo.ca",
     description="A project for orbital dynamics calculations",
-    long_description=open("README.md").read(),
+    long_description=open("README.md", encoding='utf-8').read(),
     long_description_content_type="text/markdown",
     url="https://github.com/nra-research/poliastro2",
     classifiers=[
